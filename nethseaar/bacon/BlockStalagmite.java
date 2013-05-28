@@ -32,7 +32,7 @@ public class BlockStalagmite extends Block {
         public void registerIcons(IconRegister par1IconRegister)
         {
             this.blockIcon = par1IconRegister.registerIcon("stalagmite");
-            this.stalagmiteTop = par1IconRegister.registerIcon("stalagmitetop");
+            this.stalagmiteTop = par1IconRegister.registerIcon("stalagmiteTop");
         }
 
 }

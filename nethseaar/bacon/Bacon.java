@@ -4,9 +4,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.client.EnumHelperClient;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -25,11 +27,17 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class Bacon {
 
+	EventManager eventmanager = new EventManager();
+
+	// Add materials
+		public static final EnumToolMaterial toolFLINT = EnumHelperClient.addToolMaterial("oneFLINT", 1, 15, 1.0F, 0, 0);
+
 	//add ores
 	public static Block darknessOre;
 	public static Block gravityOre;
 	public static Block lethargyOre;
-
+	public static Block bitumenOre;
+	
 	//add stone blocks
 	public static Block darkstone;
 	public static Block dimstone;
@@ -133,9 +141,41 @@ public class Bacon {
 	public static Item lightstoneHex;
 	public static Item deathstoneHex;
 	public static Item floatstoneHex;
-	//public static Item springstoneHex;
+	public static Item springstoneHex;
+	public static Item bitumenChunk;
+	
+	// Add pickaxes
+	public static Item flintTool;
+	public static Item stoneBonePick;
+	public static Item ironBonePick;
+	public static Item goldBonePick;
+	public static Item diamondBonePick;
 
+	// Add bone axes
+	public static Item stoneBoneAxe;
+	public static Item ironBoneAxe;
+	public static Item goldBoneAxe;
+	public static Item diamondBoneAxe;
 
+	// Add bone hoes
+	public static Item stoneBoneHoe;
+	public static Item ironBoneHoe;
+	public static Item goldBoneHoe;
+	public static Item diamondBoneHoe;
+
+	// Add bone shovels
+	public static Item stoneBoneShovel;
+	public static Item ironBoneShovel;
+	public static Item goldBoneShovel;
+	public static Item diamondBoneShovel;
+
+	// Add bone swords
+	public static Item stoneBoneSword;
+	public static Item ironBoneSword;
+	public static Item goldBoneSword;
+	public static Item diamondBoneSword;
+	
+	public static Item bitumenInBucket;
 
 
 	@Instance("Bacon")
@@ -151,10 +191,12 @@ public class Bacon {
 
 	@Init
 	public void load(FMLInitializationEvent event) {
+		
+		GameRegistry.registerWorldGenerator(eventmanager);
 
 
 		proxy.registerRenderers();
-		//* --------------------------------------------------------------------------------------ITEMS----------------------------------------------------
+		//* --------------------------------------------------------------------------------------INITIALIZE ITEMS----------------------------------------------------
 		//item initialization
 		darkness = new ItemBacon(5000).setMaxStackSize(64).setUnlocalizedName("darkness").setCreativeTab(CreativeTabs.tabMaterials);
 		gravity = new ItemBacon(5001).setMaxStackSize(64).setUnlocalizedName("gravity").setCreativeTab(CreativeTabs.tabMaterials);
@@ -162,36 +204,122 @@ public class Bacon {
 		darkstoneHex = new ItemBacon(5003).setMaxStackSize(64).setUnlocalizedName("darkstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
 		dimstoneHex = new ItemBacon(5004).setMaxStackSize(64).setUnlocalizedName("dimstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
 		lightstoneHex = new ItemBacon(5005).setMaxStackSize(64).setUnlocalizedName("lightstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
-		deathstoneHex = new ItemBacon(5006).setMaxStackSize(64).setUnlocalizedName("deathstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
+		springstoneHex = new ItemBacon(5008).setMaxStackSize(64).setUnlocalizedName("springstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
 		floatstoneHex = new ItemBacon(5007).setMaxStackSize(64).setUnlocalizedName("floatstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
+		deathstoneHex = new ItemBacon(5006).setMaxStackSize(64).setUnlocalizedName("deathstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
+		bitumenChunk = new ItemBacon (5009).setMaxStackSize(64).setUnlocalizedName("bitumenChunk").setCreativeTab(CreativeTabs.tabMaterials);
+		bitumenInBucket = new ItemBacon(3328).setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("bitumenInBucket").setContainerItem(Item.bucketEmpty).setMaxStackSize(1);
 
-		//* -------------------------------------------------------------------------------------- REGISTER ITEMS----------------------------------------------------
-		//item name registry
-		LanguageRegistry.addName(darkness, "Darkness");
-		LanguageRegistry.addName(gravity, "Gravity");
-		LanguageRegistry.addName(lethargy, "Lethargy");
-		LanguageRegistry.addName(darkstoneHex, "Darkstone Hex");
-		LanguageRegistry.addName(dimstoneHex, "Dimstone Hex");
-		LanguageRegistry.addName(lightstoneHex, "Lightstone Hex");
-		LanguageRegistry.addName(deathstoneHex, "Deathstone Hex");
-		LanguageRegistry.addName(floatstoneHex, "Floatstone Hex");
+		// Initialize pickaxes
+		flintTool = new ItemFlintTool(3330, toolFLINT).setUnlocalizedName("flintTool");
+		stoneBonePick = new ItemBonePickaxe(3331, EnumToolMaterial.STONE).setUnlocalizedName("stoneBonePick");
+		ironBonePick = new ItemBonePickaxe(3332, EnumToolMaterial.IRON).setUnlocalizedName("ironBonePick");
+		goldBonePick = new ItemBonePickaxe(3333, EnumToolMaterial.GOLD).setUnlocalizedName("goldBonePick");
+		diamondBonePick = new ItemBonePickaxe(3334, EnumToolMaterial.EMERALD).setUnlocalizedName("diamondBonePick");
+
+		// Initialize axes
+		stoneBoneAxe = new ItemBoneAxe(3335, EnumToolMaterial.STONE).setUnlocalizedName("stoneBoneAxe");
+		ironBoneAxe = new ItemBoneAxe(3336, EnumToolMaterial.IRON).setUnlocalizedName("ironBoneAxe");
+		goldBoneAxe = new ItemBoneAxe(3337, EnumToolMaterial.GOLD).setUnlocalizedName("goldBoneAxe");
+		diamondBoneAxe = new ItemBoneAxe(3338, EnumToolMaterial.EMERALD).setUnlocalizedName("diamondBoneAxe");
+
+		// Initialize hoes
+		stoneBoneHoe = new ItemBoneHoe(3339, EnumToolMaterial.STONE).setUnlocalizedName("stoneBoneHoe");
+		ironBoneHoe = new ItemBoneHoe(3340, EnumToolMaterial.IRON).setUnlocalizedName("ironBoneHoe");
+		goldBoneHoe = new ItemBoneHoe(3341, EnumToolMaterial.GOLD).setUnlocalizedName("goldBoneHoe");
+		diamondBoneHoe= new ItemBoneHoe(3342, EnumToolMaterial.EMERALD).setUnlocalizedName("diamondBoneHoe");
+
+		// Initialize shovels
+		stoneBoneShovel = new ItemBoneShovel(3343, EnumToolMaterial.STONE).setUnlocalizedName("stoneBoneShovel");
+		ironBoneShovel = new ItemBoneShovel(3344, EnumToolMaterial.IRON).setUnlocalizedName("ironBoneShovel");
+		goldBoneShovel = new ItemBoneShovel(3345, EnumToolMaterial.GOLD).setUnlocalizedName("goldBoneShovel");
+		diamondBoneShovel = new ItemBoneShovel(3346, EnumToolMaterial.EMERALD).setUnlocalizedName("diamondBoneShovel");
+
+		// Initialize swords
+		stoneBoneSword = new ItemBoneSword(3347, EnumToolMaterial.STONE).setUnlocalizedName("stoneBoneSword");
+		ironBoneSword = new ItemBoneSword(3348, EnumToolMaterial.IRON).setUnlocalizedName("ironBoneSword");
+		goldBoneSword = new ItemBoneSword(3349, EnumToolMaterial.GOLD).setUnlocalizedName("goldBoneSword");
+		diamondBoneSword = new ItemBoneSword(3350, EnumToolMaterial.EMERALD).setUnlocalizedName("diamondBoneSword");
 		
-		//* -------------------------------------------------------------------------------------- REGISTER ITEM NAMES----------------------------------------------------
+		//* -------------------------------------------------------------------------------------- REGISTER ITEMS----------------------------------------------------
 		//item registry
-		GameRegistry.registerItem(darkness, "Darkness");
-		GameRegistry.registerItem(gravity, "Gravity");
-		GameRegistry.registerItem(lethargy, "Lethargy");
-		GameRegistry.registerItem(darkstoneHex, "darkstoneHex");
-		GameRegistry.registerItem(dimstoneHex, "dimstoneHex");
-		GameRegistry.registerItem(lightstoneHex, "lightstoneHex");
-		GameRegistry.registerItem(deathstoneHex, "deathstoneHex");
-		GameRegistry.registerItem(floatstoneHex, "floatstoneHex");
+				GameRegistry.registerItem(darkness, "Darkness");
+				GameRegistry.registerItem(gravity, "Gravity");
+				GameRegistry.registerItem(lethargy, "Lethargy");
+				GameRegistry.registerItem(darkstoneHex, "darkstoneHex");
+				GameRegistry.registerItem(dimstoneHex, "dimstoneHex");
+				GameRegistry.registerItem(lightstoneHex, "lightstoneHex");
+				GameRegistry.registerItem(springstoneHex, "springstoneHex");
+				GameRegistry.registerItem(floatstoneHex, "floatstoneHex");
+				GameRegistry.registerItem(deathstoneHex, "deathstoneHex");
+				GameRegistry.registerItem(bitumenChunk, "bitumenChunk");
+				GameRegistry.registerItem(bitumenInBucket, "bitumenInBucket");
+				
+				GameRegistry.registerItem(flintTool, "flintTool");
+				GameRegistry.registerItem(stoneBonePick, "stoneBonePick");
+				GameRegistry.registerItem(ironBonePick, "ironBonePick");
+				GameRegistry.registerItem(goldBonePick, "goldBonePick");
+				GameRegistry.registerItem(diamondBonePick, "diamondBonePick");
+				GameRegistry.registerItem(stoneBoneAxe, "stoneBoneAxe");
+				GameRegistry.registerItem(ironBoneAxe, "ironBoneAxe");
+				GameRegistry.registerItem(goldBoneAxe, "goldBoneAxe");
+				GameRegistry.registerItem(diamondBoneAxe, "diamondBoneAxe");
+				GameRegistry.registerItem(stoneBoneHoe, "stoneBoneHoe");
+				GameRegistry.registerItem(ironBoneHoe, "ironBoneHoe");
+				GameRegistry.registerItem(goldBoneHoe, "goldBoneHoe");
+				GameRegistry.registerItem(diamondBoneHoe, "diamondBoneHoe");
+				GameRegistry.registerItem(stoneBoneShovel, "stoneBoneShovel");
+				GameRegistry.registerItem(ironBoneShovel, "ironBoneShovel");
+				GameRegistry.registerItem(goldBoneShovel, "goldBoneShovel");
+				GameRegistry.registerItem(diamondBoneShovel, "diamondBoneShovel");
+				GameRegistry.registerItem(stoneBoneSword, "stoneBoneSword");
+				GameRegistry.registerItem(ironBoneSword, "ironBoneSword");
+				GameRegistry.registerItem(goldBoneSword, "goldBoneSword");
+				GameRegistry.registerItem(diamondBoneSword, "diamondBoneSword");
+				
+		//* -------------------------------------------------------------------------------------- REGISTER ITEM NAMES----------------------------------------------------
+		//item name registry
+				LanguageRegistry.addName(darkness, "Darkness");
+				LanguageRegistry.addName(gravity, "Gravity");
+				LanguageRegistry.addName(lethargy, "Lethargy");
+				LanguageRegistry.addName(darkstoneHex, "Darkstone Hex");
+				LanguageRegistry.addName(dimstoneHex, "Dimstone Hex");
+				LanguageRegistry.addName(lightstoneHex, "Lightstone Hex");
+				LanguageRegistry.addName(springstoneHex, "Springtstone Hex");
+				LanguageRegistry.addName(floatstoneHex, "Floatstone Hex");
+				LanguageRegistry.addName(deathstoneHex, "Deathstone Hex");
+				LanguageRegistry.addName(bitumenChunk, "Bitumen Chunk");
+				GameRegistry.registerItem(bitumenInBucket, "Bitumen in Bucket");
+				
+				LanguageRegistry.addName(flintTool, "Flint Tool");
+				LanguageRegistry.addName(stoneBonePick, "Stone Pickaxe");
+				LanguageRegistry.addName(ironBonePick, "Iron Pickaxe");
+				LanguageRegistry.addName(goldBonePick, "Gold Pickaxe");
+				LanguageRegistry.addName(diamondBonePick, "Diamond Pickaxe");
+				LanguageRegistry.addName(stoneBoneAxe, "Stone Axe");
+				LanguageRegistry.addName(ironBoneAxe, "Iron Axe");
+				LanguageRegistry.addName(goldBoneAxe, "Gold Axe");
+				LanguageRegistry.addName(diamondBoneAxe, "Diamond Axe");
+				LanguageRegistry.addName(stoneBoneHoe, "Stone Hoe");
+				LanguageRegistry.addName(ironBoneHoe, "Iron Hoe");
+				LanguageRegistry.addName(goldBoneHoe, "Gold Hoe");
+				LanguageRegistry.addName(diamondBoneHoe, "Diamond Hoe");
+				LanguageRegistry.addName(stoneBoneShovel, "Stone Shovel");
+				LanguageRegistry.addName(ironBoneShovel, "Iron Shovel");
+				LanguageRegistry.addName(goldBoneShovel, "Gold Shovel");
+				LanguageRegistry.addName(diamondBoneShovel, "Diamond Shovel");
+				LanguageRegistry.addName(stoneBoneSword, "Stone Sword");
+				LanguageRegistry.addName(ironBoneSword, "Iron Sword");
+				LanguageRegistry.addName(goldBoneSword, "Gold Sword");
+				LanguageRegistry.addName(diamondBoneSword, "Diamond Sword");
+		
 
 		//* -------------------------------------------------------------------------------------- INITIALIZE BLOCKS----------------------------------------------------
 		//initialize ores
 		darknessOre = new OreDarknessOre(4080, 0, Material.rock).setUnlocalizedName("darknessOre");
-		gravityOre = new OreGravityOre(4081, 0, Material.rock).setUnlocalizedName("gravityore");
-		lethargyOre = new OreLethargyOre(4082, 0, Material.rock).setUnlocalizedName("lethargyore");
+		gravityOre = new OreGravityOre(4081, 0, Material.rock).setUnlocalizedName("gravityOre");
+		lethargyOre = new OreLethargyOre(4082, 0, Material.rock).setUnlocalizedName("lethargyOre");
+		bitumenOre = new OreBitumenOre(4083, 0, Material.rock).setUnlocalizedName("bitumenOre");
 		
 		// initialize vanilla/organic blocks
 		stoneWorkbench = new BlockStoneWorkbench(436).setUnlocalizedName("stoneworkbench");
@@ -209,7 +337,7 @@ public class Bacon {
 		spheretreeBranchwood = new BlockSpheretreeBranchwood(3523, Material.wood).setUnlocalizedName("spheretreeBranchwood").setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		
 		//initialize stone blocks
-		lightstone = new BlockBacon(4083, Material.rock).setUnlocalizedName("lightstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
+		lightstone = new BlockBacon(500, Material.rock).setUnlocalizedName("lightstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
 		dimstone = new BlockBacon(4084, Material.rock).setUnlocalizedName("dimstone").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(0.5F);
 		darkstone = new BlockBacon(4085, Material.rock).setUnlocalizedName("darkstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		springstone = new BlockBacon(4087, Material.rock).setUnlocalizedName("springstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
@@ -299,6 +427,7 @@ public class Bacon {
 		GameRegistry.registerBlock(darknessOre, "darknessOre");
 		GameRegistry.registerBlock(gravityOre, "gravityOre");
 		GameRegistry.registerBlock(lethargyOre, "lethargyOre");
+		GameRegistry.registerBlock(bitumenOre, "bitumenOre");
 		
 		//register stone blocks
 		GameRegistry.registerBlock(lightstone, "lightstone");
@@ -421,6 +550,7 @@ public class Bacon {
 		LanguageRegistry.addName(darknessOre, "Darkness Ore");
 		LanguageRegistry.addName(gravityOre, "Gravity Ore");
 		LanguageRegistry.addName(lethargyOre, "Lethargy Ore");
+		LanguageRegistry.addName(bitumenOre, "Bitumen Ore");
 		
 		//register stone block names
 		LanguageRegistry.addName(lightstone, "Lightstone");
@@ -620,6 +750,7 @@ public class Bacon {
 		ItemStack crackedFloatstoneStack = new ItemStack(Bacon.crackedFloatstone);
 		ItemStack DeathStoneHexStack = new ItemStack(Bacon.deathstoneHex);
 		ItemStack FloatStoneHexStack = new ItemStack(Bacon.floatstoneHex);
+		ItemStack SpringStoneHexStack = new ItemStack (Bacon.springstoneHex);
 		ItemStack RingTree = new ItemStack(Bacon.ringtree);
 		ItemStack ringtreePlanks = new ItemStack(Bacon.ringtreePlanks);
 		ItemStack spheretreeDeepwood = new ItemStack(Bacon.spheretreeDeepwood);
@@ -722,8 +853,8 @@ public class Bacon {
 				'x', DeathStoneHexStack);
 		GameRegistry.addRecipe(new ItemStack(Bacon.crackedFloatstone), "xxx", "xxx", "xxx",
 				'x', FloatStoneHexStack);
-		//   GameRegistry.addRecipe(new ItemStack(Bacon.crackedSpringstone), "xxx", "xxx", "xxx",
-		//           'x', SpringStoneHexStack);
+		 GameRegistry.addRecipe(new ItemStack(Bacon.crackedSpringstone), "xxx", "xxx", "xxx",
+	            'x', SpringStoneHexStack);
 		GameRegistry.addRecipe(new ItemStack(Bacon.darkstoneStairs, 6), "x  ", "xx ", "xxx",
 				'x', DarkStoneStack);
 		GameRegistry.addRecipe(new ItemStack(Bacon.lightstoneStairs, 6), "x  ", "xx ", "xxx",
@@ -784,7 +915,34 @@ public class Bacon {
 		GameRegistry.addSmelting(Bacon.springstoneBrick.blockID, new ItemStack(Bacon.smoothSpringstone), 0.8f);
 		GameRegistry.addSmelting(Bacon.condensedSpringstone.blockID, new ItemStack(Bacon.springstone), 0.8f);
 		GameRegistry.addSmelting(Bacon.springstone.blockID, new ItemStack(Bacon.crackedSpringstone), 0.8f);
-		// GameRegistry.addSmelting(Bacon.crackedSpringstone.blockID, new ItemStack(Bacon.springstoneHex), 0.8f);
+		GameRegistry.addSmelting(Bacon.crackedSpringstone.blockID, new ItemStack(Bacon.springstoneHex, 9), 0.8f);
+		
+		String toolPatterns[][] = {{"xxx", " i ", " i "},{"xx", "xi", " i"},{"x", "i", "i"},{"xx", " i", " i"},{"x", "x", "i"}};
+		Object items[][] = {{Block.cobblestone, Item.ingotIron, Item.diamond, Item.ingotGold},
+				{stoneBonePick, ironBonePick, diamondBonePick, goldBonePick},
+				{stoneBoneAxe, ironBoneAxe, diamondBoneAxe, goldBoneAxe},
+				{stoneBoneShovel, ironBoneShovel, diamondBoneShovel, goldBoneShovel},
+				{stoneBoneHoe, ironBoneHoe, diamondBoneHoe, goldBoneHoe},
+				{stoneBoneSword, ironBoneSword, diamondBoneSword, goldBoneSword}};
+
+		for (int i = 0; i < items[0].length; i++) {
+			Object material = items[0][i];
+			for (int j = 0; j < items.length - 1; j++) {
+				Item result = (Item)items[j + 1][i];
+				GameRegistry.addRecipe(new ItemStack(result), new Object[] {toolPatterns[j], 'i', Item.bone, 'x', material});
+			}
+		}
+		
+		ItemStack oneBitChunk = new ItemStack(bitumenChunk);
+		ItemStack oneBucket = new ItemStack(Item.bucketEmpty);
+		//ItemStack oneBucketBit = new ItemStack(bitumenBucket);
+		ItemStack oneBitInBucket = new ItemStack(bitumenInBucket);
+
+		GameRegistry.addRecipe(oneBitInBucket, "x", "y", 'x', oneBitChunk, 'y', oneBucket);
+		GameRegistry.addShapelessRecipe(new ItemStack(flintTool), Item.flint);
+		GameRegistry.addShapelessRecipe(oneBitChunk, oneBitInBucket);
+		//GameRegistry.addSmelting(bitumenInBucket.itemID, oneBucketBit, 1.0F);
+		GameRegistry.addSmelting(Bacon.bitumenOre.blockID, oneBitChunk, 1.0F);
 	}
 
 	@PostInit
