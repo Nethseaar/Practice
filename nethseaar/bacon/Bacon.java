@@ -100,7 +100,12 @@ public class Bacon {
 	public static Block boneLadder;
 	public static Block spheretreeDeepwood;
 	public static Block spheretreeBranchwood;
-
+	public static Block lantern;
+	public static Block boneTorch;
+	public static Block brainMushroom;
+	public static Block bitumenFlowing;
+	public static Block bitumenStill;
+	
 	//add Stairs	
 	public static BlockStairs darkstoneStairs;
 	public static BlockStairs dimstoneStairs;
@@ -143,6 +148,13 @@ public class Bacon {
 	public static Item floatstoneHex;
 	public static Item springstoneHex;
 	public static Item bitumenChunk;
+	public static Item greenBerry;
+	public static Item shriveledGreenBerry;
+	public static Item shriveledPurpleBerry;
+	public static Item compactGreenBerry;
+	public static Item compactPurpleBerry;
+	public static Item spheretreeStick;
+	public static Item ringtreeStick;
 	
 	// Add pickaxes
 	public static Item flintTool;
@@ -176,7 +188,7 @@ public class Bacon {
 	public static Item diamondBoneSword;
 	
 	public static Item bitumenInBucket;
-
+	public static Item bucketBitumen;
 
 	@Instance("Bacon")
 	public static Bacon instance;
@@ -192,9 +204,11 @@ public class Bacon {
 	@Init
 	public void load(FMLInitializationEvent event) {
 		
+		MinecraftForge.EVENT_BUS.register(new HandlerBitumenBucket());
+		
 		GameRegistry.registerWorldGenerator(eventmanager);
-
-
+		GameRegistry.registerFuelHandler(new FuelHandler());
+		
 		proxy.registerRenderers();
 		//* --------------------------------------------------------------------------------------INITIALIZE ITEMS----------------------------------------------------
 		//item initialization
@@ -208,8 +222,16 @@ public class Bacon {
 		floatstoneHex = new ItemBacon(5007).setMaxStackSize(64).setUnlocalizedName("floatstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
 		deathstoneHex = new ItemBacon(5006).setMaxStackSize(64).setUnlocalizedName("deathstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
 		bitumenChunk = new ItemBacon (5009).setMaxStackSize(64).setUnlocalizedName("bitumenChunk").setCreativeTab(CreativeTabs.tabMaterials);
-		bitumenInBucket = new ItemBacon(3328).setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("bitumenInBucket").setContainerItem(Item.bucketEmpty).setMaxStackSize(1);
-
+		bitumenInBucket = new ItemBacon(3328).setCreativeTab(CreativeTabs.tabMisc).setUnlocalizedName("bitumenInBucket").setContainerItem(Item.bucketEmpty).setMaxStackSize(1);
+		greenBerry = new ItemBacon(5010).setMaxStackSize(64).setUnlocalizedName("greenBerry").setCreativeTab(CreativeTabs.tabMaterials);
+		compactGreenBerry = new ItemBacon(5011).setMaxStackSize(64).setUnlocalizedName("compactGreenBerry").setCreativeTab(CreativeTabs.tabMaterials);
+		compactPurpleBerry = new ItemBacon(5012).setMaxStackSize(64).setUnlocalizedName("compactPurpleBerry").setCreativeTab(CreativeTabs.tabMaterials);
+		shriveledGreenBerry = new ItemBacon(5013).setMaxStackSize(64).setUnlocalizedName("shriveledGreenBerry").setCreativeTab(CreativeTabs.tabMaterials);
+		shriveledPurpleBerry = new ItemBacon(5014).setMaxStackSize(64).setUnlocalizedName("shriveledPurpleBerry").setCreativeTab(CreativeTabs.tabMaterials);
+		spheretreeStick = new ItemBacon(5044).setMaxStackSize(64).setUnlocalizedName("spheretreeStick").setCreativeTab(CreativeTabs.tabMaterials);
+		ringtreeStick = new ItemBacon(5045).setMaxStackSize(64).setUnlocalizedName("ringtreeStick").setCreativeTab(CreativeTabs.tabMaterials);
+		bucketBitumen = new ItemBucketBitumen(3329).setUnlocalizedName("bitumenBucket");
+		
 		// Initialize pickaxes
 		flintTool = new ItemFlintTool(3330, toolFLINT).setUnlocalizedName("flintTool");
 		stoneBonePick = new ItemBonePickaxe(3331, EnumToolMaterial.STONE).setUnlocalizedName("stoneBonePick");
@@ -254,6 +276,9 @@ public class Bacon {
 				GameRegistry.registerItem(deathstoneHex, "deathstoneHex");
 				GameRegistry.registerItem(bitumenChunk, "bitumenChunk");
 				GameRegistry.registerItem(bitumenInBucket, "bitumenInBucket");
+				GameRegistry.registerItem(spheretreeStick, "spheretreeStick");
+				GameRegistry.registerItem(ringtreeStick, "ringtreeStick");
+				GameRegistry.registerItem(bucketBitumen, "bucketBitumen");
 				
 				GameRegistry.registerItem(flintTool, "flintTool");
 				GameRegistry.registerItem(stoneBonePick, "stoneBonePick");
@@ -277,6 +302,12 @@ public class Bacon {
 				GameRegistry.registerItem(goldBoneSword, "goldBoneSword");
 				GameRegistry.registerItem(diamondBoneSword, "diamondBoneSword");
 				
+				GameRegistry.registerItem(greenBerry, "greenBerry");
+				GameRegistry.registerItem(compactGreenBerry, "compactGreenBerry");
+				GameRegistry.registerItem(compactPurpleBerry, "compactPurpleBerry");
+				GameRegistry.registerItem(shriveledGreenBerry, "shriveledGreenBerry");
+				GameRegistry.registerItem(shriveledPurpleBerry, "shriveledPurpleBerry");
+				
 		//* -------------------------------------------------------------------------------------- REGISTER ITEM NAMES----------------------------------------------------
 		//item name registry
 				LanguageRegistry.addName(darkness, "Darkness");
@@ -289,7 +320,10 @@ public class Bacon {
 				LanguageRegistry.addName(floatstoneHex, "Floatstone Hex");
 				LanguageRegistry.addName(deathstoneHex, "Deathstone Hex");
 				LanguageRegistry.addName(bitumenChunk, "Bitumen Chunk");
-				GameRegistry.registerItem(bitumenInBucket, "Bitumen in Bucket");
+				LanguageRegistry.addName(bitumenInBucket, "Bitumen in Bucket");
+				LanguageRegistry.addName(spheretreeStick, "Spherewood Stick");
+				LanguageRegistry.addName(ringtreeStick, "Ringwood Stick");
+				LanguageRegistry.addName(bucketBitumen, "Bitumen Bucket");
 				
 				LanguageRegistry.addName(flintTool, "Flint Tool");
 				LanguageRegistry.addName(stoneBonePick, "Stone Pickaxe");
@@ -312,6 +346,12 @@ public class Bacon {
 				LanguageRegistry.addName(ironBoneSword, "Iron Sword");
 				LanguageRegistry.addName(goldBoneSword, "Gold Sword");
 				LanguageRegistry.addName(diamondBoneSword, "Diamond Sword");
+				
+				LanguageRegistry.addName(greenBerry, "Green Berry");
+				LanguageRegistry.addName(compactGreenBerry, "Compact Green Berry");
+				LanguageRegistry.addName(compactPurpleBerry, "Compact Purple Berry");
+				LanguageRegistry.addName(shriveledGreenBerry, "Shriveled Green Berry");
+				LanguageRegistry.addName(shriveledPurpleBerry, "Shriveled Purple Berry");
 		
 
 		//* -------------------------------------------------------------------------------------- INITIALIZE BLOCKS----------------------------------------------------
@@ -335,6 +375,11 @@ public class Bacon {
 		spheretreeLeaves = new BlockBacon(3521, Material.leaves).setUnlocalizedName("spheretreeLeaves").setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabDecorations);
 		spheretreeDeepwood = new BlockSpheretreeDeepwood(3522, Material.wood).setUnlocalizedName("spheretreeDeepwood").setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		spheretreeBranchwood = new BlockSpheretreeBranchwood(3523, Material.wood).setUnlocalizedName("spheretreeBranchwood").setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
+		lantern = new BlockLantern(430, 0).setUnlocalizedName("lantern").setLightValue(0.9375F);
+		boneTorch = new BlockBoneTorch(434, 1).setUnlocalizedName("boneTorch").setLightValue(0.9375F);
+		brainMushroom = new BlockBrainMushroom(440, "brainMushroom").setUnlocalizedName("brainMushroom").setCreativeTab(CreativeTabs.tabDecorations);
+		bitumenFlowing = new BlockBitumenFlowing(431, Material.water).setUnlocalizedName("bitumenFlowing");
+		bitumenStill = new BlockBitumenStationary(432, Material.water).setUnlocalizedName("bitumenStill");
 		
 		//initialize stone blocks
 		lightstone = new BlockBacon(500, Material.rock).setUnlocalizedName("lightstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
@@ -483,6 +528,11 @@ public class Bacon {
 		GameRegistry.registerBlock(spheretreeLeaves, "spheretreeLeaves");
 		GameRegistry.registerBlock(spheretreeDeepwood, "spheretreeDeepwood");
 		GameRegistry.registerBlock(spheretreeBranchwood, "spheretreeBranchwood");
+		GameRegistry.registerBlock(lantern, "lantern");
+		GameRegistry.registerBlock(boneTorch, "boneTorch");
+		GameRegistry.registerBlock(brainMushroom, "brainMushroom");
+		GameRegistry.registerBlock(bitumenFlowing, "bitumenFlowing");
+		GameRegistry.registerBlock(bitumenStill, "bitumenStill");
 		
 		//register carved stone blocks
 		GameRegistry.registerBlock(carvedDarkstone, "carvedDarkstone");
@@ -545,6 +595,11 @@ public class Bacon {
 		LanguageRegistry.addName(spheretreeLeaves, "Sheretree Leaves");
 		LanguageRegistry.addName(spheretreeDeepwood, "Spheretree Deepwood");
 		LanguageRegistry.addName(spheretreeBranchwood, "Spheretree Branchwood");
+		LanguageRegistry.addName(lantern, "Lantern");
+		LanguageRegistry.addName(boneTorch, "Bone Torch");
+		LanguageRegistry.addName(brainMushroom, "Brain Mushroom");
+		LanguageRegistry.addName(bitumenFlowing, "Flowing Bitumen");
+		LanguageRegistry.addName(bitumenStill, "Still Bitumen");
 		
 		//register ore names
 		LanguageRegistry.addName(darknessOre, "Darkness Ore");
@@ -779,7 +834,8 @@ public class Bacon {
 		ItemStack springstoneBrickStack = new ItemStack(Bacon.springstoneBrick);
 		ItemStack smoothSpringstoneStairs = new ItemStack(Bacon.smoothSpringstoneStairs);
 		ItemStack springstoneBrickStairs = new ItemStack(Bacon.springstoneBrickStairs);
-
+		ItemStack stickStack = new ItemStack(Item.stick);
+		
 		//shapeless recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(Bacon.darkstone), new ItemStack(Bacon.crackedDarkstone));
 		GameRegistry.addShapelessRecipe(new ItemStack(Bacon.dimstone), new ItemStack(Bacon.crackedDimstone));
@@ -840,7 +896,7 @@ public class Bacon {
 		GameRegistry.addRecipe(new ItemStack(Bacon.carvedFloatstone, 4),  "xx", "xx",
 				'x', floatstoneBrickStack);
 		GameRegistry.addRecipe(new ItemStack(Bacon.carvedSpringstone, 4),  "xx", "xx",
-				'x', floatstoneBrickStack);
+				'x', springstoneBrickStack);
 		GameRegistry.addRecipe(new ItemStack(Bacon.springstoneBrick, 4),  "xx", "xx",
 				'x', smoothSpringstoneStack);
 		GameRegistry.addRecipe(new ItemStack(Bacon.crackedDarkstone), "xxx", "xxx", "xxx",
@@ -883,8 +939,19 @@ public class Bacon {
 				'x', smoothSpringstoneStack);
 		GameRegistry.addRecipe(new ItemStack(Bacon.springstoneBrickStairs, 6), "x  ", "xx ", "xxx",
 				'x', springstoneBrickStack);
-
-
+		GameRegistry.addRecipe(new ItemStack(Bacon.ringtreeStick, 4), "x", "x",
+				'x', ringtreePlanks);
+		GameRegistry.addRecipe(new ItemStack(Bacon.spheretreeStick, 4), "x", "x",
+				'x', spheretreePlanks);
+		GameRegistry.addRecipe(new ItemStack(Block.torchWood, 4), "y", "x",
+				'x', spheretreeStick, 'y', Item.coal);
+		GameRegistry.addRecipe(new ItemStack(Block.torchWood, 4), "y", "x",
+				'x', spheretreeStick, 'y', Item.coal);
+		GameRegistry.addRecipe(new ItemStack(Block.torchRedstoneActive, 4), "y", "x",
+				'x', spheretreeStick, 'y', Item.redstone);
+		GameRegistry.addRecipe(new ItemStack(Block.torchRedstoneActive, 4), "y", "x",
+				'x', spheretreeStick, 'y', Item.redstone);
+		
 		//smelting recipes
 		GameRegistry.addSmelting(Bacon.darkstoneBrick.blockID, new ItemStack(Bacon.smoothDarkstone), 0.1f);
 		GameRegistry.addSmelting(Bacon.dimstoneBrick.blockID, new ItemStack(Bacon.smoothDimstone), 0.3f);
@@ -916,6 +983,13 @@ public class Bacon {
 		GameRegistry.addSmelting(Bacon.condensedSpringstone.blockID, new ItemStack(Bacon.springstone), 0.8f);
 		GameRegistry.addSmelting(Bacon.springstone.blockID, new ItemStack(Bacon.crackedSpringstone), 0.8f);
 		GameRegistry.addSmelting(Bacon.crackedSpringstone.blockID, new ItemStack(Bacon.springstoneHex, 9), 0.8f);
+		GameRegistry.addSmelting(Bacon.carvedFloatstone.blockID, new ItemStack(Bacon.smoothFloatstone), 0.8f);
+		GameRegistry.addSmelting(Bacon.carvedSpringstone.blockID, new ItemStack(Bacon.smoothSpringstone), 0.8f);
+		GameRegistry.addSmelting(Bacon.carvedDeathstone.blockID, new ItemStack(Bacon.smoothDeathstone), 0.8f);
+		GameRegistry.addSmelting(Bacon.carvedLightstone.blockID, new ItemStack(Bacon.smoothLightstone), 0.8f);
+		GameRegistry.addSmelting(Bacon.carvedDimstone.blockID, new ItemStack(Bacon.smoothDimstone), 0.8f);
+		GameRegistry.addSmelting(Bacon.carvedDarkstone.blockID, new ItemStack(Bacon.smoothDarkstone), 0.8f);
+		GameRegistry.addSmelting(Bacon.bitumenInBucket.itemID, new ItemStack(Bacon.bucketBitumen), 0.8f);
 		
 		String toolPatterns[][] = {{"xxx", " i ", " i "},{"xx", "xi", " i"},{"x", "i", "i"},{"xx", " i", " i"},{"x", "x", "i"}};
 		Object items[][] = {{Block.cobblestone, Item.ingotIron, Item.diamond, Item.ingotGold},

@@ -7,6 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.Icon;
+import net.minecraft.world.World;
 
 public class BlockSpheretreeBranchwood extends Block {
 
@@ -28,7 +29,7 @@ public class BlockSpheretreeBranchwood extends Block {
         {
             return par1 == 0 ? this.sphereTree1Bottom : (par1 == 1 ? this.sphereTreeOrigin: this.blockIcon);
         }
-
+        
         @SideOnly(Side.CLIENT)
         public void registerIcons(IconRegister par1IconRegister)
         {

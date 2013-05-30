@@ -25,6 +25,6 @@ public class ItemFlintTool extends ItemPickaxe {
 
 	@SideOnly(Side.CLIENT)
     public void updateIcons(IconRegister par1IconRegister){
-     this.itemIcon = par1IconRegister.registerIcon("bacon.ITEM_PNG");
+     this.itemIcon = par1IconRegister.registerIcon("Bacon.flintTool");
  }
 }
