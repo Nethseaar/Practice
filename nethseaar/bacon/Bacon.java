@@ -385,9 +385,9 @@ public class Bacon {
 		lightstone = new BlockBacon(500, Material.rock).setUnlocalizedName("lightstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
 		dimstone = new BlockBacon(4084, Material.rock).setUnlocalizedName("dimstone").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(0.5F);
 		darkstone = new BlockBacon(4085, Material.rock).setUnlocalizedName("darkstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		springstone = new BlockBacon(4087, Material.rock).setUnlocalizedName("springstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
+		springstone = new BlockSpringstone(4087, Material.rock).setUnlocalizedName("springstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		floatstone = new BlockBacon(4086, Material.rock).setUnlocalizedName("floatstone").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(0.5F);
-		deathstone = new BlockBacon(4088, Material.cactus).setUnlocalizedName("deathstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
+		deathstone = new BlockDeathstone(4088, Material.cactus).setUnlocalizedName("deathstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
 		
 		//initialize condensed stone blocks
 		condensedLightstone = new BlockBacon(3501, Material.rock).setUnlocalizedName("condensedLightstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
@@ -403,7 +403,7 @@ public class Bacon {
 		crackedDarkstone = new BlockBacon(4091, Material.rock).setUnlocalizedName("crackedDarkstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		crackedSpringstone = new BlockBacon(3550,  Material.rock).setUnlocalizedName("crackedSpringstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		crackedFloatstone = new BlockBacon(3511, Material.rock).setUnlocalizedName("crackedFloatstone").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(0.5F);
-		crackedDeathstone = new BlockBacon(3507, Material.rock).setUnlocalizedName("crackedDeathstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
+		crackedDeathstone = new BlockCrackedDeathstone(3507, Material.rock).setUnlocalizedName("crackedDeathstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
 		
 		//initialize smooth stone blocks
 		smoothLightstone = new BlockBacon(3502, Material.rock).setUnlocalizedName("smoothLightstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);

@@ -1,26 +1,17 @@
 package nethseaar.bacon;
 
-import java.util.Random;
-
-import cpw.mods.fml.common.network.Player;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
-import nethseaar.bacon.CommonProxy;
-import nethseaar.bacon.Bacon;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSoulSand;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
-public class BlockAsphalt extends Block {
+public class BlockCrackedDeathstone extends Block {
 
-	public BlockAsphalt(int id, Material material) {
+	public BlockCrackedDeathstone(int id, Material material) {
 		super(id, material);
 	}
 
@@ -32,11 +23,16 @@ public class BlockAsphalt extends Block {
 
 	public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
 	{
-		par5Entity.motionX *= 1.13D;
-		par5Entity.motionZ *= 1.13D;
+		this.explode();
+	}
+
+	private void explode()
+	{
+		float f = 4.0F;
+		this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, f, true);
 	}
 
 	public void updateIcons(IconRegister par1iconregister){
-		this.blockIcon = par1iconregister.registerIcon("Bacon.asphalt");
+		this.blockIcon = par1iconregister.registerIcon("Bacon.deathstone");
 	}
 }
