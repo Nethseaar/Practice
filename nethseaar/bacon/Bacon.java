@@ -53,6 +53,10 @@ public class Bacon {
 		
 		GameRegistry.registerWorldGenerator(eventmanager);
 		GameRegistry.registerFuelHandler(new FuelHandler());
+
+		int dimension = 17;
+		DimensionManager.registerProviderType(dimension, WorldProviderBacon.class, false);
+		DimensionManager.registerDimension(dimension, dimension);
 		
 		proxy.registerRenderers();		
 	}

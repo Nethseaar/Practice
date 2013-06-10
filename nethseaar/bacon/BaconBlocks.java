@@ -11,6 +11,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 
 public class BaconBlocks {
+
 	//add ores
 	public static Block darknessOre;
 	public static Block gravityOre;
@@ -134,7 +135,7 @@ public class BaconBlocks {
 		//* -------------------------------------------------------------------------------------- INITIALIZE BLOCKS----------------------------------------------------
 		//initialize ores
 		darknessOre = new OreDarknessOre(4080, 0, Material.rock).setUnlocalizedName("darknessOre");
-		gravityOre = new OreGravityOre(4081, 0, Material.rock).setUnlocalizedName("gravityOre");
+		gravityOre = new OreGravityOre(4081, 0, Material.portal).setUnlocalizedName("gravityOre");
 		lethargyOre = new OreLethargyOre(4082, 0, Material.rock).setUnlocalizedName("lethargyOre");
 		bitumenOre = new OreBitumenOre(4083, 0, Material.rock).setUnlocalizedName("bitumenOre");
 
