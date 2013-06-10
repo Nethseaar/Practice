@@ -7,6 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.Icon;
+import net.minecraftforge.liquids.ILiquid;
 
 /**
  * BlockBitumenFlowing
@@ -18,7 +19,7 @@ import net.minecraft.util.Icon;
  * 
  */
 
-public class BlockBitumenFlowing extends BlockFlowing {
+public class BlockBitumenFlowing extends BlockFlowing implements ILiquid {
 
 	public BlockBitumenFlowing(int par1, Material par2Material) {
 		super(par1, par2Material);
@@ -30,5 +31,22 @@ public class BlockBitumenFlowing extends BlockFlowing {
 	public void updateIcons(IconRegister par1iconregister){
 		this.blockIcon = par1iconregister.registerIcon("Bacon.bitumenStill");
 		this.blockIcon = par1iconregister.registerIcon("Bacon.bitumenFlowing");
+	}
+
+	@Override
+	public int stillLiquidId() {
+		return BaconBlocks.bitumenStill.blockID;
+	}
+
+	@Override
+	public boolean isMetaSensitive() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int stillLiquidMeta() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

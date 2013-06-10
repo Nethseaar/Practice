@@ -22,9 +22,6 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
  */
 public class HandlerBoneTorchCreation {
 
-	public HandlerBoneTorchCreation() {
-	}
-
 	@ForgeSubscribe
 	public void onInteract(PlayerInteractEvent event) {
 		if (event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {

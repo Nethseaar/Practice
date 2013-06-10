@@ -14,10 +14,10 @@ import net.minecraft.item.ItemBucket;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  * 
  */
-public class ItemBucketBitumen extends ItemBucket {
+public class ItemBucketBitumen extends ItemBucket{
 
 	public ItemBucketBitumen(int id) {
-		super(id, id);
+		super(id, BaconBlocks.bitumenFlowing.blockID);
 		setCreativeTab(CreativeTabs.tabMisc);
 		setContainerItem(Item.bucketEmpty);
 		setMaxStackSize(1);
