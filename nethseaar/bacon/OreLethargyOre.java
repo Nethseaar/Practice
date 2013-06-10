@@ -22,7 +22,7 @@ public class OreLethargyOre extends Block {
 
 	@Override
 	public int idDropped(int par1, Random par2Random, int par3) {
-		return Bacon.lethargy.itemID;
+		return BaconItems.lethargy.itemID;
 	}
 	public int quantityDropped(Random random){
 		return 2;

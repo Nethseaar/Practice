@@ -21,7 +21,7 @@ public class OreDarknessOre extends Block {
 
 	@Override
 	public int idDropped(int par1, Random par2Random, int par3) {
-		return Bacon.darkness.itemID;
+		return BaconItems.darkness.itemID;
 	}
 	public int quantityDropped(Random random){
 		return 4;

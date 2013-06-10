@@ -35,11 +35,11 @@ public class HandlerBitumenBucket {
 
 		int blockID = world.getBlockId(pos.blockX,pos.blockY,pos.blockZ);
 
-		if((blockID == Bacon.bitumenStill.blockID || blockID == Bacon.bitumenFlowing.blockID)
+		if((blockID == BaconBlocks.bitumenStill.blockID || blockID == BaconBlocks.bitumenFlowing.blockID)
 				&& world.getBlockMetadata(pos.blockX, pos.blockY, pos.blockZ) == 0) 
 		{
 			world.setBlock(pos.blockX, pos.blockY, pos.blockZ, 0);
-			return new ItemStack(Bacon.bucketBitumen);
+			return new ItemStack(BaconItems.bucketBitumen);
 		} 
 		else
 			return null;

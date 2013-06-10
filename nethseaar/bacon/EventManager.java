@@ -20,7 +20,7 @@ public class EventManager implements IWorldGenerator {
 
      private void generateSurface(World world, Random random, int x, int z)
      {
-    	   this.addOreSpawn(Bacon.bitumenOre, world, random, x, z, 16, 16, 7 + random.nextInt(3), 18, 3, 120);
+    	   this.addOreSpawn(BaconBlocks.bitumenOre, world, random, x, z, 16, 16, 7 + random.nextInt(3), 18, 3, 120);
      }
      
      public void addOreSpawn(Block block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY)

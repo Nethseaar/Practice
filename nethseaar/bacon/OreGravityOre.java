@@ -22,7 +22,7 @@ public class OreGravityOre extends Block {
 
 	@Override
 	public int idDropped(int par1, Random par2Random, int par3) {
-		return Bacon.gravity.itemID;
+		return BaconItems.gravity.itemID;
 	}
 	public int quantityDropped(Random random){
 		return 2;

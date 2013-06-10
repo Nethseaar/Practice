@@ -40,8 +40,8 @@ public class HandlerBoneTorchCreation {
 						blockID = world.getBlockId(clicked.blockX, clicked.blockY, clicked.blockZ);
 					else
 						blockID = -1;
-					if ( blockID == Bacon.bitumenFlowing.blockID || blockID == Bacon.bitumenStill.blockID ) {
-						ItemStack result = new ItemStack(Bacon.boneTorch, 4);
+					if ( blockID == BaconBlocks.bitumenFlowing.blockID || blockID == BaconBlocks.bitumenStill.blockID ) {
+						ItemStack result = new ItemStack(BaconBlocks.boneTorch, 4);
 						--stack.stackSize;
 						if (!player.inventory.addItemStackToInventory(result)) {
 								player.dropPlayerItem(result);

@@ -1,12 +1,17 @@
 package nethseaar.bacon;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSoulSand;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityTNTPrimed;
+import net.minecraft.item.Item;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
 public class BlockCrackedDeathstone extends Block {
@@ -23,16 +28,18 @@ public class BlockCrackedDeathstone extends Block {
 
 	public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
 	{
-		this.explode();
-	}
-
-	private void explode()
-	{
-		float f = 4.0F;
-		this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, f, true);
+	    par1World.setBlockToAir(par2, par3, par4);
+		EntityTNTPrimed entitytntprimed = new EntityTNTPrimed(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), null);
+		par1World.spawnEntityInWorld(entitytntprimed);
+		par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
 	}
 
 	public void updateIcons(IconRegister par1iconregister){
 		this.blockIcon = par1iconregister.registerIcon("Bacon.deathstone");
+	}
+
+	public boolean canDropFromExplosion(Explosion par1Explosion)
+	{
+		return false;
 	}
 }
