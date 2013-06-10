@@ -30,8 +30,6 @@ import net.minecraftforge.common.DimensionManager;
 public class Bacon {
 
 	EventManager eventmanager = new EventManager();
-
-	public static int DimID = 2;	
 	
 	@Instance("Bacon")
 	public static Bacon instance;
@@ -49,8 +47,6 @@ public class Bacon {
 		
 		MinecraftForge.EVENT_BUS.register(new HandlerBitumenBucket());
 		
-		
-		
 		BaconBlocks.init();
 		BaconItems.init();
 		BaconRecipes.init();
@@ -58,8 +54,7 @@ public class Bacon {
 		GameRegistry.registerWorldGenerator(eventmanager);
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		
-		proxy.registerRenderers();
-		
+		proxy.registerRenderers();		
 	}
 
 	@PostInit
