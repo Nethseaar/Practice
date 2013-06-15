@@ -1,9 +1,11 @@
 package nethseaar.bacon;
 
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumMovingObjectType;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
@@ -23,31 +25,51 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 public class HandlerBoneTorchCreation {
 
 	@ForgeSubscribe
-	public void onInteract(PlayerInteractEvent event) {
-		if (event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {
+	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+    {
+        MovingObjectPosition movingobjectposition = this.getMovingObjectPositionFromPlayer(par2World, par3EntityPlayer, true);
 
-			EntityPlayer player = event.entityPlayer;
-			ItemStack stack = player.getCurrentEquippedItem();
-			if (stack != null) {
-				if (stack.itemID == Item.bone.itemID) {
-					World world = player.worldObj;
-					MovingObjectPosition clicked = this.getMovingObjectPositionFromPlayer(world, player, true);
-					int blockID;
-					if (clicked != null)
-						blockID = world.getBlockId(clicked.blockX, clicked.blockY, clicked.blockZ);
-					else
-						blockID = -1;
-					if ( blockID == BaconBlocks.bitumenFlowing.blockID || blockID == BaconBlocks.bitumenStill.blockID ) {
-						ItemStack result = new ItemStack(BaconBlocks.boneTorch, 4);
-						--stack.stackSize;
-						if (!player.inventory.addItemStackToInventory(result)) {
-								player.dropPlayerItem(result);
-						}
-					}
-				}
-			}
-		}
-	}
+        if (movingobjectposition == null)
+        {
+            return par1ItemStack;
+        }
+        else
+        {
+            if (movingobjectposition.typeOfHit == EnumMovingObjectType.TILE)
+            {
+                int i = movingobjectposition.blockX;
+                int j = movingobjectposition.blockY;
+                int k = movingobjectposition.blockZ;
+
+                if (!par2World.canMineBlock(par3EntityPlayer, i, j, k))
+                {
+                    return par1ItemStack;
+                }
+
+                if (!par3EntityPlayer.canPlayerEdit(i, j, k, movingobjectposition.sideHit, par1ItemStack))
+                {
+                    return par1ItemStack;
+                }
+
+                if (par2World.getBlockMaterial(i, j, k) == Material.water)
+                {
+                    --par1ItemStack.stackSize;
+
+                    if (par1ItemStack.stackSize <= 0)
+                    {
+                        return new ItemStack(BaconItems.bucketBitumen);
+                    }
+
+                    if (!par3EntityPlayer.inventory.addItemStackToInventory(new ItemStack(BaconItems.bucketBitumen)))
+                    {
+                        par3EntityPlayer.dropPlayerItem(new ItemStack(BaconItems.bucketBitumen.itemID, 1, 0));
+                    }
+                }
+            }
+
+            return par1ItemStack;
+        }
+    }
 
 	protected MovingObjectPosition getMovingObjectPositionFromPlayer(World par1World, EntityPlayer par2EntityPlayer, boolean par3)
     {

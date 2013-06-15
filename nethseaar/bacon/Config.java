@@ -1,0 +1,110 @@
+package nethseaar.bacon;
+
+import java.io.File;
+
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
+import net.minecraftforge.common.Configuration;
+import nethseaar.bacon.BlockIDs;
+
+public class Config {
+	
+	public static void preInit(FMLPreInitializationEvent event) {
+		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+		config.load();
+	BlockIDs.darknessOre = config.getBlock(BlockNames.darknessOreName, BlockIDs.darknessOreDefault).getInt(BlockIDs.darknessOre);
+	BlockIDs.gravityOre = config.getBlock(BlockNames.gravityOreName, BlockIDs.gravityOreDefault).getInt(BlockIDs.gravityOre);
+	BlockIDs.lethargyOre = config.getBlock(BlockNames.lethargyOreName, BlockIDs.lethargyOreDefault).getInt(BlockIDs.lethargyOre);
+	BlockIDs.darknessOre = config.getBlock(BlockNames.darknessOreName, BlockIDs.darknessOreDefault).getInt(BlockIDs.darknessOre);
+	
+	BlockIDs.stoneWorkbench = config.getBlock(BlockNames.stoneWorkbenchName, BlockIDs.stoneWorkbenchDefault).getInt(BlockIDs.stoneWorkbench);
+	BlockIDs.boneLadder = config.getBlock(BlockNames.boneLadderName, BlockIDs.boneLadderDefault).getInt(BlockIDs.boneLadder);
+	BlockIDs.asphalt = config.getBlock(BlockNames.asphaltName, BlockIDs.asphaltDefault).getInt(BlockIDs.asphalt);
+	BlockIDs.endObsidian = config.getBlock(BlockNames.endObsidianName, BlockIDs.endObsidianDefault).getInt(BlockIDs.endObsidian);
+	BlockIDs.stalagmite = config.getBlock(BlockNames.stalagmiteName, BlockIDs.stalagmiteDefault).getInt(BlockIDs.stalagmite);
+	BlockIDs.stalagmiteBase = config.getBlock(BlockNames.stalagmiteBaseName, BlockIDs.stalagmiteBaseDefault).getInt(BlockIDs.stalagmiteBase);
+	BlockIDs.ringtreePlanks = config.getBlock(BlockNames.ringtreePlanksName, BlockIDs.ringtreePlanksDefault).getInt(BlockIDs.ringtreePlanks);
+	BlockIDs.spheretreePlanks = config.getBlock(BlockNames.spheretreePlanksName, BlockIDs.spheretreePlanksDefault).getInt(BlockIDs.spheretreePlanks);
+	BlockIDs.spheretreeHeart = config.getBlock(BlockNames.spheretreeHeartName, BlockIDs.spheretreeHeartDefault).getInt(BlockIDs.spheretreeHeart);
+	BlockIDs.ringtree = config.getBlock(BlockNames.ringtreeName, BlockIDs.ringtreeDefault).getInt(BlockIDs.ringtree);
+	BlockIDs.spheretreeLeaves = config.getBlock(BlockNames.spheretreeLeavesName, BlockIDs.spheretreeLeavesDefault).getInt(BlockIDs.spheretreeLeaves);
+	BlockIDs.spheretreeDeepwood = config.getBlock(BlockNames.spheretreeDeepwoodName, BlockIDs.spheretreeDeepwoodDefault).getInt(BlockIDs.spheretreeDeepwood);
+	BlockIDs.spheretreeBranchwood = config.getBlock(BlockNames.spheretreeBranchwoodName, BlockIDs.spheretreeBranchwoodDefault).getInt(BlockIDs.spheretreeBranchwood);
+	BlockIDs.lantern = config.getBlock(BlockNames.lanternName, BlockIDs.lanternDefault).getInt(BlockIDs.lantern);
+	BlockIDs.boneTorch = config.getBlock(BlockNames.boneTorchName, BlockIDs.boneTorchDefault).getInt(BlockIDs.boneTorch);
+	BlockIDs.brainMushroom = config.getBlock(BlockNames.brainMushroomName, BlockIDs.brainMushroomDefault).getInt(BlockIDs.brainMushroom);
+	BlockIDs.bitumenStill = config.getBlock(BlockNames.bitumenStillName, BlockIDs.bitumenStillDefault).getInt(BlockIDs.bitumenStill);
+	BlockIDs.stalagmiteLevelTwo = config.getBlock(BlockNames.stalagmiteLevelTwoName, BlockIDs.stalagmiteLevelTwoDefault).getInt(BlockIDs.stalagmiteLevelTwo);
+	BlockIDs.stalagmiteLevelThree = config.getBlock(BlockNames.stalagmiteLevelThreeName, BlockIDs.stalagmiteLevelThreeDefault).getInt(BlockIDs.stalagmiteLevelThree);
+	BlockIDs.stalagmiteLevelFour = config.getBlock(BlockNames.stalagmiteLevelFourName, BlockIDs.stalagmiteLevelFourDefault).getInt(BlockIDs.stalagmiteLevelFour);
+	BlockIDs.stalagmiteLevelFive = config.getBlock(BlockNames.stalagmiteLevelFiveName, BlockIDs.stalagmiteLevelFiveDefault).getInt(BlockIDs.stalagmiteLevelFive);
+	BlockIDs.stalagmiteLevelTwoBase = config.getBlock(BlockNames.stalagmiteLevelTwoBaseName, BlockIDs.stalagmiteLevelTwoBaseDefault).getInt(BlockIDs.stalagmiteLevelTwoBase);
+	BlockIDs.stalagmiteLevelThreeBase = config.getBlock(BlockNames.stalagmiteLevelThreeBaseName, BlockIDs.stalagmiteLevelThreeBaseDefault).getInt(BlockIDs.stalagmiteLevelThreeBase);
+	BlockIDs.stalagmiteLevelFourBase = config.getBlock(BlockNames.stalagmiteLevelFourBaseName, BlockIDs.stalagmiteLevelFourBaseDefault).getInt(BlockIDs.stalagmiteLevelFourBase);
+	BlockIDs.stalagmiteLevelFiveBase = config.getBlock(BlockNames.stalagmiteLevelFiveBaseName, BlockIDs.stalagmiteLevelFiveBaseDefault).getInt(BlockIDs.stalagmiteLevelFiveBase);
+	BlockIDs.lightstone = config.getBlock(BlockNames.lightstoneName, BlockIDs.lightstoneDefault).getInt(BlockIDs.lightstone);
+	BlockIDs.dimstone = config.getBlock(BlockNames.dimstoneName, BlockIDs.dimstoneDefault).getInt(BlockIDs.dimstone);
+	BlockIDs.darkstone = config.getBlock(BlockNames.darkstoneName, BlockIDs.darkstoneDefault).getInt(BlockIDs.darkstone);
+	BlockIDs.springstone = config.getBlock(BlockNames.springstoneName, BlockIDs.springstoneDefault).getInt(BlockIDs.springstone);
+	BlockIDs.floatstone = config.getBlock(BlockNames.floatstoneName, BlockIDs.floatstoneDefault).getInt(BlockIDs.floatstone);
+	BlockIDs.deathstone = config.getBlock(BlockNames.deathstoneName, BlockIDs.deathstoneDefault).getInt(BlockIDs.deathstone);
+	BlockIDs.condensedLightstone = config.getBlock(BlockNames.condensedLightstoneName, BlockIDs.condensedLightstoneDefault).getInt(BlockIDs.condensedLightstone);
+	BlockIDs.condensedDimstone = config.getBlock(BlockNames.condensedDimstoneName, BlockIDs.condensedDimstoneDefault).getInt(BlockIDs.condensedDimstone);
+	BlockIDs.condensedDarkstone = config.getBlock(BlockNames.condensedDarkstoneName, BlockIDs.condensedDarkstoneDefault).getInt(BlockIDs.condensedDarkstone);
+	BlockIDs.condensedSpringstone = config.getBlock(BlockNames.condensedSpringstoneName, BlockIDs.condensedSpringstoneDefault).getInt(BlockIDs.condensedSpringstone);
+	BlockIDs.condensedFloatstone = config.getBlock(BlockNames.condensedFloatstoneName, BlockIDs.condensedFloatstoneDefault).getInt(BlockIDs.condensedFloatstone);
+	BlockIDs.condensedDeathstone = config.getBlock(BlockNames.condensedDeathstoneName, BlockIDs.condensedDeathstoneDefault).getInt(BlockIDs.condensedDeathstone);
+	BlockIDs.crackedLightstone = config.getBlock(BlockNames.crackedLightstoneName, BlockIDs.crackedLightstoneDefault).getInt(BlockIDs.crackedLightstone);
+	BlockIDs.crackedDimstone = config.getBlock(BlockNames.crackedDimstoneName, BlockIDs.crackedDimstoneDefault).getInt(BlockIDs.crackedDimstone);
+	BlockIDs.crackedDarkstone = config.getBlock(BlockNames.crackedDarkstoneName, BlockIDs.crackedDarkstoneDefault).getInt(BlockIDs.crackedDarkstone);
+	BlockIDs.crackedSpringstone = config.getBlock(BlockNames.crackedSpringstoneName, BlockIDs.crackedSpringstoneDefault).getInt(BlockIDs.crackedSpringstone);
+	BlockIDs.crackedFloatstone = config.getBlock(BlockNames.crackedFloatstoneName, BlockIDs.crackedFloatstoneDefault).getInt(BlockIDs.crackedFloatstone);
+	BlockIDs.crackedDeathstone = config.getBlock(BlockNames.crackedDeathstoneName, BlockIDs.crackedDeathstoneDefault).getInt(BlockIDs.crackedDeathstone);
+	BlockIDs.smoothLightstone = config.getBlock(BlockNames.smoothLightstoneName, BlockIDs.smoothLightstoneDefault).getInt(BlockIDs.smoothLightstone);
+	BlockIDs.smoothDimstone = config.getBlock(BlockNames.smoothDimstoneName, BlockIDs.smoothDimstoneDefault).getInt(BlockIDs.smoothDimstone);
+	BlockIDs.smoothDarkstone = config.getBlock(BlockNames.smoothDarkstoneName, BlockIDs.smoothDarkstoneDefault).getInt(BlockIDs.smoothDarkstone);
+	BlockIDs.smoothSpringstone = config.getBlock(BlockNames.smoothSpringstoneName, BlockIDs.smoothSpringstoneDefault).getInt(BlockIDs.smoothSpringstone);
+	BlockIDs.smoothFloatstone = config.getBlock(BlockNames.smoothFloatstoneName, BlockIDs.smoothFloatstoneDefault).getInt(BlockIDs.smoothFloatstone);
+	BlockIDs.smoothDeathstone = config.getBlock(BlockNames.smoothDeathstoneName, BlockIDs.smoothDeathstoneDefault).getInt(BlockIDs.smoothDeathstone);
+	BlockIDs.lightstoneBrick = config.getBlock(BlockNames.lightstoneBrickName, BlockIDs.lightstoneBrickDefault).getInt(BlockIDs.lightstoneBrick);
+	BlockIDs.dimstoneBrick = config.getBlock(BlockNames.dimstoneBrickName, BlockIDs.dimstoneBrickDefault).getInt(BlockIDs.dimstoneBrick);
+	BlockIDs.darkstoneBrick = config.getBlock(BlockNames.darkstoneBrickName, BlockIDs.darkstoneBrickDefault).getInt(BlockIDs.darkstoneBrick);
+	BlockIDs.springstoneBrick = config.getBlock(BlockNames.springstoneBrickName, BlockIDs.springstoneBrickDefault).getInt(BlockIDs.springstoneBrick);
+	BlockIDs.floatstoneBrick = config.getBlock(BlockNames.floatstoneBrickName, BlockIDs.floatstoneBrickDefault).getInt(BlockIDs.floatstoneBrick);
+	BlockIDs.deathstoneBrick = config.getBlock(BlockNames.deathstoneBrickName, BlockIDs.deathstoneBrickDefault).getInt(BlockIDs.deathstoneBrick);
+	BlockIDs.carvedDarkstone = config.getBlock(BlockNames.carvedDarkstoneName, BlockIDs.carvedDarkstoneDefault).getInt(BlockIDs.carvedDarkstone);
+	BlockIDs.carvedDimstone = config.getBlock(BlockNames.carvedDimstoneName, BlockIDs.carvedDimstoneDefault).getInt(BlockIDs.carvedDimstone);
+	BlockIDs.carvedLightstone = config.getBlock(BlockNames.carvedLightstoneName, BlockIDs.carvedLightstoneDefault).getInt(BlockIDs.carvedLightstone);
+	BlockIDs.carvedSpringstone = config.getBlock(BlockNames.carvedSpringstoneName, BlockIDs.carvedSpringstoneDefault).getInt(BlockIDs.carvedSpringstone);
+	BlockIDs.carvedFloatstone = config.getBlock(BlockNames.carvedFloatstoneName, BlockIDs.carvedFloatstoneDefault).getInt(BlockIDs.carvedFloatstone);
+	BlockIDs.carvedDeathstone = config.getBlock(BlockNames.carvedDeathstoneName, BlockIDs.carvedDeathstoneDefault).getInt(BlockIDs.carvedDeathstone);
+	BlockIDs.up = config.getBlock(BlockNames.upName, BlockIDs.upDefault).getInt(BlockIDs.up);
+	BlockIDs.down = config.getBlock(BlockNames.downName, BlockIDs.downDefault).getInt(BlockIDs.down);
+	BlockIDs.east = config.getBlock(BlockNames.eastName, BlockIDs.eastDefault).getInt(BlockIDs.east);
+	BlockIDs.west = config.getBlock(BlockNames.westName, BlockIDs.westDefault).getInt(BlockIDs.west);
+	BlockIDs.north = config.getBlock(BlockNames.northName, BlockIDs.northDefault).getInt(BlockIDs.north);
+	BlockIDs.south = config.getBlock(BlockNames.southName, BlockIDs.southDefault).getInt(BlockIDs.south);
+	BlockIDs.darkstoneStairs = config.getBlock(BlockNames.darkstoneStairsName, BlockIDs.darkstoneStairsDefault).getInt(BlockIDs.darkstoneStairs);
+	BlockIDs.dimstoneStairs = config.getBlock(BlockNames.dimstoneStairsName, BlockIDs.dimstoneStairsDefault).getInt(BlockIDs.dimstoneStairs);
+	BlockIDs.lightstoneStairs = config.getBlock(BlockNames.lightstoneStairsName, BlockIDs.lightstoneStairsDefault).getInt(BlockIDs.lightstoneStairs);
+	BlockIDs.springstoneStairs = config.getBlock(BlockNames.springstoneStairsName, BlockIDs.springstoneStairsDefault).getInt(BlockIDs.springstoneStairs);
+	BlockIDs.floatstoneStairs = config.getBlock(BlockNames.floatstoneStairsName, BlockIDs.floatstoneStairsDefault).getInt(BlockIDs.floatstoneStairs);
+	BlockIDs.deathstoneStairs = config.getBlock(BlockNames.deathstoneStairsName, BlockIDs.deathstoneStairsDefault).getInt(BlockIDs.deathstoneStairs);
+	BlockIDs.smoothDarkstoneStairs = config.getBlock(BlockNames.smoothDarkstoneStairsName, BlockIDs.smoothDarkstoneStairsDefault).getInt(BlockIDs.smoothDarkstoneStairs);
+	BlockIDs.smoothDimstoneStairs = config.getBlock(BlockNames.smoothDimstoneStairsName, BlockIDs.smoothDimstoneStairsDefault).getInt(BlockIDs.smoothDimstoneStairs);
+	BlockIDs.smoothLightstoneStairs = config.getBlock(BlockNames.smoothLightstoneStairsName, BlockIDs.smoothLightstoneStairsDefault).getInt(BlockIDs.smoothLightstoneStairs);
+	BlockIDs.smoothSpringstoneStairs = config.getBlock(BlockNames.smoothSpringstoneStairsName, BlockIDs.smoothSpringstoneStairsDefault).getInt(BlockIDs.smoothSpringstoneStairs);
+	BlockIDs.smoothFloatstoneStairs = config.getBlock(BlockNames.smoothFloatstoneStairsName, BlockIDs.smoothFloatstoneStairsDefault).getInt(BlockIDs.smoothFloatstoneStairs);
+	BlockIDs.smoothDeathstoneStairs = config.getBlock(BlockNames.smoothDeathstoneStairsName, BlockIDs.smoothDeathstoneStairsDefault).getInt(BlockIDs.smoothDeathstoneStairs);
+	BlockIDs.darkstoneBrickStairs = config.getBlock(BlockNames.darkstoneBrickStairsName, BlockIDs.darkstoneBrickStairsDefault).getInt(BlockIDs.darkstoneBrickStairs);
+	BlockIDs.dimstoneBrickStairs = config.getBlock(BlockNames.dimstoneBrickStairsName, BlockIDs.dimstoneBrickStairsDefault).getInt(BlockIDs.dimstoneBrickStairs);
+	BlockIDs.lightstoneBrickStairs = config.getBlock(BlockNames.lightstoneBrickStairsName, BlockIDs.lightstoneBrickStairsDefault).getInt(BlockIDs.lightstoneBrickStairs);
+	BlockIDs.springstoneBrickStairs = config.getBlock(BlockNames.springstoneBrickStairsName, BlockIDs.springstoneBrickStairsDefault).getInt(BlockIDs.springstoneBrickStairs);
+	BlockIDs.floatstoneBrickStairs = config.getBlock(BlockNames.floatstoneBrickStairsName, BlockIDs.floatstoneBrickStairsDefault).getInt(BlockIDs.floatstoneBrickStairs);
+	BlockIDs.deathstoneBrickStairs = config.getBlock(BlockNames.deathstoneBrickStairsName, BlockIDs.deathstoneBrickStairsDefault).getInt(BlockIDs.deathstoneBrickStairs);
+	BlockIDs.asphaltStairs = config.getBlock(BlockNames.asphaltStairsName, BlockIDs.asphaltStairsDefault).getInt(BlockIDs.asphaltStairs);
+	BlockIDs.ringtreePlankStairs = config.getBlock(BlockNames.ringtreePlankStairsName, BlockIDs.ringtreePlankStairsDefault).getInt(BlockIDs.ringtreePlankStairs);
+	BlockIDs.spheretreePlankStairs = config.getBlock(BlockNames.spheretreePlankStairsName, BlockIDs.spheretreePlankStairsDefault).getInt(BlockIDs.spheretreePlankStairs);
+	config.save();
+	}
+}

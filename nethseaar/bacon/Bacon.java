@@ -8,6 +8,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.client.EnumHelperClient;
 import cpw.mods.fml.common.Mod;
@@ -36,10 +38,11 @@ public class Bacon {
 
 	@SidedProxy(clientSide="nethseaar.bacon.client.ClientProxy", serverSide="nethseaar.bacon.CommonProxy")
 	public static CommonProxy proxy;
-
+	public static BiomeGenBase baconBiome;
+	public static int dimension = 17;
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
-
+		Config.preInit(event);
 	}
 
 	@Init
@@ -54,10 +57,11 @@ public class Bacon {
 		GameRegistry.registerWorldGenerator(eventmanager);
 		GameRegistry.registerFuelHandler(new FuelHandler());
 
-		int dimension = 17;
-		DimensionManager.registerProviderType(dimension, WorldProviderBacon.class, false);
-		DimensionManager.registerDimension(dimension, dimension);
 		
+//		DimensionManager.registerProviderType(dimension, WorldProviderBacon.class, false);
+//		DimensionManager.registerDimension(dimension, dimension);
+//		baconBiome = new BiomeGenBacon(80).setColor(2900485).setBiomeName("Bacon!").setDisableRain().setTemperatureRainfall(1F, 0F).setMinMaxHeight(0.1F, 1F);
+//		
 		proxy.registerRenderers();		
 	}
 

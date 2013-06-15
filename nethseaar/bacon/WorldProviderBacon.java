@@ -19,7 +19,7 @@ public class WorldProviderBacon extends WorldProvider
 	 
 	 public void registerWorldChunkManager()
 	 {
-	  this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.beach, 0.8F, 0.1F);
+	  this.worldChunkMgr = new WorldChunkManagerHell(Bacon.baconBiome, 0.8F, 0.1F);
 	  this.dimensionId = 17;
 	 }
 	 
