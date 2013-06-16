@@ -13,7 +13,7 @@ import net.minecraftforge.common.MinecraftForge;
 
 public class BaconBlocks {
 	
-	private static String[] darkstoneNames = {
+	public static String[] darkstoneNames = {
 		"Darkstone", "Cracked Darkstone", "Condensed Darkstone", "Smooth Darkstone", "Darkstone Brick", "Carved Darkstone"
 	};
 
@@ -32,7 +32,7 @@ public class BaconBlocks {
 	public static Block deathstone;
 
 	//add cracked stone blocks
-	public static Block crackedDarkstone;
+	//public static Block crackedDarkstone;
 	public static Block crackedDimstone;
 	public static Block crackedLightstone;
 	public static Block crackedSpringstone;
@@ -40,7 +40,7 @@ public class BaconBlocks {
 	public static Block crackedDeathstone;
 
 	//add condensed stone blocks
-	public static Block condensedDarkstone;
+	//public static Block condensedDarkstone;
 	public static Block condensedDimstone;
 	public static Block condensedLightstone;
 	public static Block condensedSpringstone;
@@ -48,7 +48,7 @@ public class BaconBlocks {
 	public static Block condensedDeathstone;
 
 	//add smooth stone blocks
-	public static Block smoothDarkstone;
+	//public static Block smoothDarkstone;
 	public static Block smoothDimstone;
 	public static Block smoothLightstone;
 	public static Block smoothSpringstone;
@@ -56,7 +56,7 @@ public class BaconBlocks {
 	public static Block smoothDeathstone;
 
 	//add brick blocks
-	public static Block darkstoneBrick;
+	//public static Block darkstoneBrick;
 	public static Block dimstoneBrick;
 	public static Block lightstoneBrick;
 	public static Block springstoneBrick;
@@ -64,7 +64,7 @@ public class BaconBlocks {
 	public static Block deathstoneBrick;
 
 	//add carved blocks
-	public static Block carvedDarkstone;
+	//public static Block carvedDarkstone;
 	public static Block carvedDimstone;
 	public static Block carvedLightstone;
 	public static Block carvedSpringstone;
@@ -183,7 +183,7 @@ public class BaconBlocks {
 		//initialize stone blocks
 		lightstone = new BlockBacon(BlockIDs.lightstone, Material.rock).setUnlocalizedName("lightstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
 		dimstone = new BlockBacon(BlockIDs.dimstone, Material.rock).setUnlocalizedName("dimstone").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(0.5F);
-		darkstone = new BlockBacon(BlockIDs.darkstone, Material.rock).setUnlocalizedName("darkstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
+		darkstone = new BlockDarkstone(BlockIDs.darkstone, Material.rock).setUnlocalizedName("darkstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		springstone = new BlockSpringstone(BlockIDs.springstone, Material.rock).setUnlocalizedName("springstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		floatstone = new BlockFloatstone(BlockIDs.floatstone, Material.rock).setUnlocalizedName("floatstone").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(0.5F);
 		deathstone = new BlockDeathstone(BlockIDs.deathstone, Material.cactus).setUnlocalizedName("deathstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
@@ -191,7 +191,7 @@ public class BaconBlocks {
 		//initialize condensed stone blocks
 		condensedLightstone = new BlockBacon(BlockIDs.condensedLightstone, Material.rock).setUnlocalizedName("condensedLightstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
 		condensedDimstone = new BlockBacon(BlockIDs.condensedDimstone, Material.rock).setUnlocalizedName("condensedDimstone").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(0.5F);
-		condensedDarkstone = new BlockBacon(BlockIDs.condensedDarkstone, Material.rock).setUnlocalizedName("condensedDarkstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
+		//condensedDarkstone = new BlockBacon(BlockIDs.condensedDarkstone, Material.rock).setUnlocalizedName("condensedDarkstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		condensedSpringstone = new BlockBacon(BlockIDs.condensedSpringstone,  Material.rock).setUnlocalizedName("condensedSpringstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		condensedFloatstone = new BlockBacon(BlockIDs.condensedFloatstone, Material.rock).setUnlocalizedName("condensedFloatstone").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(0.5F);
 		condensedDeathstone = new BlockBacon(BlockIDs.condensedDeathstone, Material.rock).setUnlocalizedName("condensedDeathstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
@@ -199,7 +199,7 @@ public class BaconBlocks {
 		//initialize cracked stone blocks
 		crackedLightstone = new BlockBacon(BlockIDs.crackedLightstone, Material.rock).setUnlocalizedName("crackedLightstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
 		crackedDimstone = new BlockBacon(BlockIDs.crackedDimstone, Material.rock).setUnlocalizedName("crackedDimstone").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(0.5F);
-		crackedDarkstone = new BlockBacon(BlockIDs.crackedDarkstone, Material.rock).setUnlocalizedName("crackedDarkstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
+		//crackedDarkstone = new BlockBacon(BlockIDs.crackedDarkstone, Material.rock).setUnlocalizedName("crackedDarkstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		crackedSpringstone = new BlockBacon(BlockIDs.crackedSpringstone,  Material.rock).setUnlocalizedName("crackedSpringstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		crackedFloatstone = new BlockBacon(BlockIDs.crackedFloatstone, Material.rock).setUnlocalizedName("crackedFloatstone").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(0.5F);
 		crackedDeathstone = new BlockCrackedDeathstone(BlockIDs.crackedDeathstone, Material.rock).setUnlocalizedName("crackedDeathstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
@@ -207,7 +207,7 @@ public class BaconBlocks {
 		//initialize smooth stone blocks
 		smoothLightstone = new BlockBacon(BlockIDs.smoothLightstone, Material.rock).setUnlocalizedName("smoothLightstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
 		smoothDimstone = new BlockBacon(BlockIDs.smoothDimstone, Material.rock).setUnlocalizedName("smoothDimstone").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(0.5F);
-		smoothDarkstone = new BlockBacon(BlockIDs.smoothDarkstone, Material.rock).setUnlocalizedName("smoothDarkstone").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
+		//smoothDarkstone = new BlockBacon(BlockIDs.smoothDarkstone, Material.rock).setUnlocalizedName("smoothDarkstone").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		smoothSpringstone = new BlockBacon(BlockIDs.smoothSpringstone,  Material.rock).setUnlocalizedName("smoothSpringstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		smoothFloatstone = new BlockBacon(BlockIDs.smoothFloatstone, Material.rock).setUnlocalizedName("smoothFloatstone").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(0.5F);
 		smoothDeathstone = new BlockBacon(BlockIDs.smoothDeathstone, Material.rock).setUnlocalizedName("smoothDeathstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
@@ -215,13 +215,13 @@ public class BaconBlocks {
 		//initialize stone brick blocks
 		lightstoneBrick = new BlockBacon(BlockIDs.lightstoneBrick, Material.rock).setUnlocalizedName("lightstoneBrick").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
 		dimstoneBrick = new BlockBacon(BlockIDs.dimstoneBrick, Material.rock).setUnlocalizedName("dimstoneBrick").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(0.5F);
-		darkstoneBrick = new BlockBacon(BlockIDs.darkstoneBrick, Material.rock).setUnlocalizedName("darkstoneBrick").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
+		//darkstoneBrick = new BlockBacon(BlockIDs.darkstoneBrick, Material.rock).setUnlocalizedName("darkstoneBrick").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		springstoneBrick = new BlockBacon(BlockIDs.springstoneBrick,  Material.rock).setUnlocalizedName("springstoneBrick").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		floatstoneBrick = new BlockBacon(BlockIDs.floatstoneBrick, Material.rock).setUnlocalizedName("floatstoneBrick").setStepSound(Block.soundStoneFootstep).setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(0.5F);
 		deathstoneBrick = new BlockBacon(BlockIDs.deathstoneBrick, Material.rock).setUnlocalizedName("deathstoneBrick").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
 
 		//initialize carved stone blocks
-		carvedDarkstone = new BlockBacon(BlockIDs.carvedDarkstone,  Material.rock).setUnlocalizedName("carvedDarkstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
+		//carvedDarkstone = new BlockBacon(BlockIDs.carvedDarkstone,  Material.rock).setUnlocalizedName("carvedDarkstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		carvedDimstone = new BlockBacon(BlockIDs.carvedDimstone,  Material.rock).setUnlocalizedName("carvedDimstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		carvedLightstone = new BlockBacon(BlockIDs.carvedLightstone,  Material.rock).setUnlocalizedName("carvedLightstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
 		carvedSpringstone = new BlockBacon(BlockIDs.carvedSpringstone,  Material.rock).setUnlocalizedName("carvedSpringstone").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
@@ -245,7 +245,7 @@ public class BaconBlocks {
 		deathstoneStairs = new StairBacon(BlockIDs.deathstoneStairs, BaconBlocks.deathstone, 0);
 
 		//initialize smooth stone Stairs
-		smoothDarkstoneStairs = new StairBacon(BlockIDs.smoothDarkstoneStairs, BaconBlocks.smoothDarkstone, 0);
+		//smoothDarkstoneStairs = new StairBacon(BlockIDs.smoothDarkstoneStairs, BaconBlocks.smoothDarkstone, 0);
 		smoothDimstoneStairs = new StairBacon(BlockIDs.smoothDimstoneStairs, BaconBlocks.smoothDimstone, 0);
 		smoothLightstoneStairs = new StairBacon(BlockIDs.smoothLightstoneStairs, BaconBlocks.smoothLightstone, 0);
 		smoothSpringstoneStairs = new StairBacon(BlockIDs.smoothSpringstoneStairs, BaconBlocks.smoothSpringstone, 0);
@@ -253,7 +253,7 @@ public class BaconBlocks {
 		smoothDeathstoneStairs = new StairBacon(BlockIDs.smoothDeathstoneStairs, BaconBlocks.smoothDeathstone, 0);
 
 		//initialize stone brick Stairs
-		darkstoneBrickStairs = new StairBacon(BlockIDs.darkstoneBrickStairs, BaconBlocks.darkstoneBrick, 0);
+		//darkstoneBrickStairs = new StairBacon(BlockIDs.darkstoneBrickStairs, BaconBlocks.darkstoneBrick, 0);
 		dimstoneBrickStairs = new StairBacon(BlockIDs.dimstoneBrickStairs, BaconBlocks.dimstoneBrick, 0);
 		lightstoneBrickStairs = new StairBacon(BlockIDs.lightstoneBrickStairs, BaconBlocks.lightstoneBrick, 0);
 		springstoneBrickStairs = new StairBacon(BlockIDs.springstoneBrickStairs, BaconBlocks.springstoneBrick, 0);
@@ -285,7 +285,7 @@ public class BaconBlocks {
 		GameRegistry.registerBlock(deathstone, "deathstone");
 
 		//register condensed stone blocks
-		GameRegistry.registerBlock(condensedDarkstone, "condensedDarkstone");
+		//GameRegistry.registerBlock(condensedDarkstone, "condensedDarkstone");
 		GameRegistry.registerBlock(condensedDimstone, "condensedDimstone");
 		GameRegistry.registerBlock(condensedLightstone, "condensedLightstone");
 		GameRegistry.registerBlock(condensedSpringstone, "condensedSpringstone");
@@ -293,7 +293,7 @@ public class BaconBlocks {
 		GameRegistry.registerBlock(condensedDeathstone, "condensedDeathstone");
 
 		//register smooth stone blocks
-		GameRegistry.registerBlock(smoothDarkstone, "smoothDarkstone");
+		//GameRegistry.registerBlock(smoothDarkstone, "smoothDarkstone");
 		GameRegistry.registerBlock(smoothDimstone, "smoothDimstone");
 		GameRegistry.registerBlock(smoothLightstone, "smoothLightstone");
 		GameRegistry.registerBlock(smoothSpringstone, "smoothSpringstone");
@@ -301,7 +301,7 @@ public class BaconBlocks {
 		GameRegistry.registerBlock(smoothDeathstone, "smoothDeathstone");
 
 		//register stone brick blocks
-		GameRegistry.registerBlock(darkstoneBrick, "darkstoneBrick");
+		//GameRegistry.registerBlock(darkstoneBrick, "darkstoneBrick");
 		GameRegistry.registerBlock(dimstoneBrick, "dimstoneBrick");
 		GameRegistry.registerBlock(lightstoneBrick, "lightstoneBrick");
 		GameRegistry.registerBlock(springstoneBrick, "springstoneBrick");
@@ -309,7 +309,7 @@ public class BaconBlocks {
 		GameRegistry.registerBlock(deathstoneBrick, "deathstoneBrick");
 
 		//register cracked blocks
-		GameRegistry.registerBlock(crackedDarkstone, "crackedDarkstone");
+		//GameRegistry.registerBlock(crackedDarkstone, "crackedDarkstone");
 		GameRegistry.registerBlock(crackedDimstone, "crackedDimstone");
 		GameRegistry.registerBlock(crackedLightstone, "crackedLightstone");
 		GameRegistry.registerBlock(crackedSpringstone, "crackedSpringstone");
@@ -350,7 +350,7 @@ public class BaconBlocks {
 
 
 		//register carved stone blocks
-		GameRegistry.registerBlock(carvedDarkstone, "carvedDarkstone");
+		//GameRegistry.registerBlock(carvedDarkstone, "carvedDarkstone");
 		GameRegistry.registerBlock(carvedDimstone, "carvedDimstone");
 		GameRegistry.registerBlock(carvedLightstone, "carvedLightstone");
 		GameRegistry.registerBlock(carvedSpringstone, "carvedSpringstone");
@@ -366,7 +366,7 @@ public class BaconBlocks {
 		GameRegistry.registerBlock(deathstoneStairs, "deathstoneStairs");
 
 		//register smooth stone Stairs
-		GameRegistry.registerBlock(smoothDarkstoneStairs, "smoothDarkstoneStairs");
+		//GameRegistry.registerBlock(smoothDarkstoneStairs, "smoothDarkstoneStairs");
 		GameRegistry.registerBlock(smoothDimstoneStairs, "smoothDimstoneStairs");
 		GameRegistry.registerBlock(smoothLightstoneStairs, "smoothLightstoneStairs");
 		GameRegistry.registerBlock(smoothSpringstoneStairs, "smoothSpringstoneStairs");
@@ -374,7 +374,7 @@ public class BaconBlocks {
 		GameRegistry.registerBlock(smoothDeathstoneStairs, "smoothDeathstoneStairs");
 
 		//register stone brick Stairs
-		GameRegistry.registerBlock(darkstoneBrickStairs, "darkstoneBrickStairs");
+		//GameRegistry.registerBlock(darkstoneBrickStairs, "darkstoneBrickStairs");
 		GameRegistry.registerBlock(dimstoneBrickStairs, "dimstoneBrickStairs");
 		GameRegistry.registerBlock(lightstoneBrickStairs, "lightstoneBrickStairs");
 		GameRegistry.registerBlock(springstoneBrickStairs, "springstoneBrickStairs");
@@ -441,16 +441,16 @@ public class BaconBlocks {
 		LanguageRegistry.addName(lightstone, "Lightstone");
 		LanguageRegistry.addName(dimstone, "Dimstone");
 		
-		for (int i = 0; i>darkstoneNames.length; i++)
-		LanguageRegistry.addName(new ItemStack(darkstone, 1, i), darkstoneNames[i]);
-		
+		for (int i = 0; i<darkstoneNames.length; i++)
+		{LanguageRegistry.addName(new ItemStack(darkstone, 1, i), darkstoneNames[i]);
+		}
 		
 		LanguageRegistry.addName(springstone, "Springstone");
 		LanguageRegistry.addName(floatstone, "Floatstone");
 		LanguageRegistry.addName(deathstone, "Deathstone");
 
 		//register condensed stone block names
-		LanguageRegistry.addName(condensedDarkstone, "Condensed Darkstone");
+		//LanguageRegistry.addName(condensedDarkstone, "Condensed Darkstone");
 		LanguageRegistry.addName(condensedDimstone, "Condensed Dimstone");
 		LanguageRegistry.addName(condensedLightstone, "Condensed Lightstone");
 		LanguageRegistry.addName(condensedSpringstone, "Condensed Springstone");
@@ -458,7 +458,7 @@ public class BaconBlocks {
 		LanguageRegistry.addName(condensedDeathstone, "Condensed Deathstone");
 
 		//register smooth stone block names
-		LanguageRegistry.addName(smoothDarkstone, "Smooth Darkstone");
+		//LanguageRegistry.addName(smoothDarkstone, "Smooth Darkstone");
 		LanguageRegistry.addName(smoothDimstone, "Smooth Dimstone");
 		LanguageRegistry.addName(smoothLightstone, "Smooth Lightstone");
 		LanguageRegistry.addName(smoothSpringstone, "Smooth Springstone");
@@ -466,7 +466,7 @@ public class BaconBlocks {
 		LanguageRegistry.addName(smoothDeathstone, "Smooth Deathstone");
 
 		//register stone brick block names
-		LanguageRegistry.addName(darkstoneBrick, "Darkstone Brick");
+		//LanguageRegistry.addName(darkstoneBrick, "Darkstone Brick");
 		LanguageRegistry.addName(dimstoneBrick, "Dimstone Brick");
 		LanguageRegistry.addName(lightstoneBrick, "Lightstone Brick");
 		LanguageRegistry.addName(springstoneBrick, "Springstone Brick");
@@ -474,7 +474,7 @@ public class BaconBlocks {
 		LanguageRegistry.addName(deathstoneBrick, "Deathstone Brick");
 
 		//register cracked stone block names
-		LanguageRegistry.addName(crackedDarkstone, "Cracked Darkstone");
+		//LanguageRegistry.addName(crackedDarkstone, "Cracked Darkstone");
 		LanguageRegistry.addName(crackedDimstone, "Cracked Dimstone");
 		LanguageRegistry.addName(crackedLightstone, "Cracked Lightstone");
 		LanguageRegistry.addName(crackedSpringstone, "Cracked Springstone");
@@ -490,7 +490,7 @@ public class BaconBlocks {
 		LanguageRegistry.addName(deathstoneStairs, "Deathstone Stairs");
 
 		//register smooth stone Stairs names
-		LanguageRegistry.addName(smoothDarkstoneStairs, "Smooth Darkstone Stairs");
+		//LanguageRegistry.addName(smoothDarkstoneStairs, "Smooth Darkstone Stairs");
 		LanguageRegistry.addName(smoothDimstoneStairs, "Smooth Dimstone Stairs");
 		LanguageRegistry.addName(smoothLightstoneStairs, "Smooth Lightstone Stairs");
 		LanguageRegistry.addName(smoothSpringstoneStairs, "Smooth Springstone Stairs");
@@ -498,7 +498,7 @@ public class BaconBlocks {
 		LanguageRegistry.addName(smoothDeathstoneStairs, "Smooth Deathstone Stairs");
 
 		//register stone brick Stairs names
-		LanguageRegistry.addName(darkstoneBrickStairs, "Darkstone Brick Stairs");
+		//LanguageRegistry.addName(darkstoneBrickStairs, "Darkstone Brick Stairs");
 		LanguageRegistry.addName(dimstoneBrickStairs, "Dimstone Brick Stairs");
 		LanguageRegistry.addName(lightstoneBrickStairs, "Lightstone Brick Stairs");
 		LanguageRegistry.addName(springstoneBrickStairs, "Springstone Brick Stairs");
@@ -506,7 +506,7 @@ public class BaconBlocks {
 		LanguageRegistry.addName(deathstoneBrickStairs, "Deathstone Brick Stairs");
 
 		//register carved stone names
-		LanguageRegistry.addName(carvedDarkstone, "Carved Darkstone");
+		//LanguageRegistry.addName(carvedDarkstone, "Carved Darkstone");
 		LanguageRegistry.addName(carvedDimstone, "Carved Dimstone");
 		LanguageRegistry.addName(carvedLightstone, "Carved Lightstone");
 		LanguageRegistry.addName(carvedDeathstone, "Carved Deathstone");
@@ -539,10 +539,10 @@ public class BaconBlocks {
 		MinecraftForge.setBlockHarvestLevel(floatstone, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(springstone, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(deathstone, "pickaxe", 3);
-		MinecraftForge.setBlockHarvestLevel(condensedDarkstone, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(smoothDarkstone, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(crackedDarkstone, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(darkstoneBrick, "pickaxe", 2);
+		//MinecraftForge.setBlockHarvestLevel(condensedDarkstone, "pickaxe", 2);
+		//MinecraftForge.setBlockHarvestLevel(smoothDarkstone, "pickaxe", 2);
+		//MinecraftForge.setBlockHarvestLevel(crackedDarkstone, "pickaxe", 2);
+		//MinecraftForge.setBlockHarvestLevel(darkstoneBrick, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(condensedDimstone, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(smoothDimstone, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(crackedDimstone, "pickaxe", 2);
@@ -576,13 +576,13 @@ public class BaconBlocks {
 		MinecraftForge.setBlockHarvestLevel(darkstoneStairs, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(dimstoneStairs, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(lightstoneStairs, "pickaxe", 3);
-		MinecraftForge.setBlockHarvestLevel(smoothDarkstoneStairs, "pickaxe", 1);
+		//MinecraftForge.setBlockHarvestLevel(smoothDarkstoneStairs, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(smoothDimstoneStairs, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(smoothLightstoneStairs, "pickaxe", 3);
-		MinecraftForge.setBlockHarvestLevel(darkstoneBrickStairs, "pickaxe", 1);
+		//MinecraftForge.setBlockHarvestLevel(darkstoneBrickStairs, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(dimstoneBrickStairs, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(lightstoneBrickStairs, "pickaxe", 3);
-		MinecraftForge.setBlockHarvestLevel(carvedDarkstone, "pickaxe", 1);
+		//MinecraftForge.setBlockHarvestLevel(carvedDarkstone, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(carvedDimstone, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(carvedLightstone, "pickaxe", 3);
 		MinecraftForge.setBlockHarvestLevel(carvedSpringstone, "pickaxe", 1);

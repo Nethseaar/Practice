@@ -18,12 +18,32 @@ public class ItemBlockBacon extends ItemBlock
              {
                     case 0:
                     {
-                           name = "world";
+                           name = "darkstone";
                            break;
                     }
                     case 1:
                     {
-                           name = "nether";
+                           name = "crackedDarkstone";
+                           break;
+                    }
+                    case 2:
+                    {
+                           name = "condensedDarkstone";
+                           break;
+                    }
+                    case 3:
+                    {
+                           name = "smoothDarkstone";
+                           break;
+                    }
+                    case 4:
+                    {
+                           name = "darkstoneBrick";
+                           break;
+                    }
+                    case 6:
+                    {
+                           name = "carvedDarkstone";
                            break;
                     }
                     default: name = "broken";
