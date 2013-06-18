@@ -5,33 +5,24 @@ import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSoulSand;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
-import net.minecraft.world.World;
+import net.minecraft.util.MathHelper;
 
-public class BlockFloatstone extends Block {
-
-	public BlockFloatstone(int id, Material material) {
-		super(id, material);
+public class BlockDimstone extends BlockBacon
+{
+	public BlockDimstone(int id, Material par2Material)
+	{
+		super(id, par2Material);
 		setStepSound(Block.soundStoneFootstep);
 		setHardness(3.0F);
 		setResistance(5.0F);
 		setCreativeTab(CreativeTabs.tabBlock);
 		setLightValue(0.5F);
-	}
-	
-	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
-	{
-		float f = 0.0625F;
-		return AxisAlignedBB.getAABBPool().getAABB((double)((float)par2), (double)par3, (double)((float)par4), (double)((float)par2 + 1), (double)((float)(par3 + 1)-f), (double)((float)par4 + 1));
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -42,12 +33,12 @@ public class BlockFloatstone extends Block {
 	{    	   
 		icons = new Icon[6];
 
-		icons[0] = par1IconRegister.registerIcon("floatstone");
-		icons[1] = par1IconRegister.registerIcon("crackedFloatstone");
-		icons[2] = par1IconRegister.registerIcon("condensedFloatstone");
-		icons[3] = par1IconRegister.registerIcon("smoothFloatstone");
-		icons[4] = par1IconRegister.registerIcon("floatstoneBrick");
-		icons[5] = par1IconRegister.registerIcon("carvedFloatstone");
+		icons[0] = par1IconRegister.registerIcon("dimstone");
+		icons[1] = par1IconRegister.registerIcon("crackedDimstone");
+		icons[2] = par1IconRegister.registerIcon("condensedDimstone");
+		icons[3] = par1IconRegister.registerIcon("smoothDimstone");
+		icons[4] = par1IconRegister.registerIcon("dimstoneBrick");
+		icons[5] = par1IconRegister.registerIcon("carvedDimstone");
 	}
 
 

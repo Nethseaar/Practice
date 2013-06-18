@@ -24,12 +24,6 @@ public class FuelHandler implements IFuelHandler {
 		else if(var1 == BaconBlocks.spheretreeHeart.blockID){
 			return 3200;
 		}
-		else if(var1 == BaconBlocks.ringtreePlankStairs.blockID){
-			return 300;
-		}
-		else if(var1 == BaconBlocks.spheretreePlankStairs.blockID){
-			return 300;
-		}
 		else{
 			return 0;
 		}
