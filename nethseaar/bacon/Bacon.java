@@ -22,19 +22,23 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.oredict.OreDictionary;
 
 
 @Mod(modid="Bacon", name="Bacon", version="v0.0.1")
-@NetworkMod(clientSideRequired=true, serverSideRequired=false)
+@NetworkMod(clientSideRequired=true, serverSideRequired=false, channels = "Bacon", packetHandler = PacketHandlerBacon.class)
 public class Bacon {
 
 	EventManager eventmanager = new EventManager();
 
 	@Instance("Bacon")
-	public static Bacon instance;
+	public static Bacon instance = new Bacon();
+	
+	private GuiHandler GuiHandler = new GuiHandler();
 
 	@SidedProxy(clientSide="nethseaar.bacon.client.ClientProxy", serverSide="nethseaar.bacon.CommonProxy")
 	public static CommonProxy proxy;
@@ -73,14 +77,16 @@ public class Bacon {
 	public void load(FMLInitializationEvent event) {
 
 		MinecraftForge.EVENT_BUS.register(new HandlerBitumenBucket());
-
 		BaconBlocks.init();
 		BaconItems.init();
 		BaconRecipes.init();
 
 		GameRegistry.registerWorldGenerator(eventmanager);
 		GameRegistry.registerFuelHandler(new FuelHandler());
-
+		
+		GameRegistry.registerTileEntity(TileEntityCondenser.class, "tileEntityCondenser");
+		NetworkRegistry.instance().registerGuiHandler(this, GuiHandler);
+		
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabInert", "en_US", "Subterrain Blocks I");
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabActive", "en_US", "Subterrain Blocks II");
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabSubItems", "en_US", "Subterrain Blocks III");
@@ -91,6 +97,7 @@ public class Bacon {
 		//		
 		proxy.registerRenderers();		
 	}
+
 
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {

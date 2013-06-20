@@ -16,7 +16,7 @@ public class OreDarknessOre extends Block {
 		setHardness(3.0F);
 		setResistance(10.0F);
 		setStepSound(soundStoneFootstep);
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Bacon.tabInert);
 	}
 
 	@Override

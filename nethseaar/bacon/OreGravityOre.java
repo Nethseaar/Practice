@@ -16,7 +16,7 @@ public class OreGravityOre extends Block {
 		setHardness(10.0F);
 		setResistance(20.0F);
 		setStepSound(soundStoneFootstep);
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Bacon.tabInert);
 		setLightValue(0.5F);
 	}
 

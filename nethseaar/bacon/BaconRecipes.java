@@ -54,24 +54,24 @@ public class BaconRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(BaconItems.bitumenChunk), new ItemStack(BaconItems.bitumenInBucket));
 		
 		//stairs -> normal
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.darkstone, 6), new ItemStack(BaconBlocks.darkstoneStairs));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.dimstone, 6), new ItemStack(BaconBlocks.dimstoneStairs));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.lightstone, 6), new ItemStack(BaconBlocks.lightstoneStairs));
+		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.darkstone, 1), new ItemStack(BaconBlocks.darkstoneStairs));
+		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.dimstone, 1), new ItemStack(BaconBlocks.dimstoneStairs));
+		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.lightstone, 1), new ItemStack(BaconBlocks.lightstoneStairs));
 		
 		//smooth stairs -> smooth
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.darkstone, 6, 3), new ItemStack(BaconBlocks.smoothDarkstoneStairs));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.dimstone, 6, 3), new ItemStack(BaconBlocks.smoothDimstoneStairs));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.lightstone, 6, 3), new ItemStack(BaconBlocks.smoothLightstoneStairs));
+		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.darkstone, 1, 3), new ItemStack(BaconBlocks.smoothDarkstoneStairs));
+		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.dimstone, 1, 3), new ItemStack(BaconBlocks.smoothDimstoneStairs));
+		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.lightstone, 1, 3), new ItemStack(BaconBlocks.smoothLightstoneStairs));
 		
 		//brick stairs -> brick
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.darkstone, 6, 4), new ItemStack(BaconBlocks.darkstoneBrickStairs));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.dimstone, 6, 4), new ItemStack(BaconBlocks.dimstoneBrickStairs));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.lightstone, 6, 4), new ItemStack(BaconBlocks.lightstoneBrickStairs));
+		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.darkstone, 1, 4), new ItemStack(BaconBlocks.darkstoneBrickStairs));
+		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.dimstone, 1, 4), new ItemStack(BaconBlocks.dimstoneBrickStairs));
+		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.lightstone, 1, 4), new ItemStack(BaconBlocks.lightstoneBrickStairs));
 		
 		//other stairs -> material
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.asphalt, 6), new ItemStack(BaconBlocks.asphaltStairs));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.ringtreePlanks, 6), new ItemStack(BaconBlocks.ringtreePlankStairs));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.spheretreePlanks, 6), new ItemStack(BaconBlocks.spheretreePlankStairs));
+		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.asphalt), new ItemStack(BaconBlocks.asphaltStairs));
+		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.ringtreePlanks), new ItemStack(BaconBlocks.ringtreePlankStairs));
+		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.spheretreePlanks), new ItemStack(BaconBlocks.spheretreePlankStairs));
 		
 		//* -------------------------------------------------------------------------------------- SHAPED RECIPES ----------------------------------------------------
 

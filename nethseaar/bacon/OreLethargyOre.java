@@ -16,7 +16,7 @@ public class OreLethargyOre extends Block {
 		setHardness(8.0F);
 		setResistance(15.0F);
 		setStepSound(soundStoneFootstep);
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Bacon.tabInert);
 		setLightValue(1.0F);
 	}
 

@@ -10,6 +10,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class BaconBlocks {
 
@@ -129,6 +130,10 @@ public class BaconBlocks {
 	public static Block north;
 	public static Block south;
 
+	// Add Machines
+	public static Block condenserIdle;
+	public static Block condenserActive;
+	
 	//add Portal block
 	//public static Block port;
 
@@ -221,6 +226,10 @@ public class BaconBlocks {
 		asphaltStairs = new StairBacon(BlockIDs.asphaltStairs, BaconBlocks.asphalt, 0).setUnlocalizedName("asphaltStairs");
 		ringtreePlankStairs = new StairBacon(BlockIDs.ringtreePlankStairs, BaconBlocks.ringtreePlanks, 0).setUnlocalizedName("ringtreePlankStairs");
 		spheretreePlankStairs = new StairBacon(BlockIDs.spheretreePlankStairs, BaconBlocks.spheretreePlanks, 0).setUnlocalizedName("spheretreePlankStairs");
+		
+		// Initialize Machine Blocks
+		condenserIdle = new BlockCondenser(BlockIDs.condenserIdle, false).setUnlocalizedName("condenserIdle").setCreativeTab(Bacon.tabSubItems);
+		condenserActive = new BlockCondenser(BlockIDs.condenserActive, true).setUnlocalizedName("condenserActive").setCreativeTab(Bacon.tabSubItems);
 
 		//initialize portal
 		//port = new BlockPort(834, 0);
@@ -252,6 +261,8 @@ public class BaconBlocks {
 		GameRegistry.registerBlock(stalagmiteBase, "stalagmiteBase");
 		GameRegistry.registerBlock(ringtreePlanks, "ringtreePlanks");
 		GameRegistry.registerBlock(spheretreePlanks, "spheretreePlanks");
+		OreDictionary.registerOre("plankWood", spheretreePlanks);
+		OreDictionary.registerOre("plankWood", ringtreePlanks);
 		GameRegistry.registerBlock(spheretreeHeart, "spheretreeHeart");
 		GameRegistry.registerBlock(ringtree, "ringtree");
 		GameRegistry.registerBlock(spheretreeLeaves, "spheretreeLeaves");
@@ -313,6 +324,9 @@ public class BaconBlocks {
 		GameRegistry.registerBlock(north, "north");
 		GameRegistry.registerBlock(south, "south");
 
+		GameRegistry.registerBlock(condenserIdle, "condenserIdle");
+		GameRegistry.registerBlock(condenserActive, "condenserActive");
+		
 		//register portal block
 		//GameRegistry.registerBlock(port, "port");
 
@@ -414,6 +428,9 @@ public class BaconBlocks {
 		LanguageRegistry.addName(west, "Wester");
 		LanguageRegistry.addName(north, "Norther");
 		LanguageRegistry.addName(south, "Souther");
+		
+		LanguageRegistry.addName(condenserIdle, "Condenser");
+		LanguageRegistry.addName(condenserActive, "Condenser");
 
 		//* -------------------------------------------------------------------------------------- SET BLOCK HARVEST LEVELS----------------------------------------------------
 

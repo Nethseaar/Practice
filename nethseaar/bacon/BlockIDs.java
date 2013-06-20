@@ -91,6 +91,8 @@ public class BlockIDs {
 	public static int ringtreePlankStairsDefault = 3540;
 	public static int spheretreePlankStairsDefault = 3541;
 	
+	public static int condenserIdleDefault = 3561;
+	public static int condenserActiveDefault = 3562;
 // current block IDs
 	
 	public static int darknessOre = 4080;
@@ -176,5 +178,8 @@ public class BlockIDs {
 	public static int asphaltStairs = 3539;
 	public static int ringtreePlankStairs = 3540;
 	public static int spheretreePlankStairs = 3541;
+	
+	public static int condenserIdle = 3561;
+	public static int condenserActive = 3562;
 	
 }

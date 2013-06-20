@@ -9,6 +9,7 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.EnumHelperClient;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class BaconItems {
 	
@@ -126,8 +127,8 @@ public class BaconItems {
 					GameRegistry.registerItem(hex,  "Bacon" + (hex.getUnlocalizedName().substring(5)));
 					GameRegistry.registerItem(bitumenChunk, "bitumenChunk");
 					GameRegistry.registerItem(bitumenInBucket, "bitumenInBucket");
-					GameRegistry.registerItem(spheretreeStick, "spheretreeStick");
-					GameRegistry.registerItem(ringtreeStick, "ringtreeStick");
+					OreDictionary.registerOre("stickWood", ringtreeStick);
+					OreDictionary.registerOre("stickWood", spheretreeStick);
 					GameRegistry.registerItem(bucketBitumen, "bucketBitumen");
 					
 					GameRegistry.registerItem(flintTool, "flintTool");
