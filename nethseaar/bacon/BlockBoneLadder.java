@@ -19,7 +19,7 @@ public class BlockBoneLadder extends BlockLadder {
 
 	protected BlockBoneLadder(int id, int texture) {
 		super(id);
-		this.setCreativeTab(CreativeTabs.tabDecorations);
+		this.setCreativeTab(Bacon.tabSubItems);
 		this.setHardness(0.0F);
 		this.setStepSound(Block.soundWoodFootstep);
 	}

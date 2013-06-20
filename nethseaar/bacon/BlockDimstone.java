@@ -21,7 +21,7 @@ public class BlockDimstone extends BlockBacon
 		setStepSound(Block.soundStoneFootstep);
 		setHardness(3.0F);
 		setResistance(5.0F);
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Bacon.tabInert);
 		setLightValue(0.5F);
 	}
 
@@ -31,14 +31,16 @@ public class BlockDimstone extends BlockBacon
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister par1IconRegister)
 	{    	   
-		icons = new Icon[6];
+		icons = new Icon[12];
 
-		icons[0] = par1IconRegister.registerIcon("dimstone");
-		icons[1] = par1IconRegister.registerIcon("crackedDimstone");
-		icons[2] = par1IconRegister.registerIcon("condensedDimstone");
-		icons[3] = par1IconRegister.registerIcon("smoothDimstone");
-		icons[4] = par1IconRegister.registerIcon("dimstoneBrick");
-		icons[5] = par1IconRegister.registerIcon("carvedDimstone");
+		String[] iconNames = {
+				"dimstone", "crackedDimstone", "condensedDimstone", "smoothDimstone", "dimstoneBrick", "carvedDimstone",
+				"floatstone", "crackedFloatstone", "condensedFloatstone", "smoothFloatstone", "floatstoneBrick", "carvedFloatstone"
+				};
+		
+		for (int i = 0; i < iconNames.length; i++){
+			icons[i] = par1IconRegister.registerIcon(iconNames[i]);
+		}
 	}
 
 
@@ -59,7 +61,7 @@ public class BlockDimstone extends BlockBacon
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
 	{
-		for (int var4 = 0; var4 < 6; ++var4)
+		for (int var4 = 0; var4 < 12; ++var4)
 		{
 			par3List.add(new ItemStack(par1, 1, var4));
 		}

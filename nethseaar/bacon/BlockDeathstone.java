@@ -24,19 +24,19 @@ public class BlockDeathstone extends Block {
 		setStepSound(Block.soundStoneFootstep);
 		setHardness(4.0F);
 		setResistance(5.0F);
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Bacon.tabActive);
 		setLightValue(1.0F);
 	}
-	
-    public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
-    {
-        float f = 0.0625F;
-        return AxisAlignedBB.getAABBPool().getAABB((double)((float)par2 + f), (double)par3, (double)((float)par4 + f), (double)((float)(par2 + 1) - f), (double)((float)(par3 + 1) - f), (double)((float)(par4 + 1) - f));
-    }
+
+	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+	{
+		float f = 0.0625F;
+		return AxisAlignedBB.getAABBPool().getAABB((double)((float)par2 + f), (double)par3, (double)((float)par4 + f), (double)((float)(par2 + 1) - f), (double)((float)(par3 + 1) - f), (double)((float)(par4 + 1) - f));
+	}
 
 	public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
 	{
-        par5Entity.attackEntityFrom(DamageSource.lava, 3);
+		par5Entity.attackEntityFrom(DamageSource.lava, 3);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -45,15 +45,16 @@ public class BlockDeathstone extends Block {
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister par1IconRegister)
 	{    	   
-		icons = new Icon[5];
-
-		icons[0] = par1IconRegister.registerIcon("deathstone");
-		icons[1] = par1IconRegister.registerIcon("condensedDeathstone");
-		icons[2] = par1IconRegister.registerIcon("smoothDeathstone");
-		icons[3] = par1IconRegister.registerIcon("deathstoneBrick");
-		icons[4] = par1IconRegister.registerIcon("carvedDeathstone");
+		icons = new Icon[6];
+		
+		String[] iconNames = {
+				"deathstone", "crackedDeathstone" , "condensedDeathstone", "smoothDeathstone", "deathstoneBrick", "carvedDeathstone"
+				};
+		
+		for (int i = 0; i < iconNames.length; i++){
+			icons[i] = par1IconRegister.registerIcon(iconNames[i]);
+		}
 	}
-
 
 	@SideOnly(Side.CLIENT)
 	public Icon getIcon(int par1, int par2) {
@@ -66,13 +67,13 @@ public class BlockDeathstone extends Block {
 
 	public int damageDropped(int metadata)
 	{
-	     return metadata;
+		return metadata;
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
 	{
-		for (int var4 = 0; var4 < 5; ++var4)
+		for (int var4 = 0; var4 < 6; ++var4)
 		{
 			par3List.add(new ItemStack(par1, 1, var4));
 		}

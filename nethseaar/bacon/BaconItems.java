@@ -7,9 +7,14 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.EnumHelperClient;
 
 public class BaconItems {
+	
+	public static String[] hexNames = {
+		"Darkstone Hex", "Dimstone Hex", "Lightstone Hex", "Springstone Hex", "Floatstone Hex", "Deathstone Hex"
+	};
 	
 	// Add materials
 			public static final EnumToolMaterial toolFLINT = EnumHelperClient.addToolMaterial("oneFLINT", 1, 15, 1.0F, 0, 0);
@@ -18,12 +23,7 @@ public class BaconItems {
 		public static Item darkness;
 		public static Item gravity;
 		public static Item lethargy;
-		public static Item darkstoneHex;
-		public static Item dimstoneHex;
-		public static Item lightstoneHex;
-		public static Item deathstoneHex;
-		public static Item floatstoneHex;
-		public static Item springstoneHex;
+		public static Item hex;
 		public static Item bitumenChunk;
 		public static Item greenBerry;
 		public static Item shriveledGreenBerry;
@@ -72,24 +72,19 @@ public class BaconItems {
 			
 			//* --------------------------------------------------------------------------------------INITIALIZE ITEMS----------------------------------------------------
 			//item initialization
-			darkness = new ItemBacon(5000).setMaxStackSize(64).setUnlocalizedName("darkness").setCreativeTab(CreativeTabs.tabMaterials);
-			gravity = new ItemBacon(5001).setMaxStackSize(64).setUnlocalizedName("gravity").setCreativeTab(CreativeTabs.tabMaterials);
-			lethargy = new ItemBacon(5002).setMaxStackSize(64).setUnlocalizedName("lethargy").setCreativeTab(CreativeTabs.tabMaterials);
-			darkstoneHex = new ItemBacon(5003).setMaxStackSize(64).setUnlocalizedName("darkstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
-			dimstoneHex = new ItemBacon(5004).setMaxStackSize(64).setUnlocalizedName("dimstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
-			lightstoneHex = new ItemBacon(5005).setMaxStackSize(64).setUnlocalizedName("lightstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
-			springstoneHex = new ItemBacon(5008).setMaxStackSize(64).setUnlocalizedName("springstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
-			floatstoneHex = new ItemBacon(5007).setMaxStackSize(64).setUnlocalizedName("floatstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
-			deathstoneHex = new ItemBacon(5006).setMaxStackSize(64).setUnlocalizedName("deathstoneHex").setCreativeTab(CreativeTabs.tabMaterials);
-			bitumenChunk = new ItemBacon (5009).setMaxStackSize(64).setUnlocalizedName("bitumenChunk").setCreativeTab(CreativeTabs.tabMaterials);
-			bitumenInBucket = new ItemBacon(3328).setCreativeTab(CreativeTabs.tabMisc).setUnlocalizedName("bitumenInBucket").setContainerItem(Item.bucketEmpty).setMaxStackSize(1);
-			greenBerry = new ItemBacon(5010).setMaxStackSize(64).setUnlocalizedName("greenBerry").setCreativeTab(CreativeTabs.tabMaterials);
-			compactGreenBerry = new ItemBacon(5011).setMaxStackSize(64).setUnlocalizedName("compactGreenBerry").setCreativeTab(CreativeTabs.tabMaterials);
-			compactPurpleBerry = new ItemBacon(5012).setMaxStackSize(64).setUnlocalizedName("compactPurpleBerry").setCreativeTab(CreativeTabs.tabMaterials);
-			shriveledGreenBerry = new ItemBacon(5013).setMaxStackSize(64).setUnlocalizedName("shriveledGreenBerry").setCreativeTab(CreativeTabs.tabMaterials);
-			shriveledPurpleBerry = new ItemBacon(5014).setMaxStackSize(64).setUnlocalizedName("shriveledPurpleBerry").setCreativeTab(CreativeTabs.tabMaterials);
-			spheretreeStick = new ItemBacon(5044).setMaxStackSize(64).setUnlocalizedName("spheretreeStick").setCreativeTab(CreativeTabs.tabMaterials);
-			ringtreeStick = new ItemBacon(5045).setMaxStackSize(64).setUnlocalizedName("ringtreeStick").setCreativeTab(CreativeTabs.tabMaterials);
+			darkness = new ItemBacon(5000).setMaxStackSize(64).setUnlocalizedName("darkness").setCreativeTab(Bacon.tabSubItems);
+			gravity = new ItemBacon(5001).setMaxStackSize(64).setUnlocalizedName("gravity").setCreativeTab(Bacon.tabSubItems);
+			lethargy = new ItemBacon(5002).setMaxStackSize(64).setUnlocalizedName("lethargy").setCreativeTab(Bacon.tabSubItems);
+			hex = new ItemHex(5003).setMaxStackSize(64).setUnlocalizedName("hex").setCreativeTab(Bacon.tabSubItems);
+			bitumenChunk = new ItemBacon (5009).setMaxStackSize(64).setUnlocalizedName("bitumenChunk").setCreativeTab(Bacon.tabSubItems);
+			bitumenInBucket = new ItemBacon(3328).setCreativeTab(Bacon.tabSubItems).setUnlocalizedName("bitumenInBucket").setContainerItem(Item.bucketEmpty).setMaxStackSize(1);
+			greenBerry = new ItemBacon(5010).setMaxStackSize(64).setUnlocalizedName("greenBerry").setCreativeTab(Bacon.tabSubItems);
+			compactGreenBerry = new ItemBacon(5011).setMaxStackSize(64).setUnlocalizedName("compactGreenBerry").setCreativeTab(Bacon.tabSubItems);
+			compactPurpleBerry = new ItemBacon(5012).setMaxStackSize(64).setUnlocalizedName("compactPurpleBerry").setCreativeTab(Bacon.tabSubItems);
+			shriveledGreenBerry = new ItemBacon(5013).setMaxStackSize(64).setUnlocalizedName("shriveledGreenBerry").setCreativeTab(Bacon.tabSubItems);
+			shriveledPurpleBerry = new ItemBacon(5014).setMaxStackSize(64).setUnlocalizedName("shriveledPurpleBerry").setCreativeTab(Bacon.tabSubItems);
+			spheretreeStick = new ItemBacon(5044).setMaxStackSize(64).setUnlocalizedName("spheretreeStick").setCreativeTab(Bacon.tabSubItems);
+			ringtreeStick = new ItemBacon(5045).setMaxStackSize(64).setUnlocalizedName("ringtreeStick").setCreativeTab(Bacon.tabSubItems);
 			bucketBitumen = new ItemBucketBitumen(3329).setUnlocalizedName("bitumenBucket");
 			
 			// Initialize pickaxes
@@ -128,12 +123,7 @@ public class BaconItems {
 					GameRegistry.registerItem(darkness, "Darkness");
 					GameRegistry.registerItem(gravity, "Gravity");
 					GameRegistry.registerItem(lethargy, "Lethargy");
-					GameRegistry.registerItem(darkstoneHex, "darkstoneHex");
-					GameRegistry.registerItem(dimstoneHex, "dimstoneHex");
-					GameRegistry.registerItem(lightstoneHex, "lightstoneHex");
-					GameRegistry.registerItem(springstoneHex, "springstoneHex");
-					GameRegistry.registerItem(floatstoneHex, "floatstoneHex");
-					GameRegistry.registerItem(deathstoneHex, "deathstoneHex");
+					GameRegistry.registerItem(hex,  "Bacon" + (hex.getUnlocalizedName().substring(5)));
 					GameRegistry.registerItem(bitumenChunk, "bitumenChunk");
 					GameRegistry.registerItem(bitumenInBucket, "bitumenInBucket");
 					GameRegistry.registerItem(spheretreeStick, "spheretreeStick");
@@ -173,12 +163,9 @@ public class BaconItems {
 					LanguageRegistry.addName(darkness, "Darkness");
 					LanguageRegistry.addName(gravity, "Gravity");
 					LanguageRegistry.addName(lethargy, "Lethargy");
-					LanguageRegistry.addName(darkstoneHex, "Darkstone Hex");
-					LanguageRegistry.addName(dimstoneHex, "Dimstone Hex");
-					LanguageRegistry.addName(lightstoneHex, "Lightstone Hex");
-					LanguageRegistry.addName(springstoneHex, "Springtstone Hex");
-					LanguageRegistry.addName(floatstoneHex, "Floatstone Hex");
-					LanguageRegistry.addName(deathstoneHex, "Deathstone Hex");
+					for (int i = 0; i < hexNames.length; i++)
+					{LanguageRegistry.addName(new ItemStack(hex, 1, i), hexNames[i]);
+					}	
 					LanguageRegistry.addName(bitumenChunk, "Bitumen Chunk");
 					LanguageRegistry.addName(bitumenInBucket, "Bitumen in Bucket");
 					LanguageRegistry.addName(spheretreeStick, "Spherewood Stick");

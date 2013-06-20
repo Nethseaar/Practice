@@ -32,7 +32,7 @@ import net.minecraftforge.common.DimensionManager;
 public class Bacon {
 
 	EventManager eventmanager = new EventManager();
-	
+
 	@Instance("Bacon")
 	public static Bacon instance;
 
@@ -45,23 +45,50 @@ public class Bacon {
 		Config.preInit(event);
 	}
 
+	public static CreativeTabs tabInert = new CreativeTabs("tabInert")
+	{
+		public ItemStack getIconItemStack()
+		{
+			return new ItemStack(BaconBlocks.darkstone, 1, 0);
+		}
+	};
+
+	public static CreativeTabs tabActive = new CreativeTabs("tabActive")
+	{
+		public ItemStack getIconItemStack()
+		{
+			return new ItemStack(BaconBlocks.deathstone, 1, 0);
+		}
+	};
+
+	public static CreativeTabs tabSubItems = new CreativeTabs("tabSubItems")
+	{
+		public ItemStack getIconItemStack()
+		{
+			return new ItemStack(BaconItems.hex, 1, 0);
+		}
+	};
+
 	@Init
 	public void load(FMLInitializationEvent event) {
-		
+
 		MinecraftForge.EVENT_BUS.register(new HandlerBitumenBucket());
-		
+
 		BaconBlocks.init();
 		BaconItems.init();
 		BaconRecipes.init();
-		
+
 		GameRegistry.registerWorldGenerator(eventmanager);
 		GameRegistry.registerFuelHandler(new FuelHandler());
 
-		
-//		DimensionManager.registerProviderType(dimension, WorldProviderBacon.class, false);
-//		DimensionManager.registerDimension(dimension, dimension);
-//		baconBiome = new BiomeGenBacon(80).setColor(2900485).setBiomeName("Bacon!").setDisableRain().setTemperatureRainfall(1F, 0F).setMinMaxHeight(0.1F, 1F);
-//		
+		LanguageRegistry.instance().addStringLocalization("itemGroup.tabInert", "en_US", "Subterrain Blocks I");
+		LanguageRegistry.instance().addStringLocalization("itemGroup.tabActive", "en_US", "Subterrain Blocks II");
+		LanguageRegistry.instance().addStringLocalization("itemGroup.tabSubItems", "en_US", "Subterrain Blocks III");
+
+		//		DimensionManager.registerProviderType(dimension, WorldProviderBacon.class, false);
+		//		DimensionManager.registerDimension(dimension, dimension);
+		//		baconBiome = new BiomeGenBacon(80).setColor(2900485).setBiomeName("Bacon!").setDisableRain().setTemperatureRainfall(1F, 0F).setMinMaxHeight(0.1F, 1F);
+		//		
 		proxy.registerRenderers();		
 	}
 

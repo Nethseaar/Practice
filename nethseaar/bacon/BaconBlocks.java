@@ -14,15 +14,18 @@ import net.minecraftforge.common.MinecraftForge;
 public class BaconBlocks {
 
 	public static String[] darkstoneNames = {
-		"Darkstone", "Cracked Darkstone", "Condensed Darkstone", "Smooth Darkstone", "Darkstone Brick", "Carved Darkstone"
+		"Darkstone", "Cracked Darkstone", "Condensed Darkstone", "Smooth Darkstone", "Darkstone Brick", "Carved Darkstone", 
+		"Springstone*", "Cracked Springstone*", "Condensed Springstone*", "Smooth Springstone*", "Springstone Brick*", "Carved Springstone*"
 	};
 
 	public static String[] dimstoneNames = {
-		"Dimstone", "Cracked Dimstone", "Condensed Dimstone", "Smooth Dimstone", "Dimstone Brick", "Carved Dimstone"
+		"Dimstone", "Cracked Dimstone", "Condensed Dimstone", "Smooth Dimstone", "Dimstone Brick", "Carved Dimstone",
+		"Floatstone*", "Cracked Floatstone*", "Condensed Floatstone*", "Smooth Floatstone*", "Floatstone Brick*", "Carved Floatstone*"
 	};
 
 	public static String[] lightstoneNames = {
-		"Lightstone", "Cracked Lightstone", "Condensed Lightstone", "Smooth Lightstone", "Lightstone Brick", "Carved Lightstone"
+		"Lightstone", "Cracked Lightstone", "Condensed Lightstone", "Smooth Lightstone", "Lightstone Brick", "Carved Lightstone",
+		"Deathstone*", "Cracked Deathstone*", "Condensed Deathstone*", "Smooth Deathstone*", "Deathstone Brick*", "Carved Deathstone*"
 	};
 
 	public static String[] springstoneNames = {
@@ -34,9 +37,13 @@ public class BaconBlocks {
 	};
 
 	public static String[] deathstoneNames = {
-		"Deathstone", "Cracked Deathstone", "Condensed Deathstone", "Smooth Deathstone", "Deathstone Brick", "Carved Deathstone"
+		"Deathstone", "Cracked Deathstone**", "Condensed Deathstone", "Smooth Deathstone", "Deathstone Brick", "Carved Deathstone"
 	};
 
+	public static String[] oreNames = {
+		"Darkness Ore", "Gravity Ore", "Lethargy Ore", "Bitumen Ore"
+	};
+	
 	//add ores
 	public static Block darknessOre;
 	public static Block gravityOre;
@@ -86,32 +93,32 @@ public class BaconBlocks {
 	public static Block stalagmiteLevelFiveBase;
 
 	//add Stairs	
-	public static BlockStairs darkstoneStairs;
-	public static BlockStairs dimstoneStairs;
-	public static BlockStairs lightstoneStairs;
-	public static BlockStairs springstoneStairs;
-	public static BlockStairs floatstoneStairs;
-	public static BlockStairs deathstoneStairs;
+	public static Block darkstoneStairs;
+	public static Block dimstoneStairs;
+	public static Block lightstoneStairs;
+	public static Block springstoneStairs;
+	public static Block floatstoneStairs;
+	public static Block deathstoneStairs;
 
-	//add Stairs	
-	public static BlockStairs smoothDarkstoneStairs;
-	public static BlockStairs smoothDimstoneStairs;
-	public static BlockStairs smoothLightstoneStairs;
-	public static BlockStairs smoothSpringstoneStairs;
-	public static BlockStairs smoothFloatstoneStairs;
-	public static BlockStairs smoothDeathstoneStairs;
+	//add 	
+	public static Block smoothDarkstoneStairs;
+	public static Block smoothDimstoneStairs;
+	public static Block smoothLightstoneStairs;
+	public static Block smoothSpringstoneStairs;
+	public static Block smoothFloatstoneStairs;
+	public static Block smoothDeathstoneStairs;
 
-	//add Stairs	
-	public static BlockStairs darkstoneBrickStairs;
-	public static BlockStairs dimstoneBrickStairs;
-	public static BlockStairs lightstoneBrickStairs;
-	public static BlockStairs springstoneBrickStairs;
-	public static BlockStairs floatstoneBrickStairs;
-	public static BlockStairs deathstoneBrickStairs;
+	//add 	
+	public static Block darkstoneBrickStairs;
+	public static Block dimstoneBrickStairs;
+	public static Block lightstoneBrickStairs;
+	public static Block springstoneBrickStairs;
+	public static Block floatstoneBrickStairs;
+	public static Block deathstoneBrickStairs;
 
-	public static BlockStairs asphaltStairs;
-	public static BlockStairs spheretreePlankStairs;
-	public static BlockStairs ringtreePlankStairs;
+	public static Block asphaltStairs;
+	public static Block spheretreePlankStairs;
+	public static Block ringtreePlankStairs;
 
 
 	//add direction blocks
@@ -138,34 +145,34 @@ public class BaconBlocks {
 		// initialize vanilla/organic blocks
 		stoneWorkbench = new BlockStoneWorkbench(BlockIDs.stoneWorkbench).setUnlocalizedName("stoneworkbench");
 		boneLadder = new BlockBoneLadder(BlockIDs.boneLadder, 11).setUnlocalizedName("boneladder");
-		asphalt = new BlockAsphalt(BlockIDs.asphalt, Material.rock).setUnlocalizedName("asphalt").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		endObsidian = new BlockBacon(BlockIDs.endObsidian, Material.rock).setUnlocalizedName("endObsidian").setStepSound(Block.soundStoneFootstep).setHardness(8.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		stalagmite = new BlockStalagmite(BlockIDs.stalagmite, Material.rock).setUnlocalizedName("stalagmite").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		stalagmiteBase = new BlockStalagmiteBase(BlockIDs.stalagmiteBase, Material.rock).setUnlocalizedName("stalagmiteBase").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		ringtreePlanks = new BlockBacon(BlockIDs.ringtreePlanks, Material.wood).setUnlocalizedName("ringtreePlanks").setStepSound(Block.soundWoodFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		spheretreePlanks = new BlockBacon(BlockIDs.spheretreePlanks, Material.wood).setUnlocalizedName("spheretreePlanks").setStepSound(Block.soundWoodFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		spheretreeHeart = new BlockBacon(BlockIDs.spheretreeHeart, Material.wood).setUnlocalizedName("spheretreeHeart").setStepSound(Block.soundWoodFootstep).setHardness(15.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		ringtree = new BlockRingtree(BlockIDs.ringtree, Material.wood).setUnlocalizedName("ringtreeside").setStepSound(Block.soundWoodFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		spheretreeLeaves = new BlockBacon(BlockIDs.spheretreeLeaves, Material.leaves).setUnlocalizedName("spheretreeLeaves").setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabDecorations);
-		spheretreeDeepwood = new BlockSpheretreeDeepwood(BlockIDs.spheretreeDeepwood, Material.wood).setUnlocalizedName("spheretreeDeepwood").setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		spheretreeBranchwood = new BlockSpheretreeBranchwood(BlockIDs.spheretreeBranchwood, Material.wood).setUnlocalizedName("spheretreeBranchwood").setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
+		asphalt = new BlockAsphalt(BlockIDs.asphalt, Material.rock).setUnlocalizedName("asphalt").setStepSound(Block.soundStoneFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(Bacon.tabActive);
+		endObsidian = new BlockBacon(BlockIDs.endObsidian, Material.rock).setUnlocalizedName("endObsidian").setStepSound(Block.soundStoneFootstep).setHardness(8.0F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalagmite = new BlockStalagmite(BlockIDs.stalagmite, Material.rock).setUnlocalizedName("stalagmite").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalagmiteBase = new BlockStalagmiteBase(BlockIDs.stalagmiteBase, Material.rock).setUnlocalizedName("stalagmiteBase").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		ringtreePlanks = new BlockBacon(BlockIDs.ringtreePlanks, Material.wood).setUnlocalizedName("ringtreePlanks").setStepSound(Block.soundWoodFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		spheretreePlanks = new BlockBacon(BlockIDs.spheretreePlanks, Material.wood).setUnlocalizedName("spheretreePlanks").setStepSound(Block.soundWoodFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		spheretreeHeart = new BlockBacon(BlockIDs.spheretreeHeart, Material.wood).setUnlocalizedName("spheretreeHeart").setStepSound(Block.soundWoodFootstep).setHardness(15.0F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		ringtree = new BlockRingtree(BlockIDs.ringtree, Material.wood).setUnlocalizedName("ringtreeside").setStepSound(Block.soundWoodFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		spheretreeLeaves = new BlockBacon(BlockIDs.spheretreeLeaves, Material.leaves).setUnlocalizedName("spheretreeLeaves").setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		spheretreeDeepwood = new BlockSpheretreeDeepwood(BlockIDs.spheretreeDeepwood, Material.wood).setUnlocalizedName("spheretreeDeepwood").setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		spheretreeBranchwood = new BlockSpheretreeBranchwood(BlockIDs.spheretreeBranchwood, Material.wood).setUnlocalizedName("spheretreeBranchwood").setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
 		lantern = new BlockLantern(BlockIDs.lantern, 0).setUnlocalizedName("lantern").setLightValue(0.9375F);
 		boneTorch = new BlockBoneTorch(BlockIDs.boneTorch, 1).setUnlocalizedName("boneTorch").setLightValue(0.9375F);
-		brainMushroom = new BlockBrainMushroom(BlockIDs.brainMushroom, "brainMushroom").setUnlocalizedName("brainMushroom").setCreativeTab(CreativeTabs.tabDecorations);
+		brainMushroom = new BlockBrainMushroom(BlockIDs.brainMushroom, "brainMushroom").setUnlocalizedName("brainMushroom").setCreativeTab(Bacon.tabSubItems);
 		bitumenFlowing = new BlockBitumenFlowing(BlockIDs.bitumenStill - 1, Material.water).setUnlocalizedName("bitumenFlowing");
 		bitumenStill = new BlockBitumenStationary(BlockIDs.bitumenStill, Material.water).setUnlocalizedName("bitumenStill");
 
 		//initialize stalagmite level blocks
-		stalagmiteLevelTwo = new BlockStalagmiteLevelTwo(BlockIDs.stalagmiteLevelTwo, Material.rock).setUnlocalizedName("stalagmiteLevelTwo").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		stalagmiteLevelThree = new BlockStalagmiteLevelThree(BlockIDs.stalagmiteLevelThree, Material.rock).setUnlocalizedName("stalagmiteLevelThree").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		stalagmiteLevelFour = new BlockStalagmiteLevelFour(BlockIDs.stalagmiteLevelFour, Material.rock).setUnlocalizedName("stalagmiteLevelFour").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		stalagmiteLevelFive = new BlockStalagmiteLevelFive(BlockIDs.stalagmiteLevelFive, Material.rock).setUnlocalizedName("stalagmiteLevelFive").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
+		stalagmiteLevelTwo = new BlockStalagmiteLevelTwo(BlockIDs.stalagmiteLevelTwo, Material.rock).setUnlocalizedName("stalagmiteLevelTwo").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalagmiteLevelThree = new BlockStalagmiteLevelThree(BlockIDs.stalagmiteLevelThree, Material.rock).setUnlocalizedName("stalagmiteLevelThree").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalagmiteLevelFour = new BlockStalagmiteLevelFour(BlockIDs.stalagmiteLevelFour, Material.rock).setUnlocalizedName("stalagmiteLevelFour").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalagmiteLevelFive = new BlockStalagmiteLevelFive(BlockIDs.stalagmiteLevelFive, Material.rock).setUnlocalizedName("stalagmiteLevelFive").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
 
 		//initialize stalagmite base level blocks
-		stalagmiteLevelTwoBase = new BlockStalagmiteLevelTwoBase(BlockIDs.stalagmiteLevelTwoBase, Material.rock).setUnlocalizedName("stalagmiteLevelTwoBase").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		stalagmiteLevelThreeBase = new BlockStalagmiteLevelThreeBase(BlockIDs.stalagmiteLevelThreeBase, Material.rock).setUnlocalizedName("stalagmiteLevelThreeBase").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		stalagmiteLevelFourBase = new BlockStalagmiteLevelFourBase(BlockIDs.stalagmiteLevelFourBase, Material.rock).setUnlocalizedName("stalagmiteLevelFourBase").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		stalagmiteLevelFiveBase = new BlockStalagmiteLevelFiveBase(BlockIDs.stalagmiteLevelFiveBase, Material.rock).setUnlocalizedName("stalagmiteLevelFiveBase").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
+		stalagmiteLevelTwoBase = new BlockStalagmiteLevelTwoBase(BlockIDs.stalagmiteLevelTwoBase, Material.rock).setUnlocalizedName("stalagmiteLevelTwoBase").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalagmiteLevelThreeBase = new BlockStalagmiteLevelThreeBase(BlockIDs.stalagmiteLevelThreeBase, Material.rock).setUnlocalizedName("stalagmiteLevelThreeBase").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalagmiteLevelFourBase = new BlockStalagmiteLevelFourBase(BlockIDs.stalagmiteLevelFourBase, Material.rock).setUnlocalizedName("stalagmiteLevelFourBase").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalagmiteLevelFiveBase = new BlockStalagmiteLevelFiveBase(BlockIDs.stalagmiteLevelFiveBase, Material.rock).setUnlocalizedName("stalagmiteLevelFiveBase").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
 
 
 		//initialize stone blocks
@@ -176,44 +183,44 @@ public class BaconBlocks {
 		floatstone = new BlockFloatstone(BlockIDs.floatstone, Material.rock).setUnlocalizedName("floatstone");
 		deathstone = new BlockDeathstone(BlockIDs.deathstone, Material.cactus).setUnlocalizedName("deathstone");
 
-		crackedDeathstone = new BlockCrackedDeathstone(BlockIDs.crackedDeathstone, Material.rock).setUnlocalizedName("crackedDeathstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F);
+		crackedDeathstone = new BlockCrackedDeathstone(BlockIDs.crackedDeathstone, Material.rock).setUnlocalizedName("crackedDeathstone").setStepSound(Block.soundStoneFootstep).setHardness(4.0F).setResistance(5.0F).setCreativeTab(Bacon.tabActive).setLightValue(1.0F);
 
 		//initialize direction blocks
-		up = new BlockUp(BlockIDs.up,  Material.rock).setUnlocalizedName("up").setStepSound(Block.soundSandFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		down = new BlockDown(BlockIDs.down,  Material.rock).setUnlocalizedName("down").setStepSound(Block.soundSandFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		east = new BlockEast(BlockIDs.east,  Material.rock).setUnlocalizedName("east").setStepSound(Block.soundSandFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		west = new BlockWest(BlockIDs.west,  Material.rock).setUnlocalizedName("west").setStepSound(Block.soundSandFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		north = new BlockNorth(BlockIDs.north,  Material.rock).setUnlocalizedName("north").setStepSound(Block.soundSandFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
-		south = new BlockSouth(BlockIDs.south,  Material.rock).setUnlocalizedName("south").setStepSound(Block.soundSandFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
+		up = new BlockUp(BlockIDs.up,  Material.rock).setUnlocalizedName("up").setStepSound(Block.soundSandFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(Bacon.tabActive);
+		down = new BlockDown(BlockIDs.down,  Material.rock).setUnlocalizedName("down").setStepSound(Block.soundSandFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(Bacon.tabActive);
+		east = new BlockEast(BlockIDs.east,  Material.rock).setUnlocalizedName("east").setStepSound(Block.soundSandFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(Bacon.tabActive);
+		west = new BlockWest(BlockIDs.west,  Material.rock).setUnlocalizedName("west").setStepSound(Block.soundSandFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(Bacon.tabActive);
+		north = new BlockNorth(BlockIDs.north,  Material.rock).setUnlocalizedName("north").setStepSound(Block.soundSandFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(Bacon.tabActive);
+		south = new BlockSouth(BlockIDs.south,  Material.rock).setUnlocalizedName("south").setStepSound(Block.soundSandFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(Bacon.tabActive);
 
-//		//initialize stone Stairs
-//		darkstoneStairs = new StairBacon(BlockIDs.darkstoneStairs, BaconBlocks.darkstone, 0);
-//		dimstoneStairs = new StairBacon(BlockIDs.dimstoneStairs, BaconBlocks.dimstone, 0);
-//		lightstoneStairs = new StairBacon(BlockIDs.lightstoneStairs, BaconBlocks.lightstone, 0);
-//		springstoneStairs = new StairBacon(BlockIDs.springstoneStairs, BaconBlocks.springstone, 0);
-//		floatstoneStairs = new StairBacon(BlockIDs.floatstoneStairs, BaconBlocks.floatstone, 0);
-//		deathstoneStairs = new StairBacon(BlockIDs.deathstoneStairs, BaconBlocks.deathstone, 0);
-//
-//		//initialize stone Stairs
-//		smoothDarkstoneStairs = new StairBacon(BlockIDs.smoothDarkstoneStairs, BaconBlocks.darkstone, 0);
-//		smoothDimstoneStairs = new StairBacon(BlockIDs.smoothDimstoneStairs, BaconBlocks.dimstone, 0);
-//		smoothLightstoneStairs = new StairBacon(BlockIDs.smoothLightstoneStairs, BaconBlocks.lightstone, 0);
-//		smoothSpringstoneStairs = new StairBacon(BlockIDs.smoothSpringstoneStairs, BaconBlocks.springstone, 0);
-//		smoothFloatstoneStairs = new StairBacon(BlockIDs.smoothFloatstoneStairs, BaconBlocks.floatstone, 0);
-//		smoothDeathstoneStairs = new StairBacon(BlockIDs.smoothDeathstoneStairs, BaconBlocks.deathstone, 0);
-//
-//		//initialize stone Stairs
-//		darkstoneBrickStairs = new StairBacon(BlockIDs.darkstoneBrickStairs, BaconBlocks.darkstone, 0);
-//		dimstoneBrickStairs = new StairBacon(BlockIDs.dimstoneBrickStairs, BaconBlocks.dimstone, 0);
-//		lightstoneBrickStairs = new StairBacon(BlockIDs.lightstoneBrickStairs, BaconBlocks.lightstone, 0);
-//		springstoneBrickStairs = new StairBacon(BlockIDs.springstoneBrickStairs, BaconBlocks.springstone, 0);
-//		floatstoneBrickStairs = new StairBacon(BlockIDs.floatstoneBrickStairs, BaconBlocks.floatstone, 0);
-//		deathstoneBrickStairs = new StairBacon(BlockIDs.deathstoneBrickStairs, BaconBlocks.deathstone, 0);
-//
-//		//initialize vanilla/organic Stairs
-//		asphaltStairs = new StairBacon(BlockIDs.asphaltStairs, BaconBlocks.asphalt, 0);
-//		ringtreePlankStairs = new StairBacon(BlockIDs.ringtreePlankStairs, BaconBlocks.ringtreePlanks, 0);
-//		spheretreePlankStairs = new StairBacon(BlockIDs.spheretreePlankStairs, BaconBlocks.spheretreePlanks, 0);
+		//initialize stone Stairs
+		darkstoneStairs = new StairBacon(BlockIDs.darkstoneStairs, BaconBlocks.darkstone, 0).setUnlocalizedName("darkstoneStairs");
+		dimstoneStairs = new StairBacon(BlockIDs.dimstoneStairs, BaconBlocks.dimstone, 0).setUnlocalizedName("dimstoneStairs");
+		lightstoneStairs = new StairBacon(BlockIDs.lightstoneStairs, BaconBlocks.lightstone, 0).setUnlocalizedName("lightstoneStairs");
+		springstoneStairs = new StairBacon(BlockIDs.springstoneStairs, BaconBlocks.springstone, 0).setUnlocalizedName("springstoneStairs");
+		floatstoneStairs = new StairBacon(BlockIDs.floatstoneStairs, BaconBlocks.floatstone, 0).setUnlocalizedName("floatstoneStairs");
+		deathstoneStairs = new StairBacon(BlockIDs.deathstoneStairs, BaconBlocks.deathstone, 0).setUnlocalizedName("deathstoneStairs");
+
+		//initialize stone Stairs
+		smoothDarkstoneStairs = new StairBacon(BlockIDs.smoothDarkstoneStairs, BaconBlocks.darkstone, 3).setUnlocalizedName("smoothDarkstoneStairs");
+		smoothDimstoneStairs = new StairBacon(BlockIDs.smoothDimstoneStairs, BaconBlocks.dimstone, 3).setUnlocalizedName("smoothDimstoneStairs");
+		smoothLightstoneStairs = new StairBacon(BlockIDs.smoothLightstoneStairs, BaconBlocks.lightstone, 3).setUnlocalizedName("smoothLightstoneStairs");
+		smoothSpringstoneStairs = new StairBacon(BlockIDs.smoothSpringstoneStairs, BaconBlocks.springstone, 3).setUnlocalizedName("smoothSpringstoneStairs");
+		smoothFloatstoneStairs = new StairBacon(BlockIDs.smoothFloatstoneStairs, BaconBlocks.floatstone, 3).setUnlocalizedName("smoothFloatstoneStairs");
+		smoothDeathstoneStairs = new StairBacon(BlockIDs.smoothDeathstoneStairs, BaconBlocks.deathstone, 2).setUnlocalizedName("smoothDeathstoneStairs");
+
+		//initialize stone Stairs
+		darkstoneBrickStairs = new StairBacon(BlockIDs.darkstoneBrickStairs, BaconBlocks.darkstone, 4).setUnlocalizedName("darkstoneBrickStairs");
+		dimstoneBrickStairs = new StairBacon(BlockIDs.dimstoneBrickStairs, BaconBlocks.dimstone, 4).setUnlocalizedName("dimstoneBrickStairs");
+		lightstoneBrickStairs = new StairBacon(BlockIDs.lightstoneBrickStairs, BaconBlocks.lightstone, 4).setUnlocalizedName("lightstoneBrickStairs");
+		springstoneBrickStairs = new StairBacon(BlockIDs.springstoneBrickStairs, BaconBlocks.springstone, 4).setUnlocalizedName("springstoneBrickStairs");
+		floatstoneBrickStairs = new StairBacon(BlockIDs.floatstoneBrickStairs, BaconBlocks.floatstone, 4).setUnlocalizedName("floatstoneBrickStairs");
+		deathstoneBrickStairs = new StairBacon(BlockIDs.deathstoneBrickStairs, BaconBlocks.deathstone, 3).setUnlocalizedName("deathstoneBrickStairs");
+
+		//initialize vanilla/organic Stairs
+		asphaltStairs = new StairBacon(BlockIDs.asphaltStairs, BaconBlocks.asphalt, 0).setUnlocalizedName("asphaltStairs");
+		ringtreePlankStairs = new StairBacon(BlockIDs.ringtreePlankStairs, BaconBlocks.ringtreePlanks, 0).setUnlocalizedName("ringtreePlankStairs");
+		spheretreePlankStairs = new StairBacon(BlockIDs.spheretreePlankStairs, BaconBlocks.spheretreePlanks, 0).setUnlocalizedName("spheretreePlankStairs");
 
 		//initialize portal
 		//port = new BlockPort(834, 0);
@@ -269,34 +276,34 @@ public class BaconBlocks {
 		GameRegistry.registerBlock(stalagmiteLevelFiveBase, "stalagmiteLevelFiveBase");
 
 
-//		//register stone Stairs
-//		GameRegistry.registerBlock(darkstoneStairs, "darkstoneStairs");
-//		GameRegistry.registerBlock(dimstoneStairs, "dimstoneStairs");
-//		GameRegistry.registerBlock(lightstoneStairs, "lightstoneStairs");
-//		GameRegistry.registerBlock(springstoneStairs, "springstoneStairs");
-//		GameRegistry.registerBlock(floatstoneStairs, "floatstoneStairs");
-//		GameRegistry.registerBlock(deathstoneStairs, "deathstoneStairs");
-//		
-//		//register stone Stairs
-//				GameRegistry.registerBlock(smoothDarkstoneStairs, "smoothDarkstoneStairs");
-//				GameRegistry.registerBlock(smoothDimstoneStairs, "smoothDimstoneStairs");
-//				GameRegistry.registerBlock(smoothLightstoneStairs, "smoothLightstoneStairs");
-//				GameRegistry.registerBlock(smoothSpringstoneStairs, "smoothSpringstoneStairs");
-//				GameRegistry.registerBlock(smoothFloatstoneStairs, "smoothFloatstoneStairs");
-//				GameRegistry.registerBlock(smoothDeathstoneStairs, "smoothDeathstoneStairs");
-//				
-//				//register stone Stairs
-//				GameRegistry.registerBlock(darkstoneBrickStairs, "darkstoneBrickStairs");
-//				GameRegistry.registerBlock(dimstoneBrickStairs, "dimstoneBrickStairs");
-//				GameRegistry.registerBlock(lightstoneBrickStairs, "lightstoneBrickStairs");
-//				GameRegistry.registerBlock(springstoneBrickStairs, "springstoneBrickStairs");
-//				GameRegistry.registerBlock(floatstoneBrickStairs, "floatstoneBrickStairs");
-//				GameRegistry.registerBlock(deathstoneBrickStairs, "deathstoneBrickStairs");
-//
-//		//register vanilla/organic Stairs
-//		GameRegistry.registerBlock(asphaltStairs, "asphaltStairs");
-//		GameRegistry.registerBlock(ringtreePlankStairs, "ringtreePlankStairs");
-//		GameRegistry.registerBlock(spheretreePlankStairs, "spheretreePlankStairs");
+		//register stone Stairs
+		GameRegistry.registerBlock(darkstoneStairs, "darkstoneStairs");
+		GameRegistry.registerBlock(dimstoneStairs, "dimstoneStairs");
+		GameRegistry.registerBlock(lightstoneStairs, "lightstoneStairs");
+		GameRegistry.registerBlock(springstoneStairs, "springstoneStairs");
+		GameRegistry.registerBlock(floatstoneStairs, "floatstoneStairs");
+		GameRegistry.registerBlock(deathstoneStairs, "deathstoneStairs");
+
+		//register stone Stairs
+		GameRegistry.registerBlock(smoothDarkstoneStairs, "smoothDarkstoneStairs");
+		GameRegistry.registerBlock(smoothDimstoneStairs, "smoothDimstoneStairs");
+		GameRegistry.registerBlock(smoothLightstoneStairs, "smoothLightstoneStairs");
+		GameRegistry.registerBlock(smoothSpringstoneStairs, "smoothSpringstoneStairs");
+		GameRegistry.registerBlock(smoothFloatstoneStairs, "smoothFloatstoneStairs");
+		GameRegistry.registerBlock(smoothDeathstoneStairs, "smoothDeathstoneStairs");
+
+		//register stone Stairs
+		GameRegistry.registerBlock(darkstoneBrickStairs, "darkstoneBrickStairs");
+		GameRegistry.registerBlock(dimstoneBrickStairs, "dimstoneBrickStairs");
+		GameRegistry.registerBlock(lightstoneBrickStairs, "lightstoneBrickStairs");
+		GameRegistry.registerBlock(springstoneBrickStairs, "springstoneBrickStairs");
+		GameRegistry.registerBlock(floatstoneBrickStairs, "floatstoneBrickStairs");
+		GameRegistry.registerBlock(deathstoneBrickStairs, "deathstoneBrickStairs");
+
+		//register vanilla/organic Stairs
+		GameRegistry.registerBlock(asphaltStairs, "asphaltStairs");
+		GameRegistry.registerBlock(ringtreePlankStairs, "ringtreePlankStairs");
+		GameRegistry.registerBlock(spheretreePlankStairs, "spheretreePlankStairs");
 
 		//register directional blocks
 		GameRegistry.registerBlock(up, "up");
@@ -350,55 +357,55 @@ public class BaconBlocks {
 		LanguageRegistry.addName(bitumenOre, "Bitumen Ore");
 
 		//register stone block names	
-		for (int i = 0; i< lightstoneNames.length; i++)
+		for (int i = 0; i < lightstoneNames.length; i++)
 		{LanguageRegistry.addName(new ItemStack(lightstone, 1, i), lightstoneNames[i]);
 		}
-		for (int i = 0; i< dimstoneNames.length; i++)
+		for (int i = 0; i < dimstoneNames.length; i++)
 		{LanguageRegistry.addName(new ItemStack(dimstone, 1, i), dimstoneNames[i]);
 		}		
-		for (int i = 0; i< darkstoneNames.length; i++)
+		for (int i = 0; i < darkstoneNames.length; i++)
 		{LanguageRegistry.addName(new ItemStack(darkstone, 1, i), darkstoneNames[i]);
 		}
-		for (int i = 0; i< springstoneNames.length; i++)
+		for (int i = 0; i < springstoneNames.length; i++)
 		{LanguageRegistry.addName(new ItemStack(springstone, 1, i), springstoneNames[i]);
 		}		
-		for (int i = 0; i< floatstoneNames.length; i++)
+		for (int i = 0; i < floatstoneNames.length; i++)
 		{LanguageRegistry.addName(new ItemStack(floatstone, 1, i), floatstoneNames[i]);
 		}
-		for (int i = 0; i< deathstoneNames.length; i++)
+		for (int i = 0; i < deathstoneNames.length; i++)
 		{LanguageRegistry.addName(new ItemStack(deathstone, 1, i), deathstoneNames[i]);
 		}		
 
 		LanguageRegistry.addName(crackedDeathstone, "Cracked Deathstone");
 
-//		//register stone Stairs names
-//		LanguageRegistry.addName(darkstoneStairs, "Darkstone Stairs");
-//		LanguageRegistry.addName(dimstoneStairs, "Dimstone Stairs");
-//		LanguageRegistry.addName(lightstoneStairs, "Lightstone Stairs");
-//		LanguageRegistry.addName(springstoneStairs, "Springstone Stairs");
-//		LanguageRegistry.addName(floatstoneStairs, "Floatstone Stairs");
-//		LanguageRegistry.addName(deathstoneStairs, "Deathstone Stairs");
-//		
-//		//register stone Stairs
-//		LanguageRegistry.addName(smoothDarkstoneStairs, "Smooth Darkstone Stairs");
-//		LanguageRegistry.addName(smoothDimstoneStairs, "Smooth Dimstone Stairs");
-//		LanguageRegistry.addName(smoothLightstoneStairs, "Smooth Lightstone Stairs");
-//		LanguageRegistry.addName(smoothSpringstoneStairs, "Smooth Springstone Stairs");
-//		LanguageRegistry.addName(smoothFloatstoneStairs, "Smooth Floatstone Stairs");
-//		LanguageRegistry.addName(smoothDeathstoneStairs, "Smooth Deathstone Stairs");
-//		
-//		//register stone Stairs
-//		LanguageRegistry.addName(darkstoneBrickStairs, "Darkstone Brick Stairs");
-//		LanguageRegistry.addName(dimstoneBrickStairs, "Dimstone Brick Stairs");
-//		LanguageRegistry.addName(lightstoneBrickStairs, "Lightstone Brick Stairs");
-//		LanguageRegistry.addName(springstoneBrickStairs, "Springstone Brick Stairs");
-//		LanguageRegistry.addName(floatstoneBrickStairs, "Floatstone Brick Stairs");
-//		LanguageRegistry.addName(deathstoneBrickStairs, "Deathstone Brick Stairs");
-//
-//		//register vanilla/organic Stairs names
-//		LanguageRegistry.addName(asphaltStairs, "Asphalt Stairs");
-//		LanguageRegistry.addName(ringtreePlankStairs, "Ringtree Plank Stairs");
-//		LanguageRegistry.addName(spheretreePlankStairs, "Spheretree Plank Stairs");
+		//register stone Stairs names
+		LanguageRegistry.addName(darkstoneStairs, "Darkstone Stairs");
+		LanguageRegistry.addName(dimstoneStairs, "Dimstone Stairs");
+		LanguageRegistry.addName(lightstoneStairs, "Lightstone Stairs");
+		LanguageRegistry.addName(springstoneStairs, "Springstone Stairs");
+		LanguageRegistry.addName(floatstoneStairs, "Floatstone Stairs");
+		LanguageRegistry.addName(deathstoneStairs, "Deathstone Stairs");
+
+		//register stone Stairs
+		LanguageRegistry.addName(smoothDarkstoneStairs, "Smooth Darkstone Stairs");
+		LanguageRegistry.addName(smoothDimstoneStairs, "Smooth Dimstone Stairs");
+		LanguageRegistry.addName(smoothLightstoneStairs, "Smooth Lightstone Stairs");
+		LanguageRegistry.addName(smoothSpringstoneStairs, "Smooth Springstone Stairs");
+		LanguageRegistry.addName(smoothFloatstoneStairs, "Smooth Floatstone Stairs");
+		LanguageRegistry.addName(smoothDeathstoneStairs, "Smooth Deathstone Stairs");
+
+		//register stone Stairs
+		LanguageRegistry.addName(darkstoneBrickStairs, "Darkstone Brick Stairs");
+		LanguageRegistry.addName(dimstoneBrickStairs, "Dimstone Brick Stairs");
+		LanguageRegistry.addName(lightstoneBrickStairs, "Lightstone Brick Stairs");
+		LanguageRegistry.addName(springstoneBrickStairs, "Springstone Brick Stairs");
+		LanguageRegistry.addName(floatstoneBrickStairs, "Floatstone Brick Stairs");
+		LanguageRegistry.addName(deathstoneBrickStairs, "Deathstone Brick Stairs");
+
+		//register vanilla/organic Stairs names
+		LanguageRegistry.addName(asphaltStairs, "Asphalt Stairs");
+		LanguageRegistry.addName(ringtreePlankStairs, "Ringtree Plank Stairs");
+		LanguageRegistry.addName(spheretreePlankStairs, "Spheretree Plank Stairs");
 
 		//register directional block names
 		LanguageRegistry.addName(up, "Ascender");
@@ -412,6 +419,7 @@ public class BaconBlocks {
 
 
 		//Set Harvest Level
+		MinecraftForge.setBlockHarvestLevel(bitumenOre, "pickaxe", 0);
 		MinecraftForge.setBlockHarvestLevel(darknessOre, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(gravityOre, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(lethargyOre, "pickaxe", 3);

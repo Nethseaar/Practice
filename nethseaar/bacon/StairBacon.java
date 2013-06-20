@@ -17,28 +17,10 @@ public class StairBacon extends BlockStairs {
 	protected StairBacon(int par1, Block par2Block, int par3) {
 		super(par1, par2Block, par3);
 		// TODO Auto-generated constructor stub
-	}
-	
-	public int quantityDropped(Random random){
-		return 1;
-	}
-
-	public int damageDropped(int metadata)
-	{
-	     return metadata;
-	}
-	
-	@SideOnly(Side.CLIENT)
-	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
-	{
-		for (int var4 = 0; var4 < 21; ++var4)
-		{
-			par3List.add(new ItemStack(par1, 1, var4));
-		}
+		setCreativeTab(Bacon.tabSubItems);
 	}
 	
 	public void updateIcons(IconRegister par1iconregister){
 		this.blockIcon = par1iconregister.registerIcon("Bacon.BLOCK_ID");
 		}
-
 }

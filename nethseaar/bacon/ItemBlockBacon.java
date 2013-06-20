@@ -46,6 +46,36 @@ public class ItemBlockBacon extends ItemBlock
 			name = "carvedDarkstone";
 			break;
 		}
+		case 7:
+		{
+			name = "springstone";
+			break;
+		}
+		case 8:
+		{
+			name = "crackedSpringstone";
+			break;
+		}
+		case 9:
+		{
+			name = "condensedSpringstone";
+			break;
+		}
+		case 10:
+		{
+			name = "smoothSpringstone";
+			break;
+		}
+		case 11:
+		{
+			name = "springstoneBrick";
+			break;
+		}
+		case 12:
+		{
+			name = "carvedSpringstone";
+			break;
+		}
 		default: name = "broken";
 		}
 		return getUnlocalizedName() + "." + name;

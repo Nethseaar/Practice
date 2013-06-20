@@ -15,7 +15,7 @@ public class BlockStoneWorkbench extends BlockWorkbench {
 		setHardness(1.5F);
 		setResistance(10.0F);
 		setStepSound(soundStoneFootstep);
-		setCreativeTab(CreativeTabs.tabDecorations);
+		setCreativeTab(Bacon.tabSubItems);
 	}
 
 

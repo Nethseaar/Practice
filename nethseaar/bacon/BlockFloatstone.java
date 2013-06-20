@@ -24,10 +24,10 @@ public class BlockFloatstone extends Block {
 		setStepSound(Block.soundStoneFootstep);
 		setHardness(3.0F);
 		setResistance(5.0F);
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Bacon.tabActive);
 		setLightValue(0.5F);
 	}
-	
+
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
 	{
 		float f = 0.0625F;
@@ -42,12 +42,13 @@ public class BlockFloatstone extends Block {
 	{    	   
 		icons = new Icon[6];
 
-		icons[0] = par1IconRegister.registerIcon("floatstone");
-		icons[1] = par1IconRegister.registerIcon("crackedFloatstone");
-		icons[2] = par1IconRegister.registerIcon("condensedFloatstone");
-		icons[3] = par1IconRegister.registerIcon("smoothFloatstone");
-		icons[4] = par1IconRegister.registerIcon("floatstoneBrick");
-		icons[5] = par1IconRegister.registerIcon("carvedFloatstone");
+		String[] iconNames = {
+				"floatstone", "crackedFloatstone", "condensedFloatstone", "smoothFloatstone", "floatstoneBrick", "carvedFloatstone",
+		};
+
+		for (int i = 0; i < iconNames.length; i++){
+			icons[i] = par1IconRegister.registerIcon(iconNames[i]);
+		}
 	}
 
 
@@ -62,9 +63,9 @@ public class BlockFloatstone extends Block {
 
 	public int damageDropped(int metadata)
 	{
-	     return metadata;
+		return metadata;
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
 	{

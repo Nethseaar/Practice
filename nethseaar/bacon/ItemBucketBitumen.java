@@ -18,7 +18,7 @@ public class ItemBucketBitumen extends ItemBucket{
 
 	public ItemBucketBitumen(int id) {
 		super(id, BaconBlocks.bitumenFlowing.blockID);
-		setCreativeTab(CreativeTabs.tabMisc);
+		setCreativeTab(Bacon.tabSubItems);
 		setContainerItem(Item.bucketEmpty);
 		setMaxStackSize(1);
 	}
