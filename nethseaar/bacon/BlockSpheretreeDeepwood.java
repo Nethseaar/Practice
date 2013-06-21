@@ -7,6 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Facing;
 import net.minecraft.util.Icon;
@@ -16,9 +17,15 @@ import net.minecraft.world.World;
 public class BlockSpheretreeDeepwood extends Block {
 
 	@SideOnly(Side.CLIENT)
-    private Icon sphereTreeOrigin;
+	private Icon spheretreeSide1;
 	@SideOnly(Side.CLIENT)
-    private Icon sphereTree1Bottom;
+	private Icon spheretreeSide2;
+	@SideOnly(Side.CLIENT)
+	private Icon spheretreeSide3;
+	@SideOnly(Side.CLIENT)
+    private Icon spheretreeOrigin;
+	@SideOnly(Side.CLIENT)
+    private Icon spheretree1Bottom;
 	
         public BlockSpheretreeDeepwood(int id, Material material) {
                 super(id, material);
@@ -28,79 +35,66 @@ public class BlockSpheretreeDeepwood extends Block {
         		setCreativeTab(CreativeTabs.tabBlock);
         }
         
-        
-        /**
-         * Called when a block is placed using its ItemBlock. Args: World, X, Y, Z, side, hitX, hitY, hitZ, block metadata
-         */
-        public int onBlockPlaced(World par1World, int par2, int par3, int par4, int par5, float par6, float par7, float par8, int par9)
+        public int getRenderType()
         {
-            int j1 = par9 & 3;
-            byte b0 = 0;
+            return 31;
+        }
 
-            switch (par5)
+        public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLiving par5EntityLiving, ItemStack par6ItemStack)
+        {
+            int l = MathHelper.floor_double((double)(par5EntityLiving.rotationYaw * 4.0F / 360.0F) + 2.5D) & 3;
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, l, 2);
+        }
+        
+        @SideOnly(Side.CLIENT)
+        public Icon getIcon(int par1, int par2)
+        {
+            switch (par2)
             {
-                case 0:
-                case 1:
-                    b0 = 0;
-                    break;
-                case 2:
-                case 3:
-                    b0 = 8;
-                    break;
-                case 4:
-                case 5:
-                    b0 = 4;
+            case 0: //North Facing Block 
+            	if (par1 == 2) return spheretreeOrigin; //North par1 of Block
+                if (par1 == 3) return spheretree1Bottom; //South par1 of Block
+                if (par1 == 1 || par1 == 0) return spheretreeSide1;
+                if (par1 == 5) return spheretreeSide2;
+                if (par1 == 4) return blockIcon;
+            case 1: //East Facing Block 
+            	if (par1 == 4) return spheretree1Bottom; //West par1 of Block
+                if (par1 == 5) return spheretreeOrigin; //East par1 of Block
+                if (par1 == 1 || par1 == 0) return spheretreeSide2;
+                if (par1 == 2) return blockIcon;
+                if (par1 == 3) return spheretreeSide2;
+            case 2: //South Facing Block
+                 if (par1 == 2) return spheretree1Bottom; //North par1 of Block
+                 if (par1 == 3) return spheretreeOrigin; //South par1 of Block
+                 if (par1 == 1 || par1 == 0) return spheretreeSide3;
+                 if (par1 == 5) return blockIcon;
+                 if (par1 == 4) return spheretreeSide2;
+            case 3: //West Facing Block
+                if (par1 == 4) return spheretreeOrigin; //West par1 of Block
+                if (par1 == 5) return spheretree1Bottom; //East par1 of Block
+                if (par1 == 1 || par1 == 0) return blockIcon;
+                if (par1 == 2) return spheretreeSide2;
+                if (par1 == 3) return blockIcon;
+            case 4:
+            case 5:
             }
-
-            return j1 | b0;
+            return blockIcon; //Fall back if meta is out of range
         }
         
-        /**
-         * returns a number between 0 and 3
-         */
-        public static int limitToValidMetadata(int par0)
-        {
-            return par0 & 6;
-        }
-        
-
         @Override
         public boolean isWood(World world, int x, int y, int z)
         {
             return true;
         }
-        
-        /**
-         * The type of render function that is called for this block
-         */
-        public int getRenderType()
-        {
-            return 31;
-        }
-        
-        @SideOnly(Side.CLIENT)
-
-        /**
-         * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-         */
-        public Icon getIcon(int par1, int par2)
-        {
-            int k = par2 & 12;
-            int l = par2 & 3;
-            return k == 0 && (par1 == 1) ? this.sphereTreeOrigin : (k == 0 && (par1 == 0) ? this.sphereTree1Bottom : k == 1 && (par1 == 0) ? this.sphereTreeOrigin : (k == 1 && (par1 == 1) ? this.sphereTree1Bottom : (k == 4 && (par1 == 5) ? this.sphereTreeOrigin : (k == 4 && (par1 == 4) ? this.sphereTree1Bottom : (k == 8 && (par1 == 3) ? this.sphereTreeOrigin : (k == 8 && (par1 == 2) ? this.sphereTree1Bottom : this.blockIcon))))));
-        }
-        
-//        @SideOnly(Side.CLIENT)
-//        public Icon getIcon(int par1, int par2)
-//        {
-//            return par1 == 0 ? this.sphereTree1Bottom : (par1 == 1 ? this.sphereTreeOrigin: this.blockIcon);
-//        }
-                
+                 
         @SideOnly(Side.CLIENT)
         public void registerIcons(IconRegister par1IconRegister)
         {
-            this.blockIcon = par1IconRegister.registerIcon("spheretreeDeepwood");
-            this.sphereTreeOrigin = par1IconRegister.registerIcon("spheretreeHeart");
-            this.sphereTree1Bottom = par1IconRegister.registerIcon("spheretreeDeepwoodBottom");
+            this.blockIcon = par1IconRegister.registerIcon("spheretreeDeepwood0");
+            this.spheretreeSide1 = par1IconRegister.registerIcon("spheretreeDeepwood1");
+            this.spheretreeSide2 = par1IconRegister.registerIcon("spheretreeDeepwood2");
+            this.spheretreeSide3 = par1IconRegister.registerIcon("spheretreeDeepwood3");
+            this.spheretreeOrigin = par1IconRegister.registerIcon("spheretreeHeart");
+            this.spheretree1Bottom = par1IconRegister.registerIcon("spheretreeDeepwoodBottom");
         }
 }
