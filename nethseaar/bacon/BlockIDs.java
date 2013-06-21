@@ -29,6 +29,7 @@ public class BlockIDs {
 	public static int boneTorchDefault = 434;
 	public static int brainMushroomDefault = 440;
 	public static int bitumenStillDefault = 432;
+	public static int purpleBerryDefault = 433;
 	
 	// stalagmite level blocks
 	public static int stalagmiteLevelTwoDefault = 943;
@@ -118,6 +119,7 @@ public class BlockIDs {
 	public static int boneTorch = 434;
 	public static int brainMushroom = 440;
 	public static int bitumenStill = 432;
+	public static int purpleBerry = 433;
 	
 	// stalagmite level blocks
 	public static int stalagmiteLevelTwo = 943;

@@ -25,6 +25,7 @@ public class BlockNames {
 	public static final String boneTorchName = "boneTorch";
 	public static final String brainMushroomName = "brainMushroom";
 	public static final String bitumenStillName = "bitumenStill";
+	public static final String purpleBerryName = "purpleBerryName";
 	
 	//initialize stalagmite level blocks
 	public static final String stalagmiteLevelTwoName = "stalagmiteLevelTwoName";
@@ -123,5 +124,10 @@ public class BlockNames {
 	public static final String asphaltStairsName = "asphaltStairs";
 	public static final String ringtreePlankStairsName = "ringtreePlankStairs";
 	public static final String spheretreePlankStairsName = "spheretreePlankStairs";
+	
+	//initialize machine names
+	public static final String condenserIdleName = "condenserIdle";
+	public static final String condenserActiveName = "condenserActive";
+	
 
 }

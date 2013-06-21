@@ -80,7 +80,7 @@ public class BaconBlocks {
 	public static Block brainMushroom;
 	public static Block bitumenFlowing;
 	public static Block bitumenStill;
-
+	public static Block purpleBerry;
 	//stalagmite levels
 	public static Block stalagmiteLevelTwo;
 	public static Block stalagmiteLevelThree;
@@ -166,7 +166,8 @@ public class BaconBlocks {
 		brainMushroom = new BlockBrainMushroom(BlockIDs.brainMushroom, "brainMushroom").setUnlocalizedName("brainMushroom").setCreativeTab(Bacon.tabSubItems);
 		bitumenFlowing = new BlockBitumenFlowing(BlockIDs.bitumenStill - 1, Material.water).setUnlocalizedName("bitumenFlowing");
 		bitumenStill = new BlockBitumenStationary(BlockIDs.bitumenStill, Material.water).setUnlocalizedName("bitumenStill");
-
+		purpleBerry = new BlockPurpleBerry(BlockIDs.purpleBerry, Material.plants).setUnlocalizedName("purpleBerry");
+		
 		//initialize stalagmite level blocks
 		stalagmiteLevelTwo = new BlockStalagmiteLevelTwo(BlockIDs.stalagmiteLevelTwo, Material.rock).setUnlocalizedName("stalagmiteLevelTwo").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
 		stalagmiteLevelThree = new BlockStalagmiteLevelThree(BlockIDs.stalagmiteLevelThree, Material.rock).setUnlocalizedName("stalagmiteLevelThree").setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
@@ -273,7 +274,8 @@ public class BaconBlocks {
 		GameRegistry.registerBlock(brainMushroom, "brainMushroom");
 		GameRegistry.registerBlock(bitumenFlowing, "bitumenFlowing");
 		GameRegistry.registerBlock(bitumenStill, "bitumenStill");
-
+		GameRegistry.registerBlock(purpleBerry, "purpleBerry");
+		
 		//register stalagmite level blocks
 		GameRegistry.registerBlock(stalagmiteLevelTwo, "stalagmiteLevelTwo");
 		GameRegistry.registerBlock(stalagmiteLevelThree, "stalagmiteLevelThree");
@@ -351,7 +353,8 @@ public class BaconBlocks {
 		LanguageRegistry.addName(brainMushroom, "Brain Mushroom");
 		LanguageRegistry.addName(bitumenFlowing, "Flowing Bitumen");
 		LanguageRegistry.addName(bitumenStill, "Still Bitumen");
-
+		LanguageRegistry.addName(purpleBerry, "Purple Berry");
+		
 		//register stalagmite level names
 		LanguageRegistry.addName(stalagmiteLevelTwo, "Stalagmite");
 		LanguageRegistry.addName(stalagmiteLevelThree, "Stalagmite");

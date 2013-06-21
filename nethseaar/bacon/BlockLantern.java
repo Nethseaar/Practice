@@ -50,11 +50,12 @@ public class BlockLantern extends Block {
 	}
 
 	@Override
-	public void onNeighborBlockChange(World world, int xPos, int yPos, int zPos, int blockId)
+	public void onNeighborBlockChange(World par1World, int xPos, int yPos, int zPos, int blockId)
 	{
-		if (!world.doesBlockHaveSolidTopSurface(xPos, yPos - 1, zPos))
+		if (!par1World.doesBlockHaveSolidTopSurface(xPos, yPos - 1, zPos))
 		{
-			this.dropBlockAsItem(world, xPos, yPos, zPos, world.getBlockMetadata(xPos, yPos, zPos), 0);
+			this.dropBlockAsItem(par1World, xPos, yPos, zPos, par1World.getBlockMetadata(xPos, yPos, zPos), 0);
+			par1World.setBlockToAir(xPos, yPos, zPos);
 		}
 	}
 

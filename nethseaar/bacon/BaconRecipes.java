@@ -21,30 +21,6 @@ public class BaconRecipes {
 		ItemStack bitumenInBucket = new ItemStack(BaconItems.bitumenInBucket);
 		
 		//* -------------------------------------------------------------------------------------- SHAPELESS RECIPES----------------------------------------------------
-
-		//cracked -> normal
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.darkstone), new ItemStack(BaconBlocks.darkstone, 1, 1));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.dimstone), new ItemStack(BaconBlocks.dimstone, 1, 1));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.lightstone), new ItemStack(BaconBlocks.lightstone, 1, 1));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.floatstone), new ItemStack(BaconBlocks.floatstone, 1, 1));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.springstone), new ItemStack(BaconBlocks.springstone, 1, 1));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.deathstone), new ItemStack(BaconBlocks.deathstone, 1, 1));
-		
-		//normal -> condensed
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.darkstone, 1, 2), new ItemStack(BaconBlocks.darkstone));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.dimstone, 1, 2), new ItemStack(BaconBlocks.dimstone));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.lightstone, 1, 2), new ItemStack(BaconBlocks.lightstone));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.floatstone, 1, 2), new ItemStack(BaconBlocks.floatstone));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.springstone, 1, 2), new ItemStack(BaconBlocks.springstone));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.deathstone, 1, 2), new ItemStack(BaconBlocks.deathstone));
-		
-		//condensed -> smooth
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.darkstone, 1, 3), new ItemStack(BaconBlocks.lightstone, 1, 2));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.dimstone, 1, 3), new ItemStack(BaconBlocks.lightstone, 1, 2));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.lightstone, 1, 3), new ItemStack(BaconBlocks.lightstone, 1, 2));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.springstone, 1, 3), new ItemStack(BaconBlocks.springstone, 1, 2));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.floatstone, 1, 3), new ItemStack(BaconBlocks.floatstone, 1, 2));
-		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.deathstone, 1, 3), new ItemStack(BaconBlocks.deathstone, 1, 2));
 		
 		//misc (vanilla) recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.ringtreePlanks, 4), new ItemStack(BaconBlocks.ringtree));
@@ -198,7 +174,9 @@ public class BaconRecipes {
 		
 		// Vanilla Smelting Recipes
 		GameRegistry.addSmelting(BaconItems.bitumenInBucket.itemID, new ItemStack(BaconItems.bucketBitumen), 0.8f);
-		GameRegistry.addSmelting(BaconBlocks.bitumenOre.blockID, bitumenChunk, 1.0F);		
+		GameRegistry.addSmelting(BaconBlocks.bitumenOre.blockID, bitumenChunk, 1.0F);
+		GameRegistry.addSmelting(BaconItems.greenBerry.itemID, new ItemStack(BaconItems.shriveledGreenBerry), 1.0F);
+	//	GameRegistry.addSmelting(BaconItems.greenBerry.itemID, new ItemStack(BaconItems.shriveledPurpleBerry), 1.0F);
 	}
 
 }

@@ -60,6 +60,9 @@ public class CondenserRecipes {
 		this.addSmelting(BaconItems.hex.itemID, 3, new ItemStack(BaconBlocks.springstone, 1, 1), 0.8f);
 		this.addSmelting(BaconItems.hex.itemID, 4, new ItemStack(BaconBlocks.floatstone, 1, 1), 0.8f);
 		this.addSmelting(BaconItems.hex.itemID, 5, new ItemStack(BaconBlocks.crackedDeathstone), 0.8f);
+		
+		this.addSmelting(BaconItems.shriveledGreenBerry.itemID, new ItemStack(BaconItems.compactGreenBerry), 0.8f);
+		this.addSmelting(BaconItems.shriveledPurpleBerry.itemID, new ItemStack(BaconItems.compactPurpleBerry), 0.8f);
     }
 
     /**

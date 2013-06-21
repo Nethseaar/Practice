@@ -34,6 +34,7 @@ public class Config {
 	BlockIDs.boneTorch = config.getBlock(BlockNames.boneTorchName, BlockIDs.boneTorchDefault).getInt(BlockIDs.boneTorch);
 	BlockIDs.brainMushroom = config.getBlock(BlockNames.brainMushroomName, BlockIDs.brainMushroomDefault).getInt(BlockIDs.brainMushroom);
 	BlockIDs.bitumenStill = config.getBlock(BlockNames.bitumenStillName, BlockIDs.bitumenStillDefault).getInt(BlockIDs.bitumenStill);
+	BlockIDs.purpleBerry = config.getBlock(BlockNames.purpleBerryName, BlockIDs.purpleBerryDefault).getInt(BlockIDs.purpleBerry);
 	BlockIDs.stalagmiteLevelTwo = config.getBlock(BlockNames.stalagmiteLevelTwoName, BlockIDs.stalagmiteLevelTwoDefault).getInt(BlockIDs.stalagmiteLevelTwo);
 	BlockIDs.stalagmiteLevelThree = config.getBlock(BlockNames.stalagmiteLevelThreeName, BlockIDs.stalagmiteLevelThreeDefault).getInt(BlockIDs.stalagmiteLevelThree);
 	BlockIDs.stalagmiteLevelFour = config.getBlock(BlockNames.stalagmiteLevelFourName, BlockIDs.stalagmiteLevelFourDefault).getInt(BlockIDs.stalagmiteLevelFour);
@@ -76,6 +77,9 @@ public class Config {
 	BlockIDs.asphaltStairs = config.getBlock(BlockNames.asphaltStairsName, BlockIDs.asphaltStairsDefault).getInt(BlockIDs.asphaltStairs);
 	BlockIDs.ringtreePlankStairs = config.getBlock(BlockNames.ringtreePlankStairsName, BlockIDs.ringtreePlankStairsDefault).getInt(BlockIDs.ringtreePlankStairs);
 	BlockIDs.spheretreePlankStairs = config.getBlock(BlockNames.spheretreePlankStairsName, BlockIDs.spheretreePlankStairsDefault).getInt(BlockIDs.spheretreePlankStairs);
+	BlockIDs.condenserIdle = config.getBlock(BlockNames.condenserIdleName, BlockIDs.condenserIdleDefault).getInt(BlockIDs.condenserIdle);
+	BlockIDs.condenserActive = config.getBlock(BlockNames.condenserActiveName, BlockIDs.condenserActiveDefault).getInt(BlockIDs.condenserActive);
+		
 	config.save();
 	}
 }
