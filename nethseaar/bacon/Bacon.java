@@ -27,6 +27,14 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.oredict.OreDictionary;
+import nethseaar.bacon.dimension.BiomeGenBacon;
+import nethseaar.bacon.dimension.WorldProviderBacon;
+import nethseaar.bacon.handlers.EventManager;
+import nethseaar.bacon.handlers.FuelHandler;
+import nethseaar.bacon.handlers.GuiHandler;
+import nethseaar.bacon.handlers.HandlerBitumenBucket;
+import nethseaar.bacon.handlers.PacketHandlerBacon;
+import nethseaar.bacon.tileentities.TileEntityCondenser;
 
 
 @Mod(modid="Bacon", name="Bacon", version="v0.0.1")
@@ -37,7 +45,7 @@ public class Bacon {
 
 	@Instance("Bacon")
 	public static Bacon instance = new Bacon();
-	
+
 	private GuiHandler GuiHandler = new GuiHandler();
 
 	@SidedProxy(clientSide="nethseaar.bacon.client.ClientProxy", serverSide="nethseaar.bacon.CommonProxy")
@@ -83,18 +91,18 @@ public class Bacon {
 
 		GameRegistry.registerWorldGenerator(eventmanager);
 		GameRegistry.registerFuelHandler(new FuelHandler());
-		
+
 		GameRegistry.registerTileEntity(TileEntityCondenser.class, "tileEntityCondenser");
 		NetworkRegistry.instance().registerGuiHandler(this, GuiHandler);
-		
+
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabInert", "en_US", "Subterrain Blocks I");
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabActive", "en_US", "Subterrain Blocks II");
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabSubItems", "en_US", "Subterrain Blocks III");
 
-		//		DimensionManager.registerProviderType(dimension, WorldProviderBacon.class, false);
-		//		DimensionManager.registerDimension(dimension, dimension);
-		//		baconBiome = new BiomeGenBacon(80).setColor(2900485).setBiomeName("Bacon!").setDisableRain().setTemperatureRainfall(1F, 0F).setMinMaxHeight(0.1F, 1F);
-		//		
+		//DimensionManager.registerProviderType(dimension, WorldProviderBacon.class, false);
+		//DimensionManager.registerDimension(dimension, dimension);
+		//baconBiome = new BiomeGenBacon(80).setColor(2900485).setBiomeName("Bacon!").setDisableRain().setTemperatureRainfall(1F, 0F).setMinMaxHeight(0.1F, 1F);
+
 		proxy.registerRenderers();		
 	}
 

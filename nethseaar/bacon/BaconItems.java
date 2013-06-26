@@ -10,6 +10,17 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.EnumHelperClient;
 import net.minecraftforge.oredict.OreDictionary;
+import nethseaar.bacon.bases.ItemBacon;
+import nethseaar.bacon.items.ItemBoneAxe;
+import nethseaar.bacon.items.ItemBoneHoe;
+import nethseaar.bacon.items.ItemBonePickaxe;
+import nethseaar.bacon.items.ItemBoneShovel;
+import nethseaar.bacon.items.ItemBoneSword;
+import nethseaar.bacon.items.ItemBucketBitumen;
+import nethseaar.bacon.items.ItemFlintTool;
+import nethseaar.bacon.items.ItemHex;
+import nethseaar.bacon.references.ItemIDs;
+import nethseaar.bacon.references.ItemNames;
 
 public class BaconItems {
 	
@@ -73,91 +84,91 @@ public class BaconItems {
 			
 			//* --------------------------------------------------------------------------------------INITIALIZE ITEMS----------------------------------------------------
 			//item initialization
-			darkness = new ItemBacon(5000).setMaxStackSize(64).setUnlocalizedName("darkness").setCreativeTab(Bacon.tabSubItems);
-			gravity = new ItemBacon(5001).setMaxStackSize(64).setUnlocalizedName("gravity").setCreativeTab(Bacon.tabSubItems);
-			lethargy = new ItemBacon(5002).setMaxStackSize(64).setUnlocalizedName("lethargy").setCreativeTab(Bacon.tabSubItems);
-			hex = new ItemHex(5003).setMaxStackSize(64).setUnlocalizedName("hex").setCreativeTab(Bacon.tabSubItems);
-			bitumenChunk = new ItemBacon (5009).setMaxStackSize(64).setUnlocalizedName("bitumenChunk").setCreativeTab(Bacon.tabSubItems);
-			bitumenInBucket = new ItemBacon(3328).setCreativeTab(Bacon.tabSubItems).setUnlocalizedName("bitumenInBucket").setContainerItem(Item.bucketEmpty).setMaxStackSize(1);
-			greenBerry = new ItemBacon(5010).setMaxStackSize(64).setUnlocalizedName("greenBerry").setCreativeTab(Bacon.tabSubItems);
-			compactGreenBerry = new ItemBacon(5011).setMaxStackSize(64).setUnlocalizedName("compactGreenBerry").setCreativeTab(Bacon.tabSubItems);
-			compactPurpleBerry = new ItemBacon(5012).setMaxStackSize(64).setUnlocalizedName("compactPurpleBerry").setCreativeTab(Bacon.tabSubItems);
-			shriveledGreenBerry = new ItemBacon(5013).setMaxStackSize(64).setUnlocalizedName("shriveledGreenBerry").setCreativeTab(Bacon.tabSubItems);
-			shriveledPurpleBerry = new ItemBacon(5014).setMaxStackSize(64).setUnlocalizedName("shriveledPurpleBerry").setCreativeTab(Bacon.tabSubItems);
-			spheretreeStick = new ItemBacon(5044).setMaxStackSize(64).setUnlocalizedName("spheretreeStick").setCreativeTab(Bacon.tabSubItems);
-			ringtreeStick = new ItemBacon(5045).setMaxStackSize(64).setUnlocalizedName("ringtreeStick").setCreativeTab(Bacon.tabSubItems);
-			bucketBitumen = new ItemBucketBitumen(3329).setUnlocalizedName("bitumenBucket");
+			darkness = new ItemBacon(ItemIDs.darkness).setMaxStackSize(64).setUnlocalizedName(ItemNames.darknessName).setCreativeTab(Bacon.tabSubItems);
+			gravity = new ItemBacon(ItemIDs.gravity).setMaxStackSize(64).setUnlocalizedName(ItemNames.gravityName).setCreativeTab(Bacon.tabSubItems);
+			lethargy = new ItemBacon(ItemIDs.lethargy).setMaxStackSize(64).setUnlocalizedName(ItemNames.lethargyName).setCreativeTab(Bacon.tabSubItems);
+			hex = new ItemHex(ItemIDs.hex).setMaxStackSize(64).setUnlocalizedName(ItemNames.hexName).setCreativeTab(Bacon.tabSubItems);
+			bitumenChunk = new ItemBacon (ItemIDs.bitumenChunk).setMaxStackSize(64).setUnlocalizedName(ItemNames.bitumenChunkName).setCreativeTab(Bacon.tabSubItems);
+			bitumenInBucket = new ItemBacon(ItemIDs.bitumenInBucket).setCreativeTab(Bacon.tabSubItems).setUnlocalizedName(ItemNames.bitumenInBucketName).setContainerItem(Item.bucketEmpty).setMaxStackSize(1);
+			greenBerry = new ItemBacon(ItemIDs.greenBerry).setMaxStackSize(64).setUnlocalizedName(ItemNames.greenBerryName).setCreativeTab(Bacon.tabSubItems);
+			compactGreenBerry = new ItemBacon(ItemIDs.compactGreenBerry).setMaxStackSize(64).setUnlocalizedName(ItemNames.compactGreenBerryName).setCreativeTab(Bacon.tabSubItems);
+			compactPurpleBerry = new ItemBacon(ItemIDs.compactPurpleBerry).setMaxStackSize(64).setUnlocalizedName(ItemNames.compactPurpleBerryName).setCreativeTab(Bacon.tabSubItems);
+			shriveledGreenBerry = new ItemBacon(ItemIDs.shriveledGreenBerry).setMaxStackSize(64).setUnlocalizedName(ItemNames.shriveledGreenBerryName).setCreativeTab(Bacon.tabSubItems);
+			shriveledPurpleBerry = new ItemBacon(ItemIDs.shriveledPurpleBerry).setMaxStackSize(64).setUnlocalizedName(ItemNames.shriveledPurpleBerryName).setCreativeTab(Bacon.tabSubItems);
+			spheretreeStick = new ItemBacon(ItemIDs.spheretreeStick).setMaxStackSize(64).setUnlocalizedName(ItemNames.spheretreeStickName).setCreativeTab(Bacon.tabSubItems);
+			ringtreeStick = new ItemBacon(ItemIDs.ringtreeStick).setMaxStackSize(64).setUnlocalizedName(ItemNames.ringtreeStickName).setCreativeTab(Bacon.tabSubItems);
+			bucketBitumen = new ItemBucketBitumen(ItemIDs.bitumenBucket).setUnlocalizedName(ItemNames.bitumenBucketName);
 			
 			// Initialize pickaxes
-			flintTool = new ItemFlintTool(3330, toolFLINT).setUnlocalizedName("flintTool");
-			stoneBonePick = new ItemBonePickaxe(3331, EnumToolMaterial.STONE).setUnlocalizedName("stoneBonePick");
-			ironBonePick = new ItemBonePickaxe(3332, EnumToolMaterial.IRON).setUnlocalizedName("ironBonePick");
-			goldBonePick = new ItemBonePickaxe(3333, EnumToolMaterial.GOLD).setUnlocalizedName("goldBonePick");
-			diamondBonePick = new ItemBonePickaxe(3334, EnumToolMaterial.EMERALD).setUnlocalizedName("diamondBonePick");
+			flintTool = new ItemFlintTool(ItemIDs.flintTool, toolFLINT).setUnlocalizedName(ItemNames.flintToolName);
+			stoneBonePick = new ItemBonePickaxe(ItemIDs.stoneBonePick, EnumToolMaterial.STONE).setUnlocalizedName(ItemNames.stoneBonePickName);
+			ironBonePick = new ItemBonePickaxe(ItemIDs.ironBonePick, EnumToolMaterial.IRON).setUnlocalizedName(ItemNames.ironBonePickName);
+			goldBonePick = new ItemBonePickaxe(ItemIDs.goldBonePick, EnumToolMaterial.GOLD).setUnlocalizedName(ItemNames.goldBonePickName);
+			diamondBonePick = new ItemBonePickaxe(ItemIDs.diamondBonePick, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemNames.diamondBonePickName);
 
 			// Initialize axes
-			stoneBoneAxe = new ItemBoneAxe(3335, EnumToolMaterial.STONE).setUnlocalizedName("stoneBoneAxe");
-			ironBoneAxe = new ItemBoneAxe(3336, EnumToolMaterial.IRON).setUnlocalizedName("ironBoneAxe");
-			goldBoneAxe = new ItemBoneAxe(3337, EnumToolMaterial.GOLD).setUnlocalizedName("goldBoneAxe");
-			diamondBoneAxe = new ItemBoneAxe(3338, EnumToolMaterial.EMERALD).setUnlocalizedName("diamondBoneAxe");
+			stoneBoneAxe = new ItemBoneAxe(ItemIDs.stoneBoneAxe, EnumToolMaterial.STONE).setUnlocalizedName(ItemNames.stoneBoneAxeName);
+			ironBoneAxe = new ItemBoneAxe(ItemIDs.ironBoneAxe, EnumToolMaterial.IRON).setUnlocalizedName(ItemNames.ironBoneAxeName);
+			goldBoneAxe = new ItemBoneAxe(ItemIDs.goldBoneAxe, EnumToolMaterial.GOLD).setUnlocalizedName(ItemNames.goldBoneAxeName);
+			diamondBoneAxe = new ItemBoneAxe(ItemIDs.diamondBoneAxe, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemNames.diamondBoneAxeName);
 
 			// Initialize hoes
-			stoneBoneHoe = new ItemBoneHoe(3339, EnumToolMaterial.STONE).setUnlocalizedName("stoneBoneHoe");
-			ironBoneHoe = new ItemBoneHoe(3340, EnumToolMaterial.IRON).setUnlocalizedName("ironBoneHoe");
-			goldBoneHoe = new ItemBoneHoe(3341, EnumToolMaterial.GOLD).setUnlocalizedName("goldBoneHoe");
-			diamondBoneHoe= new ItemBoneHoe(3342, EnumToolMaterial.EMERALD).setUnlocalizedName("diamondBoneHoe");
+			stoneBoneHoe = new ItemBoneHoe(ItemIDs.stoneBoneHoe, EnumToolMaterial.STONE).setUnlocalizedName(ItemNames.stoneBoneHoeName);
+			ironBoneHoe = new ItemBoneHoe(ItemIDs.ironBoneHoe, EnumToolMaterial.IRON).setUnlocalizedName(ItemNames.ironBoneHoeName);
+			goldBoneHoe = new ItemBoneHoe(ItemIDs.goldBoneHoe, EnumToolMaterial.GOLD).setUnlocalizedName(ItemNames.goldBoneHoeName);
+			diamondBoneHoe= new ItemBoneHoe(ItemIDs.diamondBoneHoe, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemNames.diamondBoneHoeName);
 
 			// Initialize shovels
-			stoneBoneShovel = new ItemBoneShovel(3343, EnumToolMaterial.STONE).setUnlocalizedName("stoneBoneShovel");
-			ironBoneShovel = new ItemBoneShovel(3344, EnumToolMaterial.IRON).setUnlocalizedName("ironBoneShovel");
-			goldBoneShovel = new ItemBoneShovel(3345, EnumToolMaterial.GOLD).setUnlocalizedName("goldBoneShovel");
-			diamondBoneShovel = new ItemBoneShovel(3346, EnumToolMaterial.EMERALD).setUnlocalizedName("diamondBoneShovel");
+			stoneBoneShovel = new ItemBoneShovel(ItemIDs.stoneBoneShovel, EnumToolMaterial.STONE).setUnlocalizedName(ItemNames.stoneBoneShovelName);
+			ironBoneShovel = new ItemBoneShovel(ItemIDs.ironBoneShovel, EnumToolMaterial.IRON).setUnlocalizedName(ItemNames.ironBoneShovelName);
+			goldBoneShovel = new ItemBoneShovel(ItemIDs.goldBoneShovel, EnumToolMaterial.GOLD).setUnlocalizedName(ItemNames.goldBoneShovelName);
+			diamondBoneShovel = new ItemBoneShovel(ItemIDs.diamondBoneShovel, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemNames.diamondBoneShovelName);
 
 			// Initialize swords
-			stoneBoneSword = new ItemBoneSword(3347, EnumToolMaterial.STONE).setUnlocalizedName("stoneBoneSword");
-			ironBoneSword = new ItemBoneSword(3348, EnumToolMaterial.IRON).setUnlocalizedName("ironBoneSword");
-			goldBoneSword = new ItemBoneSword(3349, EnumToolMaterial.GOLD).setUnlocalizedName("goldBoneSword");
-			diamondBoneSword = new ItemBoneSword(3350, EnumToolMaterial.EMERALD).setUnlocalizedName("diamondBoneSword");
+			stoneBoneSword = new ItemBoneSword(ItemIDs.stoneBoneSword, EnumToolMaterial.STONE).setUnlocalizedName(ItemNames.stoneBoneSwordName);
+			ironBoneSword = new ItemBoneSword(ItemIDs.ironBoneSword, EnumToolMaterial.IRON).setUnlocalizedName(ItemNames.ironBoneSwordName);
+			goldBoneSword = new ItemBoneSword(ItemIDs.goldBoneSword, EnumToolMaterial.GOLD).setUnlocalizedName(ItemNames.goldBoneSwordName);
+			diamondBoneSword = new ItemBoneSword(ItemIDs.diamondBoneSword, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemNames.diamondBoneSwordName);
 			
 			//* -------------------------------------------------------------------------------------- REGISTER ITEMS----------------------------------------------------
 			//item registry
-					GameRegistry.registerItem(darkness, "Darkness");
-					GameRegistry.registerItem(gravity, "Gravity");
-					GameRegistry.registerItem(lethargy, "Lethargy");
+					GameRegistry.registerItem(darkness, ItemNames.darknessName);
+					GameRegistry.registerItem(gravity, ItemNames.gravityName);
+					GameRegistry.registerItem(lethargy, ItemNames.lethargyName);
 					GameRegistry.registerItem(hex,  "Bacon" + (hex.getUnlocalizedName().substring(5)));
-					GameRegistry.registerItem(bitumenChunk, "bitumenChunk");
-					GameRegistry.registerItem(bitumenInBucket, "bitumenInBucket");
+					GameRegistry.registerItem(bitumenChunk, ItemNames.bitumenChunkName);
+					GameRegistry.registerItem(bitumenInBucket, ItemNames.bitumenInBucketName);
 					OreDictionary.registerOre("stickWood", ringtreeStick);
 					OreDictionary.registerOre("stickWood", spheretreeStick);
-					GameRegistry.registerItem(bucketBitumen, "bucketBitumen");
+					GameRegistry.registerItem(bucketBitumen, ItemNames.bitumenBucketName);
 					
-					GameRegistry.registerItem(flintTool, "flintTool");
-					GameRegistry.registerItem(stoneBonePick, "stoneBonePick");
-					GameRegistry.registerItem(ironBonePick, "ironBonePick");
-					GameRegistry.registerItem(goldBonePick, "goldBonePick");
-					GameRegistry.registerItem(diamondBonePick, "diamondBonePick");
-					GameRegistry.registerItem(stoneBoneAxe, "stoneBoneAxe");
-					GameRegistry.registerItem(ironBoneAxe, "ironBoneAxe");
-					GameRegistry.registerItem(goldBoneAxe, "goldBoneAxe");
-					GameRegistry.registerItem(diamondBoneAxe, "diamondBoneAxe");
-					GameRegistry.registerItem(stoneBoneHoe, "stoneBoneHoe");
-					GameRegistry.registerItem(ironBoneHoe, "ironBoneHoe");
-					GameRegistry.registerItem(goldBoneHoe, "goldBoneHoe");
-					GameRegistry.registerItem(diamondBoneHoe, "diamondBoneHoe");
-					GameRegistry.registerItem(stoneBoneShovel, "stoneBoneShovel");
-					GameRegistry.registerItem(ironBoneShovel, "ironBoneShovel");
-					GameRegistry.registerItem(goldBoneShovel, "goldBoneShovel");
-					GameRegistry.registerItem(diamondBoneShovel, "diamondBoneShovel");
-					GameRegistry.registerItem(stoneBoneSword, "stoneBoneSword");
-					GameRegistry.registerItem(ironBoneSword, "ironBoneSword");
-					GameRegistry.registerItem(goldBoneSword, "goldBoneSword");
-					GameRegistry.registerItem(diamondBoneSword, "diamondBoneSword");
+					GameRegistry.registerItem(flintTool, ItemNames.flintToolName);
+					GameRegistry.registerItem(stoneBonePick, ItemNames.stoneBonePickName);
+					GameRegistry.registerItem(ironBonePick, ItemNames.ironBonePickName);
+					GameRegistry.registerItem(goldBonePick, ItemNames.goldBonePickName);
+					GameRegistry.registerItem(diamondBonePick, ItemNames.diamondBonePickName);
+					GameRegistry.registerItem(stoneBoneAxe, ItemNames.stoneBoneAxeName);
+					GameRegistry.registerItem(ironBoneAxe, ItemNames.ironBoneAxeName);
+					GameRegistry.registerItem(goldBoneAxe, ItemNames.goldBoneAxeName);
+					GameRegistry.registerItem(diamondBoneAxe, ItemNames.diamondBoneAxeName);
+					GameRegistry.registerItem(stoneBoneHoe, ItemNames.stoneBoneHoeName);
+					GameRegistry.registerItem(ironBoneHoe, ItemNames.ironBoneHoeName);
+					GameRegistry.registerItem(goldBoneHoe, ItemNames.goldBoneHoeName);
+					GameRegistry.registerItem(diamondBoneHoe, ItemNames.diamondBoneHoeName);
+					GameRegistry.registerItem(stoneBoneShovel, ItemNames.stoneBoneShovelName);
+					GameRegistry.registerItem(ironBoneShovel, ItemNames.ironBoneShovelName);
+					GameRegistry.registerItem(goldBoneShovel, ItemNames.goldBoneShovelName);
+					GameRegistry.registerItem(diamondBoneShovel, ItemNames.diamondBoneShovelName);
+					GameRegistry.registerItem(stoneBoneSword, ItemNames.stoneBoneSwordName);
+					GameRegistry.registerItem(ironBoneSword, ItemNames.ironBoneSwordName);
+					GameRegistry.registerItem(goldBoneSword, ItemNames.goldBoneSwordName);
+					GameRegistry.registerItem(diamondBoneSword, ItemNames.diamondBoneSwordName);
 					
-					GameRegistry.registerItem(greenBerry, "greenBerry");
-					GameRegistry.registerItem(compactGreenBerry, "compactGreenBerry");
-					GameRegistry.registerItem(compactPurpleBerry, "compactPurpleBerry");
-					GameRegistry.registerItem(shriveledGreenBerry, "shriveledGreenBerry");
-					GameRegistry.registerItem(shriveledPurpleBerry, "shriveledPurpleBerry");
+					GameRegistry.registerItem(greenBerry, ItemNames.greenBerryName);
+					GameRegistry.registerItem(compactGreenBerry, ItemNames.compactGreenBerryName);
+					GameRegistry.registerItem(compactPurpleBerry, ItemNames.compactPurpleBerryName);
+					GameRegistry.registerItem(shriveledGreenBerry, ItemNames.shriveledGreenBerryName);
+					GameRegistry.registerItem(shriveledPurpleBerry, ItemNames.shriveledPurpleBerryName);
 					
 			//* -------------------------------------------------------------------------------------- REGISTER ITEM NAMES----------------------------------------------------
 			//item name registry

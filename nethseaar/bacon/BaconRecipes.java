@@ -22,19 +22,19 @@ public class BaconRecipes {
 		
 		//* -------------------------------------------------------------------------------------- SHAPELESS RECIPES----------------------------------------------------
 		
-		//misc (vanilla) recipes
+		// Miscellaneous Organic and Vanilla Recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.ringtreePlanks, 4), new ItemStack(BaconBlocks.ringtree));
 		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.spheretreePlanks, 8), new ItemStack(BaconBlocks.spheretreeDeepwood));
 		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.spheretreePlanks, 4), new ItemStack(BaconBlocks.spheretreeBranchwood));
 		GameRegistry.addShapelessRecipe(new ItemStack(BaconItems.flintTool), Item.flint);
 		GameRegistry.addShapelessRecipe(new ItemStack(BaconItems.bitumenChunk), new ItemStack(BaconItems.bitumenInBucket));
 		
-		//stairs -> normal
+		// Stairs -> Normal
 		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.darkstone, 1), new ItemStack(BaconBlocks.darkstoneStairs));
 		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.dimstone, 1), new ItemStack(BaconBlocks.dimstoneStairs));
 		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.lightstone, 1), new ItemStack(BaconBlocks.lightstoneStairs));
 		
-		//smooth stairs -> smooth
+		// Smooth Stairs -> Smooth
 		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.darkstone, 1, 3), new ItemStack(BaconBlocks.smoothDarkstoneStairs));
 		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.dimstone, 1, 3), new ItemStack(BaconBlocks.smoothDimstoneStairs));
 		GameRegistry.addShapelessRecipe(new ItemStack(BaconBlocks.lightstone, 1, 3), new ItemStack(BaconBlocks.smoothLightstoneStairs));
@@ -53,6 +53,10 @@ public class BaconRecipes {
 
 		// Vanilla Shaped Recipes
 		GameRegistry.addRecipe(bitumenInBucket, "x", "y", 'x', bitumenChunk, 'y', bucket);
+		GameRegistry.addRecipe(new ItemStack(BaconBlocks.lantern, 8), "x", "y", "x",
+				'x', Item.ingotIron, 'y', BaconItems.bucketBitumen);
+		GameRegistry.addRecipe(new ItemStack(BaconBlocks.asphalt, 4), "xx", "xx",
+				'x', BaconItems.bitumenChunk);
 		
 		// Dimension Wood Recipes
 		GameRegistry.addRecipe(new ItemStack(BaconItems.ringtreeStick, 4), "x", "x",
@@ -176,7 +180,7 @@ public class BaconRecipes {
 		GameRegistry.addSmelting(BaconItems.bitumenInBucket.itemID, new ItemStack(BaconItems.bucketBitumen), 0.8f);
 		GameRegistry.addSmelting(BaconBlocks.bitumenOre.blockID, bitumenChunk, 1.0F);
 		GameRegistry.addSmelting(BaconItems.greenBerry.itemID, new ItemStack(BaconItems.shriveledGreenBerry), 1.0F);
-	//	GameRegistry.addSmelting(BaconItems.greenBerry.itemID, new ItemStack(BaconItems.shriveledPurpleBerry), 1.0F);
+		GameRegistry.addSmelting(BaconBlocks.purpleBerry.blockID, new ItemStack(BaconItems.shriveledPurpleBerry), 1.0F);
 	}
 
 }
