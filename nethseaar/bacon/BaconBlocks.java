@@ -90,7 +90,7 @@ public class BaconBlocks {
 	public static String[] oreNames = {
 		"Darkness Ore", "Gravity Ore", "Lethargy Ore", "Bitumen Ore"
 	};
-	
+		
 	//add ores
 	public static Block darknessOre;
 	public static Block gravityOre;
@@ -127,6 +127,15 @@ public class BaconBlocks {
 	public static Block bitumenFlowing;
 	public static Block bitumenStill;
 	public static Block purpleBerry;
+	public static Block greenBerry;
+	public static Block spheretreeDeepwoodBranch;
+	public static Block spheretreeDeepwoodBranch1;
+	public static Block spheretreeDeepwood1;
+	public static Block spheretreeCorewood;
+	public static Block spheretreeBranchwood1;
+	public static Block spheretreeDeepwoodCorner;
+	public static Block spheretreeDeepwoodCorner1;
+	
 	//stalagmite levels
 	public static Block stalagmiteLevelTwo;
 	public static Block stalagmiteLevelThree;
@@ -213,6 +222,16 @@ public class BaconBlocks {
 		bitumenFlowing = new BlockBitumenFlowing(BlockIDs.bitumenStill - 1, Material.water).setUnlocalizedName(BlockNames.bitumenFlowingName);
 		bitumenStill = new BlockBitumenStationary(BlockIDs.bitumenStill, Material.water).setUnlocalizedName(BlockNames.bitumenStillName);
 		purpleBerry = new BlockPurpleBerry(BlockIDs.purpleBerry, Material.plants).setUnlocalizedName(BlockNames.purpleBerryName);
+		greenBerry = new BlockPurpleBerry(BlockIDs.purpleBerry, Material.plants).setUnlocalizedName(BlockNames.purpleBerryName);
+		
+		spheretreeDeepwoodBranch = new BlockSpheretreeDeepwood(BlockIDs.spheretreeDeepwoodBranch, Material.wood).setUnlocalizedName(BlockNames.spheretreeDeepwoodBranchName).setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		spheretreeDeepwoodBranch1 = new BlockSpheretreeDeepwood(BlockIDs.spheretreeDeepwoodBranch1, Material.wood).setUnlocalizedName(BlockNames.spheretreeDeepwoodBranch1Name).setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		spheretreeDeepwood1 = new BlockSpheretreeDeepwood(BlockIDs.spheretreeDeepwood1, Material.wood).setUnlocalizedName(BlockNames.spheretreeDeepwood1Name).setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		spheretreeCorewood = new BlockSpheretreeDeepwood(BlockIDs.spheretreeCorewood, Material.wood).setUnlocalizedName(BlockNames.spheretreeCorewoodName).setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		spheretreeBranchwood1 = new BlockSpheretreeDeepwood(BlockIDs.spheretreeBranchwood1, Material.wood).setUnlocalizedName(BlockNames.spheretreeBranchwood1Name).setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		spheretreeDeepwoodCorner = new BlockSpheretreeDeepwood(BlockIDs.spheretreeDeepwoodCorner, Material.wood).setUnlocalizedName(BlockNames.spheretreeDeepwoodCornerName).setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		spheretreeDeepwoodCorner1 = new BlockSpheretreeDeepwood(BlockIDs.spheretreeDeepwoodCorner1, Material.wood).setUnlocalizedName(BlockNames.spheretreeDeepwoodCorner1Name).setStepSound(Block.soundWoodFootstep).setHardness(0.2F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		
 		
 		//initialize stalagmite level blocks
 		stalagmiteLevelTwo = new BlockStalagmiteLevelTwo(BlockIDs.stalagmiteLevelTwo, Material.rock).setUnlocalizedName(BlockNames.stalagmiteLevelTwoName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
@@ -323,6 +342,16 @@ public class BaconBlocks {
 		GameRegistry.registerBlock(bitumenStill, BlockNames.bitumenStillName);
 		GameRegistry.registerBlock(purpleBerry, BlockNames.purpleBerryName);
 		
+		GameRegistry.registerBlock(greenBerry, ItemBlockBacon.class, "Bacon" + (greenBerry.getUnlocalizedName().substring(5)));
+		
+		GameRegistry.registerBlock(spheretreeDeepwoodBranch, BlockNames.spheretreeDeepwoodBranchName);
+		GameRegistry.registerBlock(spheretreeDeepwoodBranch1, BlockNames.spheretreeDeepwoodBranch1Name);
+		GameRegistry.registerBlock(spheretreeDeepwood1, BlockNames.spheretreeDeepwood1Name);
+		GameRegistry.registerBlock(spheretreeCorewood, BlockNames.spheretreeCorewoodName);
+		GameRegistry.registerBlock(spheretreeBranchwood1, BlockNames.spheretreeBranchwood1Name);
+		GameRegistry.registerBlock(spheretreeDeepwoodCorner, BlockNames.spheretreeDeepwoodCornerName);
+		GameRegistry.registerBlock(spheretreeDeepwoodCorner1, BlockNames.spheretreeDeepwoodCorner1Name);
+
 		//register stalagmite level blocks
 		GameRegistry.registerBlock(stalagmiteLevelTwo, BlockNames.stalagmiteLevelTwoName);
 		GameRegistry.registerBlock(stalagmiteLevelThree, BlockNames.stalagmiteLevelThreeName);
@@ -401,6 +430,17 @@ public class BaconBlocks {
 		LanguageRegistry.addName(bitumenFlowing, "Flowing Bitumen");
 		LanguageRegistry.addName(bitumenStill, "Still Bitumen");
 		LanguageRegistry.addName(purpleBerry, "Purple Berry");
+		
+		LanguageRegistry.addName(new ItemStack(lightstone, 1, 0), "Berry Pod");
+		LanguageRegistry.addName(new ItemStack(lightstone, 1, 1), "Grown Berry Pod");
+		
+		LanguageRegistry.addName(spheretreeDeepwoodBranch, "Spheretree Deepwood");
+		LanguageRegistry.addName(spheretreeDeepwoodBranch1, "Spheretree Deepwood");
+		LanguageRegistry.addName(spheretreeDeepwood1, "Spheretree Deepwood");
+		LanguageRegistry.addName(spheretreeCorewood, "Spheretree Corewood");
+		LanguageRegistry.addName(spheretreeBranchwood1, "Spheretree Branchwood");
+		LanguageRegistry.addName(spheretreeDeepwoodCorner, "Spheretree Deepwood");
+		LanguageRegistry.addName(spheretreeDeepwoodCorner1, "Spheretree Deepwood");
 		
 		//register stalagmite level names
 		LanguageRegistry.addName(stalagmiteLevelTwo, "Stalagmite");

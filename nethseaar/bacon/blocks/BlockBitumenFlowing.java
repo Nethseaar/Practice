@@ -27,13 +27,19 @@ public class BlockBitumenFlowing extends BlockFlowing implements ILiquid {
 		this.setHardness(100F);
 		this.setLightOpacity(3);
 		this.setCreativeTab(CreativeTabs.tabMisc);
+		this.disableStats();
 	}
 
 	public void updateIcons(IconRegister par1iconregister){
-		this.blockIcon = par1iconregister.registerIcon("Bacon.bitumenStill");
-		this.blockIcon = par1iconregister.registerIcon("Bacon.bitumenFlowing");
+		this.blockIcon = par1iconregister.registerIcon("Bacon.bitumen");
+		this.blockIcon = par1iconregister.registerIcon("Bacon.bitumen_flow");
 	}
 
+	@Override
+	  public int getRenderType() {
+	    return 4;
+	  }
+	
 	@Override
 	public int stillLiquidId() {
 		return BaconBlocks.bitumenStill.blockID;

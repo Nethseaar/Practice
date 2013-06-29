@@ -26,6 +26,7 @@ public class BlockBitumenStationary extends BlockStationary  implements ILiquid{
 		this.setHardness(100F);
 		this.setLightOpacity(3);
 		this.setCreativeTab(CreativeTabs.tabMisc);
+		this.disableStats();
 	}
 	
 	@Override
@@ -33,9 +34,14 @@ public class BlockBitumenStationary extends BlockStationary  implements ILiquid{
 		return BaconBlocks.bitumenStill.blockID;
 	}
 	
+	@Override
+	  public int getRenderType() {
+	    return 4;
+	  }
+	
 	public void updateIcons(IconRegister par1iconregister){
-		this.blockIcon = par1iconregister.registerIcon("Bacon.bitumenStill");
-		this.blockIcon = par1iconregister.registerIcon("Bacon.bitumenFlowing");
+		this.blockIcon = par1iconregister.registerIcon("Bacon.bitumen");
+		this.blockIcon = par1iconregister.registerIcon("Bacon.bitumen_flow");
 	}
 
 	@Override

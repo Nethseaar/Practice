@@ -121,9 +121,9 @@ public class BlockCondenser extends BlockContainer
      */
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.blockIcon = par1IconRegister.registerIcon("furnace_side");
-        this.furnaceIconFront = par1IconRegister.registerIcon(this.isActive ? "furnace_front_lit" : "furnace_front");
-        this.furnaceIconTop = par1IconRegister.registerIcon("furnace_top");
+        this.blockIcon = par1IconRegister.registerIcon("condenserSide");
+        this.furnaceIconFront = par1IconRegister.registerIcon(this.isActive ? "condenserFrontActive" : "condenserFront");
+        this.furnaceIconTop = par1IconRegister.registerIcon("condenserTop");
     }
 
     /**

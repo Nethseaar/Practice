@@ -31,6 +31,15 @@ public class BlockIDs {
 	public static int bitumenStillDefault = 432;
 	public static int purpleBerryDefault = 433;
 	
+	public static int spheretreeDeepwoodBranchDefault = 445;
+	public static int spheretreeDeepwoodBranch1Default = 452;
+	public static int spheretreeDeepwood1Default = 446;
+	public static int spheretreeCorewoodDefault = 447;
+	public static int spheretreeBranchwood1Default = 448;
+	public static int spheretreeDeepwoodCornerDefault = 449;
+	public static int spheretreeDeepwoodCorner1Default = 450;
+	public static int greenBerryDefault = 451;
+	
 	// stalagmite level blocks
 	public static int stalagmiteLevelTwoDefault = 943;
 	public static int stalagmiteLevelThreeDefault = 944;
@@ -120,6 +129,15 @@ public class BlockIDs {
 	public static int brainMushroom = 440;
 	public static int bitumenStill = 432;
 	public static int purpleBerry = 433;
+	
+	public static int spheretreeDeepwoodBranch = 445;
+	public static int spheretreeDeepwoodBranch1 = 452;
+	public static int spheretreeDeepwood1 = 446;
+	public static int spheretreeCorewood = 447;
+	public static int spheretreeBranchwood1 = 448;
+	public static int spheretreeDeepwoodCorner = 449;
+	public static int spheretreeDeepwoodCorner1 = 450;
+	public static int greenBerry = 451;
 	
 	// stalagmite level blocks
 	public static int stalagmiteLevelTwo = 943;

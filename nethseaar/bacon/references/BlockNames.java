@@ -24,9 +24,18 @@ public class BlockNames {
 	public static final String lanternName = "lantern";
 	public static final String boneTorchName = "boneTorch";
 	public static final String brainMushroomName = "brainMushroom";
-	public static final String bitumenStillName = "bitumenStill";
-	public static final String bitumenFlowingName = "bitumenFlowing";
+	public static final String bitumenStillName = "bitumen";
+	public static final String bitumenFlowingName = "bitumen_flow";
 	public static final String purpleBerryName = "purpleBerryName";
+	
+	public static final String spheretreeDeepwoodBranchName = "spheretreeDeepwoodBranch";
+	public static final String spheretreeDeepwoodBranch1Name = "spheretreeDeepwoodBranch1";
+	public static final String spheretreeDeepwood1Name = "spheretreeDeepwood1";
+	public static final String spheretreeCorewoodName = "spheretreeCorewood";
+	public static final String spheretreeBranchwood1Name = "spheretreeBranchwood1";
+	public static final String spheretreeDeepwoodCornerName = "spheretreeDeepwoodCorner";
+	public static final String spheretreeDeepwoodCorner1Name = "spheretreeDeepwoodCorner1";
+	public static final String greenBerryName = "greenBerry";
 	
 	//initialize stalagmite level blocks
 	public static final String stalagmiteLevelTwoName = "stalagmiteLevelTwoName";
