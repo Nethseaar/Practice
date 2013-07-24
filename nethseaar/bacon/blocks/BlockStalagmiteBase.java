@@ -42,7 +42,7 @@ public class BlockStalagmiteBase extends Block {
 				if (i1 == 15)
 				{
 					if (par5Random.nextInt(3) == 1){
-						par1World.setBlock(par2, par3 + 1, par4, BaconBlocks.stalagmite.blockID);
+						par1World.setBlock(par2, par3 + 1, par4, BaconBlocks.stalagmiteLevelOne.blockID);
 					}
 					else{
 						par1World.setBlock(par2, par3 + 1, par4, BaconBlocks.stalagmiteLevelTwo.blockID);

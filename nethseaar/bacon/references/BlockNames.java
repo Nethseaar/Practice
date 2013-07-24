@@ -12,8 +12,8 @@ public class BlockNames {
 	public static final String boneLadderName = "boneLadder";
 	public static final String asphaltName = "asphalt";
 	public static final String endObsidianName = "endObsidian";
-	public static final String stalagmiteName = "stalagmite";
-	public static final String stalagmiteBaseName = "stalagmiteBase";
+	public static final String stalagmiteLevelOneName = "stalagmite";
+	public static final String stalagmiteLevelOneBaseName = "stalagmiteBase";
 	public static final String ringtreePlanksName = "ringtreePlanks";
 	public static final String spheretreePlanksName = "spheretreePlanks";
 	public static final String spheretreeHeartName = "spheretreeHeart";
@@ -36,6 +36,8 @@ public class BlockNames {
 	public static final String spheretreeDeepwoodCornerName = "spheretreeDeepwoodCorner";
 	public static final String spheretreeDeepwoodCorner1Name = "spheretreeDeepwoodCorner1";
 	public static final String greenBerryName = "greenBerry";
+	
+	public static final String redRock = "redRock";
 	
 	//initialize stalagmite level blocks
 	public static final String stalagmiteLevelTwoName = "stalagmiteLevelTwoName";

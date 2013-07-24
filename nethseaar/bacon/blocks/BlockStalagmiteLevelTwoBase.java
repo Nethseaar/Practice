@@ -56,7 +56,7 @@ public class BlockStalagmiteLevelTwoBase extends Block {
     					if (par5Random.nextInt(3) == 1){
     						par1World.setBlock(par2, par3 + 1, par4, BaconBlocks.stalagmiteLevelTwo.blockID);
     						if (par5Random.nextInt(3) == 1){
-    							par1World.setBlock(par2, par3, par4, BaconBlocks.stalagmiteBase.blockID);
+    							par1World.setBlock(par2, par3, par4, BaconBlocks.stalagmiteLevelOneBase.blockID);
     						}
     					}
     					else{

@@ -94,7 +94,7 @@ public class BlockSpheretreeDeepwoodBranch extends Block {
             this.spheretreeSide2 = par1IconRegister.registerIcon("spheretreeDeepwoodBranch00");
             this.spheretreeSide3 = par1IconRegister.registerIcon("spheretreeDeepwoodBranch00");
             this.spheretreeOrigin = par1IconRegister.registerIcon("spheretreeDeepwoodBottom");
-            this.spheretree1Bottom = par1IconRegister.registerIcon("spheretreeBranchwoodBottom");
+            this.spheretree1Bottom = par1IconRegister.registerIcon("spheretreeDeepwoodBottom");
         }
 
 

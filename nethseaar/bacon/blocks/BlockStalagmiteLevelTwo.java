@@ -30,10 +30,10 @@ public class BlockStalagmiteLevelTwo extends Block {
 	@Override
 	public void onNeighborBlockChange(World par1World, int xPos, int yPos, int zPos, int blockId)
 	{
-		if(par1World.getBlockId(xPos, yPos - 1, zPos) == this.blockID || par1World.getBlockId(xPos, yPos - 1, zPos) == BaconBlocks.stalagmiteBase.blockID){
+		if(par1World.getBlockId(xPos, yPos - 1, zPos) == this.blockID || par1World.getBlockId(xPos, yPos - 1, zPos) == BaconBlocks.stalagmiteLevelOneBase.blockID){
 			return;
 		}
-		else if(par1World.getBlockId(xPos, yPos - 1, zPos) == BaconBlocks.stalagmite.blockID || par1World.getBlockId(xPos, yPos - 1, zPos) == BaconBlocks.stalagmiteLevelTwoBase.blockID){
+		else if(par1World.getBlockId(xPos, yPos - 1, zPos) == BaconBlocks.stalagmiteLevelOne.blockID || par1World.getBlockId(xPos, yPos - 1, zPos) == BaconBlocks.stalagmiteLevelTwoBase.blockID){
 			return;}
 		else if (!par1World.doesBlockHaveSolidTopSurface(xPos, yPos - 1, zPos))
 		{
@@ -62,7 +62,7 @@ public class BlockStalagmiteLevelTwo extends Block {
 					if (par5Random.nextInt(3) == 1){
 						par1World.setBlock(par2, par3 + 1, par4, BaconBlocks.stalagmiteLevelTwo.blockID);
 						if (par5Random.nextInt(3) == 1){
-							par1World.setBlock(par2, par3, par4, BaconBlocks.stalagmite.blockID);
+							par1World.setBlock(par2, par3, par4, BaconBlocks.stalagmiteLevelOne.blockID);
 						}
 					}
 					else{

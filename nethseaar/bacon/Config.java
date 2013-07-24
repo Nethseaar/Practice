@@ -24,8 +24,8 @@ public class Config {
 	BlockIDs.boneLadder = config.getBlock(BlockNames.boneLadderName, BlockIDs.boneLadderDefault).getInt(BlockIDs.boneLadder);
 	BlockIDs.asphalt = config.getBlock(BlockNames.asphaltName, BlockIDs.asphaltDefault).getInt(BlockIDs.asphalt);
 	BlockIDs.endObsidian = config.getBlock(BlockNames.endObsidianName, BlockIDs.endObsidianDefault).getInt(BlockIDs.endObsidian);
-	BlockIDs.stalagmite = config.getBlock(BlockNames.stalagmiteName, BlockIDs.stalagmiteDefault).getInt(BlockIDs.stalagmite);
-	BlockIDs.stalagmiteBase = config.getBlock(BlockNames.stalagmiteBaseName, BlockIDs.stalagmiteBaseDefault).getInt(BlockIDs.stalagmiteBase);
+	BlockIDs.stalagmiteLevelOne = config.getBlock(BlockNames.stalagmiteLevelOneName, BlockIDs.stalagmiteLevelOneDefault).getInt(BlockIDs.stalagmiteLevelOne);
+	BlockIDs.stalagmiteLevelOneBase = config.getBlock(BlockNames.stalagmiteLevelOneBaseName, BlockIDs.stalagmiteLevelOneBaseDefault).getInt(BlockIDs.stalagmiteLevelOneBase);
 	BlockIDs.ringtreePlanks = config.getBlock(BlockNames.ringtreePlanksName, BlockIDs.ringtreePlanksDefault).getInt(BlockIDs.ringtreePlanks);
 	BlockIDs.spheretreePlanks = config.getBlock(BlockNames.spheretreePlanksName, BlockIDs.spheretreePlanksDefault).getInt(BlockIDs.spheretreePlanks);
 	BlockIDs.spheretreeHeart = config.getBlock(BlockNames.spheretreeHeartName, BlockIDs.spheretreeHeartDefault).getInt(BlockIDs.spheretreeHeart);

@@ -16,7 +16,6 @@ public class BlockNorth extends BlockSand {
     private Icon northTop;
 	@SideOnly(Side.CLIENT)
     private Icon northBottom;
-	@SideOnly(Side.CLIENT)
 	
         public BlockNorth(int id, Material material) {
                 super(id, material);

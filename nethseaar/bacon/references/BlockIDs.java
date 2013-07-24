@@ -16,8 +16,8 @@ public class BlockIDs {
 	public static int boneLadderDefault = 443;
 	public static int asphaltDefault = 3513;
 	public static int endObsidianDefault = 3514;
-	public static int stalagmiteDefault = 3515;
-	public static int stalagmiteBaseDefault = 3516;
+	public static int stalagmiteLevelOneDefault = 3515;
+	public static int stalagmiteLevelOneBaseDefault = 3516;
 	public static int ringtreePlanksDefault = 3517;
 	public static int spheretreePlanksDefault = 3518;
 	public static int spheretreeHeartDefault = 3519;
@@ -39,6 +39,8 @@ public class BlockIDs {
 	public static int spheretreeDeepwoodCornerDefault = 449;
 	public static int spheretreeDeepwoodCorner1Default = 450;
 	public static int greenBerryDefault = 451;
+	
+	public static int redRockDefault= 800;
 	
 	// stalagmite level blocks
 	public static int stalagmiteLevelTwoDefault = 943;
@@ -115,8 +117,8 @@ public class BlockIDs {
 	public static int boneLadder = 443;
 	public static int asphalt = 3513;
 	public static int endObsidian = 3514;
-	public static int stalagmite = 3515;
-	public static int stalagmiteBase = 3516;
+	public static int stalagmiteLevelOne = 3515;
+	public static int stalagmiteLevelOneBase = 3516;
 	public static int ringtreePlanks = 3517;
 	public static int spheretreePlanks = 3518;
 	public static int spheretreeHeart = 3519;
@@ -138,6 +140,8 @@ public class BlockIDs {
 	public static int spheretreeDeepwoodCorner = 449;
 	public static int spheretreeDeepwoodCorner1 = 450;
 	public static int greenBerry = 451;
+	
+	public static int redRock = 800;
 	
 	// stalagmite level blocks
 	public static int stalagmiteLevelTwo = 943;
