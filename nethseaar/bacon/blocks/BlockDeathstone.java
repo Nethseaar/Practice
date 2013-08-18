@@ -46,10 +46,10 @@ public class BlockDeathstone extends Block {
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister par1IconRegister)
 	{    	   
-		icons = new Icon[6];
+		icons = new Icon[7];
 		
 		String[] iconNames = {
-				"deathstone", "crackedDeathstone" , "condensedDeathstone", "smoothDeathstone", "deathstoneBrick", "carvedDeathstone"
+				"deathstone", "crackedDeathstone" , "condensedDeathstone", "smoothDeathstone", "deathstoneBrick", "carvedDeathstone", "deathstoneSmallBrick"
 				};
 		
 		for (int i = 0; i < iconNames.length; i++){
@@ -74,7 +74,7 @@ public class BlockDeathstone extends Block {
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
 	{
-		for (int var4 = 0; var4 < 6; ++var4)
+		for (int var4 = 0; var4 < 7; ++var4)
 		{
 			par3List.add(new ItemStack(par1, 1, var4));
 		}

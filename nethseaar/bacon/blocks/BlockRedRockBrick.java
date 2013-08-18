@@ -5,34 +5,25 @@ import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSoulSand;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
-import net.minecraft.world.World;
+import net.minecraft.util.MathHelper;
 import nethseaar.bacon.Bacon;
+import nethseaar.bacon.bases.BlockBacon;
 
-public class BlockFloatstone extends Block {
-
-	public BlockFloatstone(int id, Material material) {
-		super(id, material);
-		setStepSound(Block.soundStoneFootstep);
-		setHardness(3.0F);
-		setResistance(5.0F);
-		setCreativeTab(Bacon.tabActive);
-		setLightValue(0.5F);
-	}
-
-	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+public class BlockRedRockBrick extends BlockBacon
+{
+	public BlockRedRockBrick(int id, Material par2Material)
 	{
-		float f = 0.0625F;
-		return AxisAlignedBB.getAABBPool().getAABB((double)((float)par2), (double)par3, (double)((float)par4), (double)((float)par2 + 1), (double)((float)(par3 + 1)-f), (double)((float)par4 + 1));
+		super(id, par2Material);
+		setStepSound(Block.soundStoneFootstep);
+		setHardness(2.0F);
+		setResistance(5.0F);
+		setCreativeTab(Bacon.tabInert);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -41,11 +32,11 @@ public class BlockFloatstone extends Block {
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister par1IconRegister)
 	{    	   
-		icons = new Icon[7];
-
+		icons = new Icon[3];
+		
 		String[] iconNames = {
-				"floatstone", "crackedFloatstone", "condensedFloatstone", "smoothFloatstone", "floatstoneBrick", "carvedFloatstone", "floatstoneSmallBrick"
-		};
+				"redRockBrick", "redRockSmallBrick", "carvedRedRock"
+				};
 
 		for (int i = 0; i < iconNames.length; i++){
 			icons[i] = par1IconRegister.registerIcon(iconNames[i]);
@@ -64,13 +55,13 @@ public class BlockFloatstone extends Block {
 
 	public int damageDropped(int metadata)
 	{
-		return metadata;
+	     return metadata;
 	}
-
+	
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
 	{
-		for (int var4 = 0; var4 < 7; ++var4)
+		for (int var4 = 0; var4 < 3; ++var4)
 		{
 			par3List.add(new ItemStack(par1, 1, var4));
 		}

@@ -37,9 +37,11 @@ import nethseaar.bacon.handlers.PacketHandlerBacon;
 import nethseaar.bacon.tileentities.TileEntityCondenser;
 
 
-@Mod(modid="Bacon", name="Bacon", version="v0.0.1")
+@Mod(modid= Bacon.modid, name="Bacon", version="v0.0.1")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false, channels = "Bacon", packetHandler = PacketHandlerBacon.class)
 public class Bacon {
+	
+	public static final String modid = "Bacon";
 
 	EventManager eventmanager = new EventManager();
 

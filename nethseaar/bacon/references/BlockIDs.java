@@ -41,6 +41,16 @@ public class BlockIDs {
 	public static int greenBerryDefault = 451;
 	
 	public static int redRockDefault= 800;
+	public static int redRockBrickDefault= 801;
+	public static int redSandDefault= 802;
+	
+	// Red Rock Spire blocks
+	public static int redRockSpireDefault = 807;
+	public static int redRockSpireLevelTwoDefault = 808;
+	public static int redRockSpireLevelThreeDefault = 809;
+	public static int redRockSpireLevelFourDefault = 810;
+	public static int redRockSpireLevelFiveDefault = 811;
+	
 	
 	// stalagmite level blocks
 	public static int stalagmiteLevelTwoDefault = 943;
@@ -102,6 +112,8 @@ public class BlockIDs {
 	public static int asphaltStairsDefault = 3539;
 	public static int ringtreePlankStairsDefault = 3540;
 	public static int spheretreePlankStairsDefault = 3541;
+	public static int redRockStairsDefault = 804;
+	public static int redRockBrickStairsDefault = 805;
 	
 	public static int condenserIdleDefault = 3561;
 	public static int condenserActiveDefault = 3562;
@@ -142,6 +154,15 @@ public class BlockIDs {
 	public static int greenBerry = 451;
 	
 	public static int redRock = 800;
+	public static int redRockBrick = 801;
+	public static int redSand = 802;
+	
+	// Red Rock Spire blocks
+	public static int redRockSpire = 807;
+	public static int redRockSpireLevelTwo = 808;
+	public static int redRockSpireLevelThree = 809;
+	public static int redRockSpireLevelFour = 810;
+	public static int redRockSpireLevelFive = 811;
 	
 	// stalagmite level blocks
 	public static int stalagmiteLevelTwo = 943;
@@ -202,6 +223,8 @@ public class BlockIDs {
 	public static int asphaltStairs = 3539;
 	public static int ringtreePlankStairs = 3540;
 	public static int spheretreePlankStairs = 3541;
+	public static int redRockStairs = 804;
+	public static int redRockBrickStairs = 805;
 	
 	public static int condenserIdle = 3561;
 	public static int condenserActive = 3562;

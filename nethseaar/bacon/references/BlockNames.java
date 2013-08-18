@@ -1,7 +1,7 @@
 package nethseaar.bacon.references;
 
 public class BlockNames {
-	
+
 	public static final String darknessOreName = "darknessOre";
 	public static final String gravityOreName = "gravityOre";
 	public static final String lethargyOreName = "lethargyOre";
@@ -26,8 +26,18 @@ public class BlockNames {
 	public static final String brainMushroomName = "brainMushroom";
 	public static final String bitumenStillName = "bitumen";
 	public static final String bitumenFlowingName = "bitumen_flow";
-	public static final String purpleBerryName = "purpleBerryName";
-	
+	public static final String purpleBerryName = "purpleBerry";
+	public static final String redRockName = "redRock";
+	public static final String redRockBrickName = "redRockBrick";
+	public static final String redSandName = "redSand";
+
+	//initialize stalagmite base level blocks
+	public static final String redRockSpireName = "redRockSpire";
+	public static final String redRockSpireLevelTwoName = "redRockSpireLevelTwo";
+	public static final String redRockSpireLevelThreeName = "redRockSpireLevelThree";
+	public static final String redRockSpireLevelFourName = "redRockSpireLevelFour";
+	public static final String redRockSpireLevelFiveName = "redRockSpireLevelFive";
+
 	public static final String spheretreeDeepwoodBranchName = "spheretreeDeepwoodBranch";
 	public static final String spheretreeDeepwoodBranch1Name = "spheretreeDeepwoodBranch1";
 	public static final String spheretreeDeepwood1Name = "spheretreeDeepwood1";
@@ -36,9 +46,7 @@ public class BlockNames {
 	public static final String spheretreeDeepwoodCornerName = "spheretreeDeepwoodCorner";
 	public static final String spheretreeDeepwoodCorner1Name = "spheretreeDeepwoodCorner1";
 	public static final String greenBerryName = "greenBerry";
-	
-	public static final String redRock = "redRock";
-	
+
 	//initialize stalagmite level blocks
 	public static final String stalagmiteLevelTwoName = "stalagmiteLevelTwoName";
 	public static final String stalagmiteLevelThreeName = "stalagmiteLevelThreeName";
@@ -136,10 +144,12 @@ public class BlockNames {
 	public static final String asphaltStairsName = "asphaltStairs";
 	public static final String ringtreePlankStairsName = "ringtreePlankStairs";
 	public static final String spheretreePlankStairsName = "spheretreePlankStairs";
-	
+	public static final String redRockStairsName = "redRockStairs";
+	public static final String redRockBrickStairsName = "redRockBrickStairs";
+
 	//initialize machine names
 	public static final String condenserIdleName = "condenserIdle";
 	public static final String condenserActiveName = "condenserActive";
-	
+
 
 }

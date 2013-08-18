@@ -1,6 +1,7 @@
 package nethseaar.bacon;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSand;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,6 +27,12 @@ import nethseaar.bacon.blocks.BlockLightstone;
 import nethseaar.bacon.blocks.BlockNorth;
 import nethseaar.bacon.blocks.BlockPurpleBerry;
 import nethseaar.bacon.blocks.BlockRedRock;
+import nethseaar.bacon.blocks.BlockRedRockBrick;
+import nethseaar.bacon.blocks.BlockRedRockSpire;
+import nethseaar.bacon.blocks.BlockRedRockSpireLevelFive;
+import nethseaar.bacon.blocks.BlockRedRockSpireLevelFour;
+import nethseaar.bacon.blocks.BlockRedRockSpireLevelThree;
+import nethseaar.bacon.blocks.BlockRedRockSpireLevelTwo;
 import nethseaar.bacon.blocks.BlockRingtree;
 import nethseaar.bacon.blocks.BlockSouth;
 import nethseaar.bacon.blocks.BlockSpheretreeBranchwood;
@@ -67,29 +74,39 @@ public class BaconBlocks {
 	// Store all the names for meta-data subblocks.
 	private static String[] darkstoneNames = {
 		"Darkstone", "Cracked Darkstone", "Condensed Darkstone", "Smooth Darkstone", "Darkstone Brick", "Carved Darkstone", 
-		"Springstone*", "Cracked Springstone*", "Condensed Springstone*", "Smooth Springstone*", "Springstone Brick*", "Carved Springstone*"
+		"Springstone*", "Cracked Springstone*", "Condensed Springstone*", "Smooth Springstone*", "Springstone Brick*", "Carved Springstone*", 
+		"Darkstone Small Brick", "Springstone Small Brick*"
 	};
-	
+
 	private static String[] dimstoneNames = {
 		"Dimstone", "Cracked Dimstone", "Condensed Dimstone", "Smooth Dimstone", "Dimstone Brick", "Carved Dimstone",
-		"Floatstone*", "Cracked Floatstone*", "Condensed Floatstone*", "Smooth Floatstone*", "Floatstone Brick*", "Carved Floatstone*"
+		"Floatstone*", "Cracked Floatstone*", "Condensed Floatstone*", "Smooth Floatstone*", "Floatstone Brick*", "Carved Floatstone*", 
+		"Dimstone Small Brick", "Floatstone Small Brick*"
 	};
 
 	private static String[] lightstoneNames = {
 		"Lightstone", "Cracked Lightstone", "Condensed Lightstone", "Smooth Lightstone", "Lightstone Brick", "Carved Lightstone",
-		"Deathstone*", "Cracked Deathstone*", "Condensed Deathstone*", "Smooth Deathstone*", "Deathstone Brick*", "Carved Deathstone*"
+		"Deathstone*", "Cracked Deathstone*", "Condensed Deathstone*", "Smooth Deathstone*", "Deathstone Brick*", "Carved Deathstone*", 
+		"Lightstone Small Brick", "Deathstone Small Brick*"
 	};
 
 	private static String[] springstoneNames = {
-		"Springstone", "Cracked Springstone", "Condensed Springstone", "Smooth Springstone", "Springstone Brick", "Carved Springstone"
+		"Springstone", "Cracked Springstone", "Condensed Springstone", "Smooth Springstone", "Springstone Brick", "Carved Springstone", 
+		"Springstone Small Brick"
 	};
 
 	private static String[] floatstoneNames = {
-		"Floatstone", "Cracked Floatstone", "Condensed Floatstone", "Smooth Floatstone", "Floatstone Brick", "Carved Floatstone"
+		"Floatstone", "Cracked Floatstone", "Condensed Floatstone", "Smooth Floatstone", "Floatstone Brick", "Carved Floatstone", 
+		"Floatstone Small Brick"
 	};
 
 	private static String[] deathstoneNames = {
-		"Deathstone", "Cracked Deathstone**", "Condensed Deathstone", "Smooth Deathstone", "Deathstone Brick", "Carved Deathstone"
+		"Deathstone", "Cracked Deathstone**", "Condensed Deathstone", "Smooth Deathstone", "Deathstone Brick", "Carved Deathstone", 
+		"Deathstone Small Brick"
+	};
+
+	private static String[] decorativeBlockNames = {
+		"Red Rock Brick", "Red Rock Small Brick", "Carved Red Rock"
 	};
 
 	private static String[] oreNames = {
@@ -124,6 +141,15 @@ public class BaconBlocks {
 	public static Block bitumenStill;
 	public static Block boneLadder;
 	public static Block redRock;
+	public static Block redRockBrick;
+	public static Block redSand;
+
+	// Declare Red Rock Spire Blocks
+	public static Block redRockSpire;
+	public static Block redRockSpireLevelTwo;
+	public static Block redRockSpireLevelThree;
+	public static Block redRockSpireLevelFour;
+	public static Block redRockSpireLevelFive;
 
 	// Declare Organic Blocks
 	public static Block ringtreePlanks;
@@ -183,7 +209,8 @@ public class BaconBlocks {
 	public static Block asphaltStairs;
 	public static Block spheretreePlankStairs;
 	public static Block ringtreePlankStairs;
-
+	public static Block redRockStairs;
+	public static Block redRockBrickStairs;
 
 	// Declare direction blocks
 	public static Block up;
@@ -204,7 +231,7 @@ public class BaconBlocks {
 	public static void init() {
 
 		//* -------------------------------------------------------------------------------------- INITIALIZE BLOCKS----------------------------------------------------
-		
+
 		// Initialize Ores
 		darknessOre = new OreDarknessOre(BlockIDs.darknessOre, 0, Material.rock).setUnlocalizedName(BlockNames.darknessOreName);
 		gravityOre = new OreGravityOre(BlockIDs.gravityOre, 0, Material.rock).setUnlocalizedName(BlockNames.gravityOreName);
@@ -221,7 +248,17 @@ public class BaconBlocks {
 		brainMushroom = new BlockBrainMushroom(BlockIDs.brainMushroom, "brainMushroom").setUnlocalizedName(BlockNames.brainMushroomName).setCreativeTab(Bacon.tabSubItems);
 		bitumenFlowing = new BlockBitumenFlowing(BlockIDs.bitumenStill - 1, Material.water).setUnlocalizedName(BlockNames.bitumenFlowingName);
 		bitumenStill = new BlockBitumenStationary(BlockIDs.bitumenStill, Material.water).setUnlocalizedName(BlockNames.bitumenStillName);
-		redRock = new BlockRedRock(BlockIDs.redRock, Material.rock).setUnlocalizedName(BlockNames.redRock);
+		redRock = new BlockRedRock(BlockIDs.redRock, Material.rock).setUnlocalizedName(BlockNames.redRockName).setCreativeTab(Bacon.tabInert);
+		redRockBrick = new BlockRedRockBrick(BlockIDs.redRockBrick, Material.rock).setUnlocalizedName(BlockNames.redRockBrickName).setCreativeTab(Bacon.tabInert);
+		redSand = new BlockSand(BlockIDs.redSand,  Material.rock).setUnlocalizedName(BlockNames.redSandName).setStepSound(Block.soundSandFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(Bacon.tabActive);
+
+		// Initialize redRockSpire Blocks
+		redRockSpire = new BlockRedRockSpire(BlockIDs.redRockSpire, Material.rock).setUnlocalizedName(BlockNames.redRockSpireName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		redRockSpireLevelTwo = new BlockRedRockSpireLevelTwo(BlockIDs.redRockSpireLevelTwo, Material.rock).setUnlocalizedName(BlockNames.redRockSpireLevelTwoName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		redRockSpireLevelThree = new BlockRedRockSpireLevelThree(BlockIDs.redRockSpireLevelThree, Material.rock).setUnlocalizedName(BlockNames.redRockSpireLevelThreeName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		redRockSpireLevelFour = new BlockRedRockSpireLevelFour(BlockIDs.redRockSpireLevelFour, Material.rock).setUnlocalizedName(BlockNames.redRockSpireLevelFourName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		redRockSpireLevelFive = new BlockRedRockSpireLevelFive(BlockIDs.redRockSpireLevelFive, Material.rock).setUnlocalizedName(BlockNames.redRockSpireLevelFiveName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+
 
 		// Initialize Organic Blocks
 		ringtreePlanks = new BlockBacon(BlockIDs.ringtreePlanks, Material.wood).setUnlocalizedName(BlockNames.ringtreePlanksName).setStepSound(Block.soundWoodFootstep).setHardness(2.0F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
@@ -301,6 +338,8 @@ public class BaconBlocks {
 		asphaltStairs = new StairBacon(BlockIDs.asphaltStairs, BaconBlocks.asphalt, 0).setUnlocalizedName(BlockNames.asphaltStairsName);
 		ringtreePlankStairs = new StairBacon(BlockIDs.ringtreePlankStairs, BaconBlocks.ringtreePlanks, 0).setUnlocalizedName(BlockNames.ringtreePlankStairsName);
 		spheretreePlankStairs = new StairBacon(BlockIDs.spheretreePlankStairs, BaconBlocks.spheretreePlanks, 0).setUnlocalizedName(BlockNames.spheretreePlankStairsName);
+		redRockStairs = new StairBacon(BlockIDs.redRockStairs, BaconBlocks.redRock, 0).setUnlocalizedName(BlockNames.redRockStairsName);
+		redRockBrickStairs = new StairBacon(BlockIDs.redRockBrickStairs, BaconBlocks.redRockBrick, 0).setUnlocalizedName(BlockNames.redRockBrickStairsName);
 
 		// Initialize Machine Blocks
 		condenserIdle = new BlockCondenser(BlockIDs.condenserIdle, false).setUnlocalizedName(BlockNames.condenserIdleName).setCreativeTab(Bacon.tabSubItems);
@@ -337,7 +376,17 @@ public class BaconBlocks {
 		GameRegistry.registerBlock(brainMushroom, BlockNames.brainMushroomName);
 		GameRegistry.registerBlock(bitumenFlowing, BlockNames.bitumenFlowingName);
 		GameRegistry.registerBlock(bitumenStill, BlockNames.bitumenStillName);
-		GameRegistry.registerBlock(redRock, BlockNames.redRock);
+		GameRegistry.registerBlock(redRock, BlockNames.redRockName);
+		GameRegistry.registerBlock(redSand, BlockNames.redSandName);
+
+		GameRegistry.registerBlock(redRockBrick, ItemBlockBacon.class, "Bacon" + (redRockBrick.getUnlocalizedName().substring(5)));
+
+		// Register Red Rock Spire Blocks
+		GameRegistry.registerBlock(redRockSpire, BlockNames.redRockSpireName);
+		GameRegistry.registerBlock(redRockSpireLevelTwo, BlockNames.redRockSpireLevelTwoName);
+		GameRegistry.registerBlock(redRockSpireLevelThree, BlockNames.redRockSpireLevelThreeName);
+		GameRegistry.registerBlock(redRockSpireLevelFour, BlockNames.redRockSpireLevelFourName);
+		GameRegistry.registerBlock(redRockSpireLevelFive, BlockNames.redRockSpireLevelFiveName);
 
 		// Register Organic Blocks
 		GameRegistry.registerBlock(ringtreePlanks, BlockNames.ringtreePlanksName);
@@ -402,6 +451,8 @@ public class BaconBlocks {
 		GameRegistry.registerBlock(asphaltStairs, BlockNames.asphaltStairsName);
 		GameRegistry.registerBlock(ringtreePlankStairs, BlockNames.ringtreePlankStairsName);
 		GameRegistry.registerBlock(spheretreePlankStairs, BlockNames.spheretreePlankStairsName);
+		GameRegistry.registerBlock(redRockStairs, BlockNames.redRockStairsName);
+		GameRegistry.registerBlock(redRockBrickStairs, BlockNames.redRockBrickStairsName);
 
 		// Register Directional Blocks
 		GameRegistry.registerBlock(up, BlockNames.upName);
@@ -437,6 +488,18 @@ public class BaconBlocks {
 		LanguageRegistry.addName(bitumenFlowing, "Flowing Bitumen");
 		LanguageRegistry.addName(bitumenStill, "Still Bitumen");
 		LanguageRegistry.addName(redRock, "Red Rock");
+		LanguageRegistry.addName(redSand, "Red Sand");
+
+		for (int i = 0; i < decorativeBlockNames.length; i++)
+		{LanguageRegistry.addName(new ItemStack(redRockBrick, 1, i), decorativeBlockNames[i]);
+		}
+
+		// Register Red Rock Spire Block Names
+		LanguageRegistry.addName(redRockSpire, "Red Rock Spire");
+		LanguageRegistry.addName(redRockSpireLevelTwo, "Red Rock Spire");
+		LanguageRegistry.addName(redRockSpireLevelThree, "Red Rock Spire");
+		LanguageRegistry.addName(redRockSpireLevelFour, "Red Rock Spire");
+		LanguageRegistry.addName(redRockSpireLevelFive, "Red Rock Spire");
 
 		// Register Organic Block Names
 		LanguageRegistry.addName(ringtreePlanks, "Ringtree Planks");
@@ -458,18 +521,18 @@ public class BaconBlocks {
 		LanguageRegistry.addName(spheretreeDeepwoodCorner1, "Spheretree Deepwood Corner II");
 
 		// Register Stalagmite Block Names
-		LanguageRegistry.addName(stalagmiteLevelOne, "stalagmiteLevelOne");
-		LanguageRegistry.addName(stalagmiteLevelTwo, "stalagmiteLevelOne II");
-		LanguageRegistry.addName(stalagmiteLevelThree, "stalagmiteLevelOne III");
-		LanguageRegistry.addName(stalagmiteLevelFour, "stalagmiteLevelOne IV");
-		LanguageRegistry.addName(stalagmiteLevelFive, "stalagmiteLevelOne V");
+		LanguageRegistry.addName(stalagmiteLevelOne, "Stalagmite");
+		LanguageRegistry.addName(stalagmiteLevelTwo, "Stalagmite");
+		LanguageRegistry.addName(stalagmiteLevelThree, "Stalagmite");
+		LanguageRegistry.addName(stalagmiteLevelFour, "Stalagmite");
+		LanguageRegistry.addName(stalagmiteLevelFive, "Stalagmite");
 
 		// Register Stalagmite Base Block Names
-		LanguageRegistry.addName(stalagmiteLevelOneBase, "Base of stalagmiteLevelOne");
-		LanguageRegistry.addName(stalagmiteLevelTwoBase, "stalagmiteLevelOne Base II");
-		LanguageRegistry.addName(stalagmiteLevelThreeBase, "stalagmiteLevelOne Base III");
-		LanguageRegistry.addName(stalagmiteLevelFourBase, "stalagmiteLevelOne Base IV");
-		LanguageRegistry.addName(stalagmiteLevelFiveBase, "stalagmiteLevelOne Base V");
+		LanguageRegistry.addName(stalagmiteLevelOneBase, "Stalagmite Base");
+		LanguageRegistry.addName(stalagmiteLevelTwoBase, "Stalagmite Base");
+		LanguageRegistry.addName(stalagmiteLevelThreeBase, "Stalagmite Base");
+		LanguageRegistry.addName(stalagmiteLevelFourBase, "Stalagmite Base");
+		LanguageRegistry.addName(stalagmiteLevelFiveBase, "Stalagmite Base");
 
 		// Register Dimension Stone Block Names	
 		for (int i = 0; i < lightstoneNames.length; i++)
@@ -520,7 +583,9 @@ public class BaconBlocks {
 		LanguageRegistry.addName(asphaltStairs, "Asphalt Stairs");
 		LanguageRegistry.addName(ringtreePlankStairs, "Ringtree Plank Stairs");
 		LanguageRegistry.addName(spheretreePlankStairs, "Spheretree Plank Stairs");
-
+		LanguageRegistry.addName(redRockStairs, "Red Rock Stairs");
+		LanguageRegistry.addName(redRockBrickStairs, "Red Rock Brick Stairs");
+		
 		// Register Directional Block Names
 		LanguageRegistry.addName(up, "Ascender");
 		LanguageRegistry.addName(down, "Descender");
@@ -540,7 +605,7 @@ public class BaconBlocks {
 		MinecraftForge.setBlockHarvestLevel(darknessOre, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(gravityOre, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(lethargyOre, "pickaxe", 3);
-		
+
 		//Set Dimension Stone Blocks Harvest Levels
 		MinecraftForge.setBlockHarvestLevel(lightstone, "pickaxe", 3);
 		MinecraftForge.setBlockHarvestLevel(dimstone, "pickaxe", 2);
@@ -549,11 +614,20 @@ public class BaconBlocks {
 		MinecraftForge.setBlockHarvestLevel(springstone, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(deathstone, "pickaxe", 3);
 		MinecraftForge.setBlockHarvestLevel(crackedDeathstone, "pickaxe", 3);
-		
+
 		//Set Overworld Blocks Harvest Levels
 		MinecraftForge.setBlockHarvestLevel(asphalt, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(endObsidian, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(redRock, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(redRockBrick, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(redSand, "shovel", 0);
+
+		//Set Red Rock Spire Blocks Harvest Levels
+		MinecraftForge.setBlockHarvestLevel(redRockSpire, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(redRockSpireLevelTwo, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(redRockSpireLevelThree, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(redRockSpireLevelFour, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(redRockSpireLevelFive, "pickaxe", 1);
 
 		//Set Organic Blocks Harvest Levels
 		MinecraftForge.setBlockHarvestLevel(ringtreePlanks, "axe", 0);
@@ -563,12 +637,14 @@ public class BaconBlocks {
 		MinecraftForge.setBlockHarvestLevel(spheretreeLeaves, "shears", 0);
 		MinecraftForge.setBlockHarvestLevel(spheretreeDeepwood, "axe", 3);
 		MinecraftForge.setBlockHarvestLevel(spheretreeBranchwood, "axe", 2);
-		
+
 		//Set Overworld and Vanilla Stair Harvest Levels
 		MinecraftForge.setBlockHarvestLevel(asphaltStairs, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(ringtreePlankStairs, "axe", 0);
 		MinecraftForge.setBlockHarvestLevel(spheretreePlankStairs, "axe", 3);
-		
+		MinecraftForge.setBlockHarvestLevel(redRockStairs, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(redRockBrickStairs, "pickaxe", 1);
+
 		//Set Dimension Stone Stairs Harvest Levels
 		MinecraftForge.setBlockHarvestLevel(darkstoneStairs, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(dimstoneStairs, "pickaxe", 2);
@@ -576,7 +652,7 @@ public class BaconBlocks {
 		MinecraftForge.setBlockHarvestLevel(springstoneStairs, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(floatstoneStairs, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(deathstoneStairs, "pickaxe", 3);
-		
+
 		//Set Dimension Smooth Stone Stairs Harvest Levels
 		MinecraftForge.setBlockHarvestLevel(smoothDarkstoneStairs, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(smoothDimstoneStairs, "pickaxe", 2);
@@ -584,7 +660,7 @@ public class BaconBlocks {
 		MinecraftForge.setBlockHarvestLevel(smoothSpringstoneStairs, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(smoothFloatstoneStairs, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(smoothDeathstoneStairs, "pickaxe", 3);
-		
+
 		//Set Dimension Stone Brick Stairs Harvest Levels
 		MinecraftForge.setBlockHarvestLevel(darkstoneBrickStairs, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(dimstoneBrickStairs, "pickaxe", 2);
@@ -592,7 +668,7 @@ public class BaconBlocks {
 		MinecraftForge.setBlockHarvestLevel(springstoneBrickStairs, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(floatstoneBrickStairs, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(deathstoneBrickStairs, "pickaxe", 3);
-		
+
 		//Set Directional Blocks Harvest Levels
 		MinecraftForge.setBlockHarvestLevel(up, "spade", 2);
 		MinecraftForge.setBlockHarvestLevel(down, "spade", 2);
@@ -600,14 +676,14 @@ public class BaconBlocks {
 		MinecraftForge.setBlockHarvestLevel(west, "spade", 2);
 		MinecraftForge.setBlockHarvestLevel(south, "spade", 2);
 		MinecraftForge.setBlockHarvestLevel(north, "spade", 2);
-		
+
 		//Set Stalagmite Blocks Harvest Levels
 		MinecraftForge.setBlockHarvestLevel(stalagmiteLevelOne, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(stalagmiteLevelTwo, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(stalagmiteLevelThree, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(stalagmiteLevelFour, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(stalagmiteLevelFive, "pickaxe", 1);
-		
+
 		//Set Stalagmite Base Blocks Harvest Levels
 		MinecraftForge.setBlockHarvestLevel(stalagmiteLevelOneBase, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(stalagmiteLevelTwoBase, "pickaxe", 1);

@@ -32,11 +32,11 @@ public class BlockDarkstone extends BlockBacon
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister par1IconRegister)
 	{    	   
-		icons = new Icon[12];
+		icons = new Icon[14];
 		
 		String[] iconNames = {
 				"darkstone", "crackedDarkstone", "condensedDarkstone", "smoothDarkstone", "darkstoneBrick", "carvedDarkstone",
-				"springstone", "crackedSpringstone", "condensedSpringstone", "smoothSpringstone", "springstoneBrick", "carvedSpringstone"
+				"springstone", "crackedSpringstone", "condensedSpringstone", "smoothSpringstone", "springstoneBrick", "carvedSpringstone", "darkstoneSmallBrick", "springstoneSmallBrick"
 				};
 
 		for (int i = 0; i < iconNames.length; i++){
@@ -62,7 +62,7 @@ public class BlockDarkstone extends BlockBacon
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
 	{
-		for (int var4 = 0; var4 < 12; ++var4)
+		for (int var4 = 0; var4 < 14; ++var4)
 		{
 			par3List.add(new ItemStack(par1, 1, var4));
 		}
