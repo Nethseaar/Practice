@@ -14,6 +14,8 @@ public class BlockNames {
 	public static final String endObsidianName = "endObsidian";
 	public static final String stalagmiteLevelOneName = "stalagmite";
 	public static final String stalagmiteLevelOneBaseName = "stalagmiteBase";
+	public static final String stalactiteLevelOneName = "stalactite";
+	public static final String stalactiteLevelOneBaseName = "stalactiteBase";
 	public static final String ringtreePlanksName = "ringtreePlanks";
 	public static final String spheretreePlanksName = "spheretreePlanks";
 	public static final String spheretreeHeartName = "spheretreeHeart";
@@ -59,6 +61,17 @@ public class BlockNames {
 	public static final String stalagmiteLevelFourBaseName = "stalagmiteLevelFourBase";
 	public static final String stalagmiteLevelFiveBaseName = "stalagmiteLevelFiveBase";
 
+	//initialize stalactite level blocks
+		public static final String stalactiteLevelTwoName = "stalactiteLevelTwoName";
+		public static final String stalactiteLevelThreeName = "stalactiteLevelThreeName";
+		public static final String stalactiteLevelFourName = "stalactiteLevelFourName";
+		public static final String stalactiteLevelFiveName = "stalactiteLevelFiveName";
+
+		//initialize stalactite base level blocks
+		public static final String stalactiteLevelTwoBaseName = "stalactiteLevelTwoBase";
+		public static final String stalactiteLevelThreeBaseName = "stalactiteLevelThreeBase";
+		public static final String stalactiteLevelFourBaseName = "stalactiteLevelFourBase";
+		public static final String stalactiteLevelFiveBaseName = "stalactiteLevelFiveBase";
 
 	//initialize stone blocks
 	public static final String lightstoneName = "lightstone";

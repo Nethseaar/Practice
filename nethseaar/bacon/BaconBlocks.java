@@ -45,6 +45,16 @@ import nethseaar.bacon.blocks.BlockSpheretreeDeepwoodBranch1;
 import nethseaar.bacon.blocks.BlockSpheretreeDeepwoodCorner;
 import nethseaar.bacon.blocks.BlockSpheretreeDeepwoodCorner1;
 import nethseaar.bacon.blocks.BlockSpringstone;
+import nethseaar.bacon.blocks.BlockStalactite;
+import nethseaar.bacon.blocks.BlockStalactiteLevelFive;
+import nethseaar.bacon.blocks.BlockStalactiteBase;
+import nethseaar.bacon.blocks.BlockStalactiteLevelFiveBase;
+import nethseaar.bacon.blocks.BlockStalactiteLevelFour;
+import nethseaar.bacon.blocks.BlockStalactiteLevelFourBase;
+import nethseaar.bacon.blocks.BlockStalactiteLevelThree;
+import nethseaar.bacon.blocks.BlockStalactiteLevelThreeBase;
+import nethseaar.bacon.blocks.BlockStalactiteLevelTwo;
+import nethseaar.bacon.blocks.BlockStalactiteLevelTwoBase;
 import nethseaar.bacon.blocks.BlockStalagmite;
 import nethseaar.bacon.blocks.BlockStalagmiteBase;
 import nethseaar.bacon.blocks.BlockStalagmiteLevelFive;
@@ -181,6 +191,20 @@ public class BaconBlocks {
 	public static Block stalagmiteLevelFourBase;
 	public static Block stalagmiteLevelFiveBase;
 
+	// Declare stalactite Blocks
+	public static Block stalactiteLevelOne;
+	public static Block stalactiteLevelTwo;
+	public static Block stalactiteLevelThree;
+	public static Block stalactiteLevelFour;
+	public static Block stalactiteLevelFive;
+
+	// Declare stalactite Base Blocks
+	public static Block stalactiteLevelOneBase;
+	public static Block stalactiteLevelTwoBase;
+	public static Block stalactiteLevelThreeBase;
+	public static Block stalactiteLevelFourBase;
+	public static Block stalactiteLevelFiveBase;
+
 	// Declare Dimension Stone Stairs	
 	public static Block darkstoneStairs;
 	public static Block dimstoneStairs;
@@ -291,6 +315,20 @@ public class BaconBlocks {
 		stalagmiteLevelThreeBase = new BlockStalagmiteLevelThreeBase(BlockIDs.stalagmiteLevelThreeBase, Material.rock).setUnlocalizedName(BlockNames.stalagmiteLevelThreeBaseName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
 		stalagmiteLevelFourBase = new BlockStalagmiteLevelFourBase(BlockIDs.stalagmiteLevelFourBase, Material.rock).setUnlocalizedName(BlockNames.stalagmiteLevelFourBaseName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
 		stalagmiteLevelFiveBase = new BlockStalagmiteLevelFiveBase(BlockIDs.stalagmiteLevelFiveBase, Material.rock).setUnlocalizedName(BlockNames.stalagmiteLevelFiveBaseName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+
+		// Initialize stalactite Blocks
+		stalactiteLevelOne = new BlockStalactite(BlockIDs.stalactiteLevelOne, Material.rock).setUnlocalizedName(BlockNames.stalactiteLevelOneName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalactiteLevelTwo = new BlockStalactiteLevelTwo(BlockIDs.stalactiteLevelTwo, Material.rock).setUnlocalizedName(BlockNames.stalactiteLevelTwoName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalactiteLevelThree = new BlockStalactiteLevelThree(BlockIDs.stalactiteLevelThree, Material.rock).setUnlocalizedName(BlockNames.stalactiteLevelThreeName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalactiteLevelFour = new BlockStalactiteLevelFour(BlockIDs.stalactiteLevelFour, Material.rock).setUnlocalizedName(BlockNames.stalactiteLevelFourName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalactiteLevelFive = new BlockStalactiteLevelFive(BlockIDs.stalactiteLevelFive, Material.rock).setUnlocalizedName(BlockNames.stalactiteLevelFiveName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+
+		// Initialize stalactite Base Blocks
+		stalactiteLevelOneBase = new BlockStalactiteBase(BlockIDs.stalactiteLevelOneBase, Material.rock).setUnlocalizedName(BlockNames.stalactiteLevelOneBaseName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalactiteLevelTwoBase = new BlockStalactiteLevelTwoBase(BlockIDs.stalactiteLevelTwoBase, Material.rock).setUnlocalizedName(BlockNames.stalactiteLevelTwoBaseName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalactiteLevelThreeBase = new BlockStalactiteLevelThreeBase(BlockIDs.stalactiteLevelThreeBase, Material.rock).setUnlocalizedName(BlockNames.stalactiteLevelThreeBaseName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalactiteLevelFourBase = new BlockStalactiteLevelFourBase(BlockIDs.stalactiteLevelFourBase, Material.rock).setUnlocalizedName(BlockNames.stalactiteLevelFourBaseName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
+		stalactiteLevelFiveBase = new BlockStalactiteLevelFiveBase(BlockIDs.stalactiteLevelFiveBase, Material.rock).setUnlocalizedName(BlockNames.stalactiteLevelFiveBaseName).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setResistance(5.0F).setCreativeTab(Bacon.tabInert);
 
 
 		// Initialize Dimension Stone Blocks
@@ -422,6 +460,19 @@ public class BaconBlocks {
 		GameRegistry.registerBlock(stalagmiteLevelFourBase, BlockNames.stalagmiteLevelFourBaseName);
 		GameRegistry.registerBlock(stalagmiteLevelFiveBase, BlockNames.stalagmiteLevelFiveBaseName);
 
+		// Register stalactite Blocks
+		GameRegistry.registerBlock(stalactiteLevelOne, BlockNames.stalactiteLevelOneName);
+		GameRegistry.registerBlock(stalactiteLevelTwo, BlockNames.stalactiteLevelTwoName);
+		GameRegistry.registerBlock(stalactiteLevelThree, BlockNames.stalactiteLevelThreeName);
+		GameRegistry.registerBlock(stalactiteLevelFour, BlockNames.stalactiteLevelFourName);
+		GameRegistry.registerBlock(stalactiteLevelFive, BlockNames.stalactiteLevelFiveName);
+
+		// Register stalactite Base Blocks
+		GameRegistry.registerBlock(stalactiteLevelOneBase, BlockNames.stalactiteLevelOneBaseName);
+		GameRegistry.registerBlock(stalactiteLevelTwoBase, BlockNames.stalactiteLevelTwoBaseName);
+		GameRegistry.registerBlock(stalactiteLevelThreeBase, BlockNames.stalactiteLevelThreeBaseName);
+		GameRegistry.registerBlock(stalactiteLevelFourBase, BlockNames.stalactiteLevelFourBaseName);
+		GameRegistry.registerBlock(stalactiteLevelFiveBase, BlockNames.stalactiteLevelFiveBaseName);
 
 		// Register Dimension Stone Stairs
 		GameRegistry.registerBlock(darkstoneStairs, BlockNames.darkstoneStairsName);
@@ -534,6 +585,20 @@ public class BaconBlocks {
 		LanguageRegistry.addName(stalagmiteLevelFourBase, "Stalagmite Base");
 		LanguageRegistry.addName(stalagmiteLevelFiveBase, "Stalagmite Base");
 
+		// Register stalactite Block Names
+		LanguageRegistry.addName(stalactiteLevelOne, "Stalactite");
+		LanguageRegistry.addName(stalactiteLevelTwo, "Stalactite");
+		LanguageRegistry.addName(stalactiteLevelThree, "Stalactite");
+		LanguageRegistry.addName(stalactiteLevelFour, "Stalactite");
+		LanguageRegistry.addName(stalactiteLevelFive, "Stalactite");
+
+		// Register stalactite Base Block Names
+		LanguageRegistry.addName(stalactiteLevelOneBase, "Stalactite Base");
+		LanguageRegistry.addName(stalactiteLevelTwoBase, "Stalactite Base");
+		LanguageRegistry.addName(stalactiteLevelThreeBase, "Stalactite Base");
+		LanguageRegistry.addName(stalactiteLevelFourBase, "Stalactite Base");
+		LanguageRegistry.addName(stalactiteLevelFiveBase, "Stalactite Base");
+
 		// Register Dimension Stone Block Names	
 		for (int i = 0; i < lightstoneNames.length; i++)
 		{LanguageRegistry.addName(new ItemStack(lightstone, 1, i), lightstoneNames[i]);
@@ -585,7 +650,7 @@ public class BaconBlocks {
 		LanguageRegistry.addName(spheretreePlankStairs, "Spheretree Plank Stairs");
 		LanguageRegistry.addName(redRockStairs, "Red Rock Stairs");
 		LanguageRegistry.addName(redRockBrickStairs, "Red Rock Brick Stairs");
-		
+
 		// Register Directional Block Names
 		LanguageRegistry.addName(up, "Ascender");
 		LanguageRegistry.addName(down, "Descender");
@@ -690,5 +755,19 @@ public class BaconBlocks {
 		MinecraftForge.setBlockHarvestLevel(stalagmiteLevelThreeBase, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(stalagmiteLevelFourBase, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(stalagmiteLevelFiveBase, "pickaxe", 1);
+
+		//Set stalactite Blocks Harvest Levels
+		MinecraftForge.setBlockHarvestLevel(stalactiteLevelOne, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(stalactiteLevelTwo, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(stalactiteLevelThree, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(stalactiteLevelFour, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(stalactiteLevelFive, "pickaxe", 1);
+
+		//Set stalactite Base Blocks Harvest Levels
+		MinecraftForge.setBlockHarvestLevel(stalactiteLevelOneBase, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(stalactiteLevelTwoBase, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(stalactiteLevelThreeBase, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(stalactiteLevelFourBase, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(stalactiteLevelFiveBase, "pickaxe", 1);
 	}
 }
