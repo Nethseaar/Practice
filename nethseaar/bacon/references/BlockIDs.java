@@ -16,6 +16,8 @@ public class BlockIDs {
 	public static int boneLadderDefault = 443;
 	public static int asphaltDefault = 3513;
 	public static int endObsidianDefault = 3514;
+	public static int stalactiteLevelOneDefault = 959;
+	public static int stalactiteLevelOneBaseDefault = 960;
 	public static int stalagmiteLevelOneDefault = 3515;
 	public static int stalagmiteLevelOneBaseDefault = 3516;
 	public static int ringtreePlanksDefault = 3517;
@@ -64,6 +66,17 @@ public class BlockIDs {
 	public static int stalagmiteLevelFourBaseDefault = 949;
 	public static int stalagmiteLevelFiveBaseDefault = 950;
 
+	// stalactite level blocks
+		public static int stalactiteLevelTwoDefault = 951;
+		public static int stalactiteLevelThreeDefault = 952;
+		public static int stalactiteLevelFourDefault = 953;
+		public static int stalactiteLevelFiveDefault = 954;
+
+		// stalactite base level blocks
+		public static int stalactiteLevelTwoBaseDefault = 955;
+		public static int stalactiteLevelThreeBaseDefault = 956;
+		public static int stalactiteLevelFourBaseDefault = 957;
+		public static int stalactiteLevelFiveBaseDefault = 958;
 
 	// stone blocks
 	public static int lightstoneDefault = 500;
@@ -129,6 +142,8 @@ public class BlockIDs {
 	public static int boneLadder = 443;
 	public static int asphalt = 3513;
 	public static int endObsidian = 3514;
+	public static int stalactiteLevelOne = 959;
+	public static int stalactiteLevelOneBase = 960;
 	public static int stalagmiteLevelOne = 3515;
 	public static int stalagmiteLevelOneBase = 3516;
 	public static int ringtreePlanks = 3517;
@@ -176,6 +191,18 @@ public class BlockIDs {
 	public static int stalagmiteLevelFourBase = 949;
 	public static int stalagmiteLevelFiveBase = 950;
 
+	// stalactite level blocks
+	public static int stalactiteLevelTwo = 951;
+	public static int stalactiteLevelThree = 952;
+	public static int stalactiteLevelFour = 953;
+	public static int stalactiteLevelFive = 954;
+
+	// stalactite base level blocks
+	public static int stalactiteLevelTwoBase = 955;
+	public static int stalactiteLevelThreeBase = 956;
+	public static int stalactiteLevelFourBase = 957;
+	public static int stalactiteLevelFiveBase = 958;
+	
 	// stone blocks
 	public static int lightstone = 500;
 	public static int dimstone = 4084;

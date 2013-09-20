@@ -15,7 +15,7 @@ import nethseaar.bacon.BaconBlocks;
 public class BlockStalactiteBase extends Block {
 
 	@SideOnly(Side.CLIENT)
-	private Icon stalagmiteTop;
+	private Icon stalactiteTop;
 	@SideOnly(Side.CLIENT)
 	private Icon stoneBottom;
 
@@ -42,10 +42,10 @@ public class BlockStalactiteBase extends Block {
 				if (i1 == 15)
 				{
 					if (par5Random.nextInt(3) == 1){
-						par1World.setBlock(par2, par3 - 1, par4, BaconBlocks.stalagmiteLevelOne.blockID);
+						par1World.setBlock(par2, par3 - 1, par4, BaconBlocks.stalactiteLevelOne.blockID);
 					}
 					else{
-						par1World.setBlock(par2, par3 - 1, par4, BaconBlocks.stalagmiteLevelTwo.blockID);
+						par1World.setBlock(par2, par3 - 1, par4, BaconBlocks.stalactiteLevelTwo.blockID);
 					}
 					par1World.setBlockMetadataWithNotify(par2, par3, par4, 0, 4);
 				}
@@ -60,14 +60,14 @@ public class BlockStalactiteBase extends Block {
 	@SideOnly(Side.CLIENT)
 	public Icon getIcon(int par1, int par2)
 	{
-		return par1 == 0 ? this.stoneBottom : (par1 == 1 ? this.stalagmiteTop: this.blockIcon);
+		return par1 == 0 ? this.stalactiteTop : (par1 == 1 ? this.stoneBottom : this.blockIcon);
 	}
 
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister par1IconRegister)
 	{
-		this.blockIcon = par1IconRegister.registerIcon("stalagmiteBase");
-		this.stalagmiteTop = par1IconRegister.registerIcon("stalagmiteTop");
+		this.blockIcon = par1IconRegister.registerIcon("stalactiteBase");
+		this.stalactiteTop = par1IconRegister.registerIcon("stalagmiteTop");
 		this.stoneBottom = par1IconRegister.registerIcon("stone");
 	}
 
