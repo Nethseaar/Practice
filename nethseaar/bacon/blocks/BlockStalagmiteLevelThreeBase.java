@@ -87,7 +87,7 @@ public class BlockStalagmiteLevelThreeBase extends Block {
         @SideOnly(Side.CLIENT)
         public Icon getIcon(int par1, int par2)
         {
-            return par1 == 0 ? this.stoneBottom : (par1 == 1 ? this.stalagmiteTop: this.blockIcon);
+            return par1 == 0 ? this.stalagmiteTop : (par1 == 1 ? this.stalagmiteTop: this.blockIcon);
         }
 
         @SideOnly(Side.CLIENT)

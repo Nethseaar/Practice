@@ -10,6 +10,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityFallingSand;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
@@ -17,12 +18,11 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import nethseaar.bacon.BaconBlocks;
 import nethseaar.bacon.blocks.BlockUp;
 
 public class EntityFallingAscender extends Entity {
 
-	 public int blockID;
+	  public int blockID;
 	    public int metadata;
 
 	    /** How long the block has been falling for. */
@@ -60,7 +60,7 @@ public class EntityFallingAscender extends Entity {
 	        super(par1World);
 	        this.fallTime = 0;
 	        this.shouldDropItem = true;
-	        this.isBreakingAnvil = true;
+	        this.isBreakingAnvil = false;
 	        this.isAnvil = false;
 	        this.fallHurtMax = 40;
 	        this.fallHurtAmount = 2.0F;
@@ -113,7 +113,7 @@ public class EntityFallingAscender extends Entity {
 	            this.prevPosY = this.posY;
 	            this.prevPosZ = this.posZ;
 	            ++this.fallTime;
-	            this.motionY -= 0.03999999910593033D;
+	            this.motionY += 0.03999999910593033D;
 	            this.moveEntity(this.motionX, this.motionY, this.motionZ);
 	            this.motionX *= 0.9800000190734863D;
 	            this.motionY *= 0.9800000190734863D;
@@ -140,13 +140,13 @@ public class EntityFallingAscender extends Entity {
 	                {
 	                    this.motionX *= 0.699999988079071D;
 	                    this.motionZ *= 0.699999988079071D;
-	                    this.motionY *= -0.5D;
+	                    this.motionY *= +0.5D;
 
 	                    if (this.worldObj.getBlockId(i, j, k) != Block.pistonMoving.blockID)
 	                    {
 	                        this.setDead();
 
-	                        if (!this.isBreakingAnvil && this.worldObj.canPlaceEntityOnSide(this.blockID, i, j, k, true, 1, (Entity)null, (ItemStack)null) && !BlockUp.canFallBelow(this.worldObj, i, j - 1, k) && this.worldObj.setBlock(i, j, k, this.blockID, this.metadata, 3))
+	                        if (!BlockUp.canFallAbove(this.worldObj, i, j + 1, k) && this.worldObj.setBlock(i, j, k, this.blockID, this.metadata, 3))
 	                        {
 	                            if (Block.blocksList[this.blockID] instanceof BlockUp)
 	                            {
@@ -192,46 +192,6 @@ public class EntityFallingAscender extends Entity {
 	                    }
 
 	                    this.setDead();
-	                }
-	            }
-	        }
-	    }
-
-	    /**
-	     * Called when the mob is falling. Calculates and applies fall damage.
-	     */
-	    protected void fall(float par1)
-	    {
-	        if (this.isAnvil)
-	        {
-	            int i = MathHelper.ceiling_float_int(par1 - 1.0F);
-
-	            if (i > 0)
-	            {
-	                ArrayList arraylist = new ArrayList(this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.boundingBox));
-	                DamageSource damagesource = this.blockID == Block.anvil.blockID ? DamageSource.anvil : DamageSource.fallingBlock;
-	                Iterator iterator = arraylist.iterator();
-
-	                while (iterator.hasNext())
-	                {
-	                    Entity entity = (Entity)iterator.next();
-	                    entity.attackEntityFrom(damagesource, Math.min(MathHelper.floor_float((float)i * this.fallHurtAmount), this.fallHurtMax));
-	                }
-
-	                if (this.blockID == Block.anvil.blockID && (double)this.rand.nextFloat() < 0.05000000074505806D + (double)i * 0.05D)
-	                {
-	                    int j = this.metadata >> 2;
-	                    int k = this.metadata & 3;
-	                    ++j;
-
-	                    if (j > 2)
-	                    {
-	                        this.isBreakingAnvil = true;
-	                    }
-	                    else
-	                    {
-	                        this.metadata = k | j << 2;
-	                    }
 	                }
 	            }
 	        }
@@ -297,7 +257,7 @@ public class EntityFallingAscender extends Entity {
 
 	        if (this.blockID == 0)
 	        {
-	            this.blockID = BaconBlocks.up.blockID;
+	            this.blockID = Block.sand.blockID;
 	        }
 	    }
 
@@ -334,4 +294,4 @@ public class EntityFallingAscender extends Entity {
 	    {
 	        return false;
 	    }
-	}
+}

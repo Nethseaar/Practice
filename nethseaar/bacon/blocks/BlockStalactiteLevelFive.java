@@ -13,7 +13,7 @@ import nethseaar.bacon.BaconBlocks;
 public class BlockStalactiteLevelFive extends Block {
 
 	@SideOnly(Side.CLIENT)
-    private Icon stalactiteTop;
+    private Icon stalagmiteTop;
 	
         public BlockStalactiteLevelFive(int id, Material material) {
                 super(id, material);
@@ -28,12 +28,12 @@ public class BlockStalactiteLevelFive extends Block {
     	@Override
     	public void onNeighborBlockChange(World par1World, int xPos, int yPos, int zPos, int blockId)
     	{
-    		if(par1World.getBlockId(xPos, yPos + 1, zPos) == this.blockID || par1World.getBlockId(xPos, yPos + 1, zPos) == BaconBlocks.stalactiteLevelFiveBase.blockID){
+    		if(par1World.getBlockId(xPos, yPos - 1, zPos) == this.blockID || par1World.getBlockId(xPos, yPos - 1, zPos) == BaconBlocks.stalagmiteLevelFiveBase.blockID){
     			return;
     		}
-    		else if(par1World.getBlockId(xPos, yPos + 1, zPos) == BaconBlocks.stalactiteLevelFour.blockID || par1World.getBlockId(xPos, yPos + 1, zPos) == BaconBlocks.stalactiteLevelFourBase.blockID){
+    		else if(par1World.getBlockId(xPos, yPos - 1, zPos) == BaconBlocks.stalagmiteLevelFour.blockID || par1World.getBlockId(xPos, yPos - 1, zPos) == BaconBlocks.stalagmiteLevelFourBase.blockID){
     			return;}
-    		else if (!par1World.doesBlockHaveSolidTopSurface(xPos, yPos + 1, zPos))
+    		else if (!par1World.doesBlockHaveSolidTopSurface(xPos, yPos - 1, zPos))
     		{
     			this.dropBlockAsItem(par1World, xPos, yPos, zPos, par1World.getBlockMetadata(xPos, yPos, zPos), 0);
     			par1World.setBlockToAir(xPos, yPos, zPos);
@@ -54,14 +54,14 @@ public class BlockStalactiteLevelFive extends Block {
         @SideOnly(Side.CLIENT)
         public Icon getIcon(int par1, int par2)
         {
-            return par1 == 0 ? this.stalactiteTop : (par1 == 1 ? this.stalactiteTop: this.blockIcon);
+            return par1 == 0 ? this.stalagmiteTop : (par1 == 1 ? this.stalagmiteTop: this.blockIcon);
         }
 
         @SideOnly(Side.CLIENT)
         public void registerIcons(IconRegister par1IconRegister)
         {
-            this.blockIcon = par1IconRegister.registerIcon("stalactite");
-            this.stalactiteTop = par1IconRegister.registerIcon("stalagmiteTop");
+            this.blockIcon = par1IconRegister.registerIcon("stalagmite");
+            this.stalagmiteTop = par1IconRegister.registerIcon("stalagmiteTop");
         }
 
 }

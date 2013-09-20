@@ -15,7 +15,7 @@ import nethseaar.bacon.BaconBlocks;
 public class BlockStalactiteLevelTwo extends Block {
 
 	@SideOnly(Side.CLIENT)
-	private Icon stalactiteTop;
+	private Icon stalagmiteTop;
 
 	public BlockStalactiteLevelTwo(int id, Material material) {
 		super(id, material);
@@ -30,10 +30,10 @@ public class BlockStalactiteLevelTwo extends Block {
 	@Override
 	public void onNeighborBlockChange(World par1World, int xPos, int yPos, int zPos, int blockId)
 	{
-		if(par1World.getBlockId(xPos, yPos + 1, zPos) == this.blockID || par1World.getBlockId(xPos, yPos + 1, zPos) == BaconBlocks.stalactiteLevelOneBase.blockID){
+		if(par1World.getBlockId(xPos, yPos - 1, zPos) == this.blockID || par1World.getBlockId(xPos, yPos - 1, zPos) == BaconBlocks.stalagmiteLevelOneBase.blockID){
 			return;
 		}
-		else if(par1World.getBlockId(xPos, yPos + 1, zPos) == BaconBlocks.stalactiteLevelOne.blockID || par1World.getBlockId(xPos, yPos + 1, zPos) == BaconBlocks.stalactiteLevelTwoBase.blockID){
+		else if(par1World.getBlockId(xPos, yPos - 1, zPos) == BaconBlocks.stalagmiteLevelOne.blockID || par1World.getBlockId(xPos, yPos - 1, zPos) == BaconBlocks.stalagmiteLevelTwoBase.blockID){
 			return;}
 		else if (!par1World.doesBlockHaveSolidTopSurface(xPos, yPos - 1, zPos))
 		{
@@ -44,11 +44,11 @@ public class BlockStalactiteLevelTwo extends Block {
 
 	public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
 	{
-		if (par1World.isAirBlock(par2, par3 - 1, par4))
+		if (par1World.isAirBlock(par2, par3 + 1, par4))
 		{
 			int l;
 
-			for (l = 1; par1World.getBlockId(par2, par3 + l, par4) == this.blockID; ++l)
+			for (l = 1; par1World.getBlockId(par2, par3 - l, par4) == this.blockID; ++l)
 			{
 				;
 			}
@@ -60,13 +60,13 @@ public class BlockStalactiteLevelTwo extends Block {
 				if (i1 == 15)
 				{
 					if (par5Random.nextInt(3) == 1){
-						par1World.setBlock(par2, par3 - 1, par4, BaconBlocks.stalactiteLevelTwo.blockID);
+						par1World.setBlock(par2, par3 + 1, par4, BaconBlocks.stalagmiteLevelTwo.blockID);
 						if (par5Random.nextInt(3) == 1){
-							par1World.setBlock(par2, par3, par4, BaconBlocks.stalactiteLevelOne.blockID);
+							par1World.setBlock(par2, par3, par4, BaconBlocks.stalagmiteLevelOne.blockID);
 						}
 					}
 					else{
-						par1World.setBlock(par2, par3 - 1, par4, BaconBlocks.stalactiteLevelThree.blockID);
+						par1World.setBlock(par2, par3 + 1, par4, BaconBlocks.stalagmiteLevelThree.blockID);
 					}
 					par1World.setBlockMetadataWithNotify(par2, par3, par4, 0, 4);
 				}
@@ -91,14 +91,14 @@ public class BlockStalactiteLevelTwo extends Block {
 	@SideOnly(Side.CLIENT)
 	public Icon getIcon(int par1, int par2)
 	{
-		return par1 == 0 ? this.stalactiteTop : (par1 == 1 ? this.stalactiteTop: this.blockIcon);
+		return par1 == 0 ? this.stalagmiteTop : (par1 == 1 ? this.stalagmiteTop: this.blockIcon);
 	}
 
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister par1IconRegister)
 	{
-		this.blockIcon = par1IconRegister.registerIcon("stalactite");
-		this.stalactiteTop = par1IconRegister.registerIcon("stalagmiteTop");
+		this.blockIcon = par1IconRegister.registerIcon("stalagmite");
+		this.stalagmiteTop = par1IconRegister.registerIcon("stalagmiteTop");
 	}
 
 }

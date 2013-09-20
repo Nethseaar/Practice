@@ -28,11 +28,11 @@ public class BlockStalactite extends Block {
                 
         public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     	{
-    		if (par1World.isAirBlock(par2, par3 - 1, par4))
+    		if (par1World.isAirBlock(par2, par3 + 1, par4))
     		{
     			int l;
 
-    			for (l = 1; par1World.getBlockId(par2, par3 + l, par4) == this.blockID; ++l)
+    			for (l = 1; par1World.getBlockId(par2, par3 - l, par4) == this.blockID; ++l)
     			{
     				;
     			}
@@ -44,10 +44,10 @@ public class BlockStalactite extends Block {
     				if (i1 == 15)
     				{
     					if (par5Random.nextInt(3) == 1){
-    						par1World.setBlock(par2, par3 - 1, par4, BaconBlocks.stalactiteLevelOne.blockID);
+    						par1World.setBlock(par2, par3 + 1, par4, BaconBlocks.stalagmiteLevelOne.blockID);
     					}
     					else{
-    						par1World.setBlock(par2, par3 - 1, par4, BaconBlocks.stalactiteLevelTwo.blockID);
+    						par1World.setBlock(par2, par3 + 1, par4, BaconBlocks.stalagmiteLevelTwo.blockID);
     					}
     					par1World.setBlockMetadataWithNotify(par2, par3, par4, 0, 4);
     				}
@@ -68,7 +68,7 @@ public class BlockStalactite extends Block {
         @SideOnly(Side.CLIENT)
         public void registerIcons(IconRegister par1IconRegister)
         {
-            this.blockIcon = par1IconRegister.registerIcon("stalactite");
+            this.blockIcon = par1IconRegister.registerIcon("stalagmite");
             this.stalagmiteTop = par1IconRegister.registerIcon("stalagmiteTop");
         }
 
